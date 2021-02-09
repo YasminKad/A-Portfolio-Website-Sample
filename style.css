@@ -14,7 +14,7 @@
     font-weight: bold;
 }
 *{
-    font-family: Parastoo;
+    font-family: Parastoo, sans-serif;
     margin: 0;
 }
 body, html{
@@ -31,13 +31,7 @@ body{
 a{
     text-decoration: none;
 }
-a:not(#kamal):hover{
-    color: #5cbe26;
-}
-p{
-    font-family: Parastoo;
-}
-#navbarID{
+.navbar{
     padding-top: 10px;
     padding-bottom: 10px;
     width: 100%;
@@ -45,7 +39,7 @@ p{
     display: block;
     position: fixed;
 }
-.navbar a{
+.navbar-icon-link{
     padding-left: 60px;
     overflow: hidden;
     padding-top: 8px;
@@ -53,18 +47,21 @@ p{
     font-size: 15px;
     text-decoration: none;
     color: #ffffff;
-    font-family: Parastoo;
 }
 .navbar i{
     padding-left: 10px;
 }
-#kamal{
+.navbar a.navbar-icon-link:hover{
+    color: #5cbe26;
+}
+.kamal-name{
     font-weight: bolder;
     padding-right: 350px;
     font-size: 25px;
     background-color: transparent;
+    color: white;
 }
-#spaceInNavbar{
+.space-in-navbar{
     padding-left: 350px;
     background-color: transparent;
 }
@@ -77,4 +74,45 @@ p{
     background-color: #ffffff;
     text-align: center;
     background-size: cover;
+}
+.my-first-grid {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    align-items: center;
+    width: 1040px;
+    height: 280px;
+    margin: auto;
+    padding-top: 345px;
+}
+.inner-text{
+    color: white;
+    padding-bottom: 15px;
+}
+.im-this-and-that{
+    font-size: 45px;
+}
+.my-first-grid a.social-media-icons{
+    color: white;
+}
+.my-first-grid a.social-media-icons:hover{
+    color: #5cbe26;
+}
+.pro-pic{
+    border-radius: 1000px;
+    height: 280px;
+    width: 280px;
+    margin-left: 60px;
+}
+.job-title{
+    color: #5cbe26;
+    font-weight: bolder;
+}
+.a-short-article-about-kamal{
+    font-size: 15px;
+    line-height: 30px;
+    font-weight: 400;
+}
+.social-media-icons{
+    margin: 0 20px 20px 0;
+    font-size: 20px;
 }
