@@ -1,0 +1,80 @@
+@font-face {
+    font-family: Parastoo;
+    src: url('./fonts/Parastoo.eot');
+    src: url('./fonts/Parastoo.eot?#iefix') format('embedded-opentype'),
+    url('./fonts/Parastoo.woff') format('woff'),
+    url('./fonts/Parastoo.ttf') format('truetype');
+}
+@font-face {
+    font-family: ParastooBold;
+    src: url('./fonts/Parastoo-Bold.eot');
+    src: url('./fonts/Parastoo-Bold.eot?#iefix') format('embedded-opentype'),
+    url('./fonts/Parastoo-Bold.woff') format('woff'),
+    url('./fonts/Parastoo-Bold.ttf') format('truetype');
+    font-weight: bold;
+}
+*{
+    font-family: Parastoo;
+    margin: 0;
+}
+body, html{
+    height: 100%;
+    width: 100%;
+    margin: 0;
+}
+body{
+    background-image: url("Media/wallpaper.jpg");
+    background-repeat: no-repeat;
+    background-color: #ffffff;
+    background-size: 100% 100%;
+}
+a{
+    text-decoration: none;
+}
+a:not(#kamal):hover{
+    color: #5cbe26;
+}
+p{
+    font-family: Parastoo;
+}
+#navbarID{
+    padding-top: 10px;
+    padding-bottom: 10px;
+    width: 100%;
+    background-color: transparent;
+    display: block;
+    position: fixed;
+}
+.navbar a{
+    padding-left: 60px;
+    overflow: hidden;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    font-size: 15px;
+    text-decoration: none;
+    color: #ffffff;
+    font-family: Parastoo;
+}
+.navbar i{
+    padding-left: 10px;
+}
+#kamal{
+    font-weight: bolder;
+    padding-right: 350px;
+    font-size: 25px;
+    background-color: transparent;
+}
+#spaceInNavbar{
+    padding-left: 350px;
+    background-color: transparent;
+}
+.footer {
+    padding: 10px;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    margin-bottom: 3px;
+    background-color: #ffffff;
+    text-align: center;
+    background-size: cover;
+}
