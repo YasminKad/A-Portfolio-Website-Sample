@@ -66,6 +66,8 @@ a{
     background-color: transparent;
 }
 .footer {
+    color: #ff253a;
+    alignment: center;
     padding: 10px;
     left: 0;
     bottom: 0;
@@ -74,6 +76,7 @@ a{
     background-color: #ffffff;
     text-align: center;
     background-size: cover;
+    position: absolute;
 }
 .my-first-grid {
     display: grid;
@@ -90,6 +93,7 @@ a{
 }
 .im-this-and-that{
     font-size: 45px;
+    font-weight: bold;
 }
 .my-first-grid a.social-media-icons{
     color: white;
@@ -105,7 +109,7 @@ a{
 }
 .job-title{
     color: #5cbe26;
-    font-weight: bolder;
+    font-weight: bold;
 }
 .a-short-article-about-kamal{
     font-size: 15px;
@@ -115,4 +119,29 @@ a{
 .social-media-icons{
     margin: 0 20px 20px 0;
     font-size: 20px;
+}
+.introduction-button-more-about-me{
+    color: white;
+    font-size: 15px;
+    position: relative;
+    padding: 12px 34px 12px 34px;
+    border: none;
+    overflow: hidden;
+    border-radius: 26px;
+    font-weight: 500;
+    background-color: #5cbe26;
+}
+.introduction-button-portfolio{
+    color: white;
+    font-size: 15px;
+    position: relative;
+    padding: 12px 64px 12px 64px;
+    border: none;
+    overflow: hidden;
+    border-radius: 26px;
+    font-weight: 500;
+    background-color: #6666;
+}
+.introduction-button-portfolio i{
+    padding-left: 6px;
 }
