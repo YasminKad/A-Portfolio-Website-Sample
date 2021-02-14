@@ -1,0 +1,168 @@
+$kamal-green:#5cbe26;
+$kamal-gray:#666666;
+
+@font-face {
+  font-family: Parastoo;
+  src: url('./fonts/Parastoo.eot');
+  src: url('./fonts/Parastoo.eot?#iefix') format('embedded-opentype'),
+  url('./fonts/Parastoo.woff') format('woff'),
+  url('./fonts/Parastoo.ttf') format('truetype');
+}
+@font-face {
+  font-family: ParastooBold;
+  src: url('./fonts/Parastoo-Bold.eot');
+  src: url('./fonts/Parastoo-Bold.eot?#iefix') format('embedded-opentype'),
+  url('./fonts/Parastoo-Bold.woff') format('woff'),
+  url('./fonts/Parastoo-Bold.ttf') format('truetype');
+  font-weight: bold;
+}
+*{
+  font-family: Parastoo, sans-serif;
+  margin: 0;
+}
+body, html{
+  height: 100%;
+  width: 100%;
+  margin: 0;
+}
+body{
+  background-image: url("Media/wallpaper.jpg");
+  background-repeat: no-repeat;
+  background-color: #ffffff;
+  background-size: 100% 100%;
+}
+a{
+  text-decoration: none;
+}
+/*************************************navbar section*******************************/
+.navbar{
+  padding-top: 10px;
+  padding-bottom: 10px;
+  width: 100%;
+  background-color: transparent;
+  display: block;
+  position: fixed;
+}
+.navbar-icon-link{
+  padding-left: 60px;
+  overflow: hidden;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  font-size: 15px;
+  text-decoration: none;
+  color: #ffffff;
+}
+.navbar i{
+  padding-left: 10px;
+}
+.navbar a.navbar-icon-link:hover{
+  color: #5cbe26;
+}
+.kamal-name{
+  font-weight: bolder;
+  padding-right: 350px;
+  font-size: 25px;
+  background-color: transparent;
+  color: white;
+}
+.space-in-navbar{
+  padding-left: 350px;
+  background-color: transparent;
+}
+.footer {
+  color: #ff253a;
+  alignment: center;
+  padding: 10px;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  margin-bottom: 3px;
+  background-color: #ffffff;
+  text-align: center;
+  background-size: cover;
+  position: absolute;
+}
+/*************************************banner section*******************************/
+.my-first-grid {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  align-items: center;
+  width: 1040px;
+  height: 280px;
+  margin: auto;
+  padding-top: 345px;
+}
+.inner-text{
+  color: white;
+  padding-bottom: 15px;
+}
+.im-this-and-that{
+  font-size: 45px;
+  font-weight: bold;
+}
+.my-first-grid a.social-media-icons{
+  color: white;
+}
+.my-first-grid a.social-media-icons:hover{
+  color: #5cbe26;
+}
+.pro-pic{
+  border-radius: 1000px;
+  height: 280px;
+  width: 280px;
+  margin-left: 60px;
+}
+.job-title{
+  color: #5cbe26;
+  font-weight: bold;
+}
+.a-short-article-about-kamal{
+  font-size: 15px;
+  line-height: 30px;
+  font-weight: 400;
+}
+.social-media-icons{
+  margin: 0 20px 20px 0;
+  font-size: 20px;
+}
+.introduction-button-more-about-me{
+  color: white;
+  font-size: 15px;
+  position: relative;
+  padding: 12px 34px 12px 34px;
+  border: none;
+  overflow: hidden;
+  border-radius: 26px;
+  font-weight: 500;
+  background-color: #5cbe26;
+}
+.introduction-button-portfolio{
+  color: white;
+  font-size: 15px;
+  position: relative;
+  padding: 12px 64px 12px 64px;
+  border: none;
+  overflow: hidden;
+  border-radius: 26px;
+  font-weight: 500;
+  background-color: #6666;
+  margin-left: 10px;
+}
+.introduction-button-portfolio i{
+  padding-left: 6px;
+}
+/*************************************about me section*******************************/
+.about-me-first{
+  .title-of-section{
+    margin-top: 9000px;
+    position: relative;
+    font-size: 15px;
+
+    h1{
+
+    }
+    span{
+
+    }
+  }
+}
