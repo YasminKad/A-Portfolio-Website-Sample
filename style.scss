@@ -1,6 +1,7 @@
 $kamal-green: #5cbe26;
 $kamal-gray: #666666;
 $kamal-white: #eeeeee;
+$kamal-light-gray: #d9d9d9;
 
 @font-face {
   font-family: Parastoo;
@@ -253,9 +254,9 @@ a {
 
       .inner-second-column {
         p{
-          color: $kamal-gray;
+          color: $kamal-light-gray;
           span{
-            color: #212529;
+            color: $kamal-gray;
           }
         }
       }
@@ -278,7 +279,7 @@ a {
       grid-template-columns: 1fr 1fr;
       align-items: center;
       width: 70%;
-      height: 200px;
+      height: 100px;
       margin: auto;
       .header-box{
         color: $kamal-gray;
@@ -290,16 +291,54 @@ a {
     }
     .grid-main{
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: 2fr 2fr;
       grid-template-rows: 1fr 1fr;
       align-items: center;
-      width: 100%;
+      width: 70%;
       margin: auto;
-      padding: 15px 25px;
       .grid-box{
-
+        alignment: center;
+        font-weight: 400;
+        align-items: center;
+        width: 70%;
+        color: $kamal-gray;
+        border-radius: 3px;
+        display: block;
+        border-right: 3px solid $kamal-green;
+        border-bottom: 1px solid $kamal-light-gray;
+        border-left: 1px solid $kamal-light-gray;
+        border-top: 1px solid $kamal-light-gray;
+        padding: 15px 25px 15px 25px;
+        margin-bottom: 24px;
+        margin-right: 50px;
+        box-shadow: 2px 4px 8px 2px rgba(0,0,0,0.2);
+        transition: 0.3s;
+        h1{
+          display: block;
+          margin-bottom: 10px;
+        }
+        p{
+          display: inline-block;
+          margin-left: 16px;
+          i{
+            margin-left: 5px;
+          }
+        }
+        article{
+          display: block;
+          margin-top: 4px;
+        }
+        span{
+          background-color: $kamal-green;
+          color: $kamal-white;
+          border-radius: 3px;
+          padding-right: 5px;
+          padding-left: 5px;
+        }
       }
-
+      .grid-box:hover {
+        box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+      }
     }
   }
 }
