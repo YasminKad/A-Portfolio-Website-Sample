@@ -1,5 +1,6 @@
-$kamal-green:#5cbe26;
-$kamal-gray:#666666;
+$kamal-green: #5cbe26;
+$kamal-gray: #666666;
+$kamal-white: #eeeeee;
 
 @font-face {
   font-family: Parastoo;
@@ -8,6 +9,7 @@ $kamal-gray:#666666;
   url('./fonts/Parastoo.woff') format('woff'),
   url('./fonts/Parastoo.ttf') format('truetype');
 }
+
 @font-face {
   font-family: ParastooBold;
   src: url('./fonts/Parastoo-Bold.eot');
@@ -16,26 +18,31 @@ $kamal-gray:#666666;
   url('./fonts/Parastoo-Bold.ttf') format('truetype');
   font-weight: bold;
 }
-*{
+
+* {
   font-family: Parastoo, sans-serif;
   margin: 0;
 }
-body, html{
+
+body, html {
   height: 100%;
   width: 100%;
   margin: 0;
 }
-body{
+
+body {
   background-image: url("Media/wallpaper.jpg");
   background-repeat: no-repeat;
   background-color: #ffffff;
   background-size: 100% 100%;
 }
-a{
+
+a {
   text-decoration: none;
 }
+
 /*************************************navbar section*******************************/
-.navbar{
+.navbar {
   padding-top: 10px;
   padding-bottom: 10px;
   width: 100%;
@@ -43,7 +50,8 @@ a{
   display: block;
   position: fixed;
 }
-.navbar-icon-link{
+
+.navbar-icon-link {
   padding-left: 60px;
   overflow: hidden;
   padding-top: 8px;
@@ -52,37 +60,34 @@ a{
   text-decoration: none;
   color: #ffffff;
 }
-.navbar i{
+
+.navbar i {
   padding-left: 10px;
 }
-.navbar a.navbar-icon-link:hover{
+
+.navbar a.navbar-icon-link:hover {
   color: #5cbe26;
 }
-.kamal-name{
+
+.kamal-name {
   font-weight: bolder;
   padding-right: 350px;
   font-size: 25px;
   background-color: transparent;
   color: white;
 }
-.space-in-navbar{
+
+.space-in-navbar {
   padding-left: 350px;
   background-color: transparent;
 }
-.footer {
-  color: #ff253a;
-  alignment: center;
-  padding: 10px;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  margin-bottom: 3px;
-  background-color: #ffffff;
-  text-align: center;
-  background-size: cover;
-  position: absolute;
-}
+
 /*************************************banner section*******************************/
+#home {
+  width: 100%;
+  height: 985px;
+}
+
 .my-first-grid {
   display: grid;
   grid-template-columns: 1fr 2fr;
@@ -92,40 +97,49 @@ a{
   margin: auto;
   padding-top: 345px;
 }
-.inner-text{
+
+.inner-text {
   color: white;
   padding-bottom: 15px;
 }
-.im-this-and-that{
+
+.im-this-and-that {
   font-size: 45px;
   font-weight: bold;
 }
-.my-first-grid a.social-media-icons{
+
+.my-first-grid a.social-media-icons {
   color: white;
 }
-.my-first-grid a.social-media-icons:hover{
+
+.my-first-grid a.social-media-icons:hover {
   color: #5cbe26;
 }
-.pro-pic{
+
+.pro-pic {
   border-radius: 1000px;
   height: 280px;
   width: 280px;
   margin-left: 60px;
 }
-.job-title{
+
+.job-title {
   color: #5cbe26;
   font-weight: bold;
 }
-.a-short-article-about-kamal{
+
+.a-short-article-about-kamal {
   font-size: 15px;
   line-height: 30px;
   font-weight: 400;
 }
-.social-media-icons{
+
+.social-media-icons {
   margin: 0 20px 20px 0;
   font-size: 20px;
 }
-.introduction-button-more-about-me{
+
+.introduction-button-more-about-me {
   color: white;
   font-size: 15px;
   position: relative;
@@ -136,7 +150,8 @@ a{
   font-weight: 500;
   background-color: #5cbe26;
 }
-.introduction-button-portfolio{
+
+.introduction-button-portfolio {
   color: white;
   font-size: 15px;
   position: relative;
@@ -148,20 +163,142 @@ a{
   background-color: #6666;
   margin-left: 10px;
 }
-.introduction-button-portfolio i{
+
+.introduction-button-portfolio i {
   padding-left: 6px;
 }
+
 /*************************************about me section*******************************/
-.about-me-first{
-  .title-of-section{
-    margin-top: 9000px;
-    position: relative;
-    font-size: 15px;
-
-    h1{
-
+.about-me-first {
+  display: block;
+  height: 450px;
+  margin-bottom: 50px;
+  .title-of-section {
+    //background-color: blue;
+    height: 100px;
+    font-weight: bold;
+    font-size: 50px;
+    text-align: center;
+    color: $kamal-gray;
+    span {
+      color: $kamal-green
     }
-    span{
+    p{
+      font-size: 30px;
+      font-weight: bolder;
+    }
+  }
+
+  .about-me-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    width: 70%;
+    height: 200px;
+    margin: auto;
+
+    .about-me-first-column {
+      h1{
+        color: $kamal-gray;
+        margin-bottom: 10px;
+      }
+      span{
+        color: $kamal-green;
+      }
+      article{
+        font-size: 15px;
+        font-weight: 400;
+        line-height: 30px;
+        color: $kamal-gray;
+        margin-bottom: 15px;
+      }
+      a{
+        display: inline-block;
+        color: $kamal-white;
+        background-color: $kamal-green;
+        font-size: 15px;
+        font-weight: 500;
+        text-align: center;
+        line-height: 1.5;
+        padding: 12px 34px;
+        margin-top: 10px;
+        border: none;
+        overflow: hidden;
+        border-radius: 26px;
+        i{
+          padding-left: 10px;
+        }
+      }
+    }
+
+    .about-me-second-column {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      width: 100%;
+      height: 450px;
+      margin: auto;
+      padding-right: 20px;
+      line-height: 40px;
+      font-weight: 400;
+
+      .inner-first-column {
+        p{
+          color: $kamal-gray;
+          span{
+            color: #212529;
+          }
+        }
+      }
+
+      .inner-second-column {
+        p{
+          color: $kamal-gray;
+          span{
+            color: #212529;
+          }
+        }
+      }
+    }
+  }
+}
+.experience-and-education{
+  display: block;
+  .header{
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-weight: 500;
+    font-size: 1.5rem;
+    color: $kamal-gray;
+  }
+  .experience-and-education-grid{
+    .grid-headers{
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      width: 70%;
+      height: 200px;
+      margin: auto;
+      .header-box{
+        color: $kamal-gray;
+        margin-bottom: 10px;
+        text-align: center;
+        font-size: 1.17rem;
+
+      }
+    }
+    .grid-main{
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+      align-items: center;
+      width: 100%;
+      margin: auto;
+      padding: 15px 25px;
+      .grid-box{
+
+      }
 
     }
   }

@@ -1,150 +1,279 @@
 @font-face {
-    font-family: Parastoo;
-    src: url('./fonts/Parastoo.eot');
-    src: url('./fonts/Parastoo.eot?#iefix') format('embedded-opentype'),
-    url('./fonts/Parastoo.woff') format('woff'),
-    url('./fonts/Parastoo.ttf') format('truetype');
+  font-family: Parastoo;
+  src: url("./fonts/Parastoo.eot");
+  src: url("./fonts/Parastoo.eot?#iefix") format("embedded-opentype"), url("./fonts/Parastoo.woff") format("woff"), url("./fonts/Parastoo.ttf") format("truetype");
 }
 @font-face {
-    font-family: ParastooBold;
-    src: url('./fonts/Parastoo-Bold.eot');
-    src: url('./fonts/Parastoo-Bold.eot?#iefix') format('embedded-opentype'),
-    url('./fonts/Parastoo-Bold.woff') format('woff'),
-    url('./fonts/Parastoo-Bold.ttf') format('truetype');
-    font-weight: bold;
+  font-family: ParastooBold;
+  src: url("./fonts/Parastoo-Bold.eot");
+  src: url("./fonts/Parastoo-Bold.eot?#iefix") format("embedded-opentype"), url("./fonts/Parastoo-Bold.woff") format("woff"), url("./fonts/Parastoo-Bold.ttf") format("truetype");
+  font-weight: bold;
 }
-*{
-    font-family: Parastoo, sans-serif;
-    margin: 0;
+* {
+  font-family: Parastoo, sans-serif;
+  margin: 0;
 }
-body, html{
-    height: 100%;
-    width: 100%;
-    margin: 0;
-}
-body{
-    background-image: url("Media/wallpaper.jpg");
-    background-repeat: no-repeat;
-    background-color: #ffffff;
-    background-size: 100% 100%;
-}
-a{
-    text-decoration: none;
-}
-.navbar{
-    padding-top: 10px;
-    padding-bottom: 10px;
-    width: 100%;
-    background-color: transparent;
-    display: block;
-    position: fixed;
-}
-.navbar-icon-link{
-    padding-left: 60px;
-    overflow: hidden;
-    padding-top: 8px;
-    padding-bottom: 8px;
-    font-size: 15px;
-    text-decoration: none;
-    color: #ffffff;
-}
-.navbar i{
-    padding-left: 10px;
-}
-.navbar a.navbar-icon-link:hover{
-    color: #5cbe26;
-}
-.kamal-name{
-    font-weight: bolder;
-    padding-right: 350px;
-    font-size: 25px;
-    background-color: transparent;
-    color: white;
-}
-.space-in-navbar{
-    padding-left: 350px;
-    background-color: transparent;
-}
-.footer {
-    color: #ff253a;
-    alignment: center;
-    padding: 10px;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    margin-bottom: 3px;
-    background-color: #ffffff;
-    text-align: center;
-    background-size: cover;
-    position: absolute;
-}
-.my-first-grid {
-    display: grid;
-    grid-template-columns: 1fr 2fr;
-    align-items: center;
-    width: 1040px;
-    height: 280px;
-    margin: auto;
-    padding-top: 345px;
-}
-.inner-text{
-    color: white;
-    padding-bottom: 15px;
-}
-.im-this-and-that{
-    font-size: 45px;
-    font-weight: bold;
-}
-.my-first-grid a.social-media-icons{
-    color: white;
-}
-.my-first-grid a.social-media-icons:hover{
-    color: #5cbe26;
-}
-.pro-pic{
-    border-radius: 1000px;
-    height: 280px;
-    width: 280px;
-    margin-left: 60px;
-}
-.job-title{
-    color: #5cbe26;
-    font-weight: bold;
-}
-.a-short-article-about-kamal{
-    font-size: 15px;
-    line-height: 30px;
-    font-weight: 400;
-}
-.social-media-icons{
-    margin: 0 20px 20px 0;
-    font-size: 20px;
-}
-.introduction-button-more-about-me{
-    color: white;
-    font-size: 15px;
-    position: relative;
-    padding: 12px 34px 12px 34px;
-    border: none;
-    overflow: hidden;
-    border-radius: 26px;
-    font-weight: 500;
-    background-color: #5cbe26;
-}
-.introduction-button-portfolio{
-    color: white;
-    font-size: 15px;
-    position: relative;
-    padding: 12px 64px 12px 64px;
-    border: none;
-    overflow: hidden;
-    border-radius: 26px;
-    font-weight: 500;
-    background-color: #6666;
-}
-.introduction-button-portfolio i{
-    padding-left: 6px;
-}
-@media screen and (orientation: portrait){
 
+body, html {
+  height: 100%;
+  width: 100%;
+  margin: 0;
 }
+
+body {
+  background-image: url("Media/wallpaper.jpg");
+  background-repeat: no-repeat;
+  background-color: #ffffff;
+  background-size: 100% 100%;
+}
+
+a {
+  text-decoration: none;
+}
+
+/*************************************navbar section*******************************/
+.navbar {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  width: 100%;
+  background-color: transparent;
+  display: block;
+  position: fixed;
+}
+
+.navbar-icon-link {
+  padding-left: 60px;
+  overflow: hidden;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  font-size: 15px;
+  text-decoration: none;
+  color: #ffffff;
+}
+
+.navbar i {
+  padding-left: 10px;
+}
+
+.navbar a.navbar-icon-link:hover {
+  color: #5cbe26;
+}
+
+.kamal-name {
+  font-weight: bolder;
+  padding-right: 350px;
+  font-size: 25px;
+  background-color: transparent;
+  color: white;
+}
+
+.space-in-navbar {
+  padding-left: 350px;
+  background-color: transparent;
+}
+
+/*************************************banner section*******************************/
+#home {
+  width: 100%;
+  height: 985px;
+}
+
+.my-first-grid {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  align-items: center;
+  width: 1040px;
+  height: 280px;
+  margin: auto;
+  padding-top: 345px;
+}
+
+.inner-text {
+  color: white;
+  padding-bottom: 15px;
+}
+
+.im-this-and-that {
+  font-size: 45px;
+  font-weight: bold;
+}
+
+.my-first-grid a.social-media-icons {
+  color: white;
+}
+
+.my-first-grid a.social-media-icons:hover {
+  color: #5cbe26;
+}
+
+.pro-pic {
+  border-radius: 1000px;
+  height: 280px;
+  width: 280px;
+  margin-left: 60px;
+}
+
+.job-title {
+  color: #5cbe26;
+  font-weight: bold;
+}
+
+.a-short-article-about-kamal {
+  font-size: 15px;
+  line-height: 30px;
+  font-weight: 400;
+}
+
+.social-media-icons {
+  margin: 0 20px 20px 0;
+  font-size: 20px;
+}
+
+.introduction-button-more-about-me {
+  color: white;
+  font-size: 15px;
+  position: relative;
+  padding: 12px 34px 12px 34px;
+  border: none;
+  overflow: hidden;
+  border-radius: 26px;
+  font-weight: 500;
+  background-color: #5cbe26;
+}
+
+.introduction-button-portfolio {
+  color: white;
+  font-size: 15px;
+  position: relative;
+  padding: 12px 64px 12px 64px;
+  border: none;
+  overflow: hidden;
+  border-radius: 26px;
+  font-weight: 500;
+  background-color: #6666;
+  margin-left: 10px;
+}
+
+.introduction-button-portfolio i {
+  padding-left: 6px;
+}
+
+/*************************************about me section*******************************/
+.about-me-first {
+  display: block;
+  height: 450px;
+  margin-bottom: 50px;
+}
+.about-me-first .title-of-section {
+  height: 100px;
+  font-weight: bold;
+  font-size: 50px;
+  text-align: center;
+  color: #666666;
+}
+.about-me-first .title-of-section span {
+  color: #5cbe26;
+}
+.about-me-first .title-of-section p {
+  font-size: 30px;
+  font-weight: bolder;
+}
+.about-me-first .about-me-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  width: 70%;
+  height: 200px;
+  margin: auto;
+}
+.about-me-first .about-me-grid .about-me-first-column h1 {
+  color: #666666;
+  margin-bottom: 10px;
+}
+.about-me-first .about-me-grid .about-me-first-column span {
+  color: #5cbe26;
+}
+.about-me-first .about-me-grid .about-me-first-column article {
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 30px;
+  color: #666666;
+  margin-bottom: 15px;
+}
+.about-me-first .about-me-grid .about-me-first-column a {
+  display: inline-block;
+  color: #eeeeee;
+  background-color: #5cbe26;
+  font-size: 15px;
+  font-weight: 500;
+  text-align: center;
+  line-height: 1.5;
+  padding: 12px 34px;
+  margin-top: 10px;
+  border: none;
+  overflow: hidden;
+  border-radius: 26px;
+}
+.about-me-first .about-me-grid .about-me-first-column a i {
+  padding-left: 10px;
+}
+.about-me-first .about-me-grid .about-me-second-column {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  width: 100%;
+  height: 450px;
+  margin: auto;
+  padding-right: 20px;
+  line-height: 40px;
+  font-weight: 400;
+}
+.about-me-first .about-me-grid .about-me-second-column .inner-first-column p {
+  color: #666666;
+}
+.about-me-first .about-me-grid .about-me-second-column .inner-first-column p span {
+  color: #212529;
+}
+.about-me-first .about-me-grid .about-me-second-column .inner-second-column p {
+  color: #666666;
+}
+.about-me-first .about-me-grid .about-me-second-column .inner-second-column p span {
+  color: #212529;
+}
+
+.experience-and-education {
+  display: block;
+}
+.experience-and-education .header {
+  text-align: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-weight: 500;
+  font-size: 1.5rem;
+  color: #666666;
+}
+.experience-and-education .experience-and-education-grid .grid-headers {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  width: 70%;
+  height: 200px;
+  margin: auto;
+}
+.experience-and-education .experience-and-education-grid .grid-headers .header-box {
+  color: #666666;
+  margin-bottom: 10px;
+  text-align: center;
+  font-size: 1.17rem;
+}
+.experience-and-education .experience-and-education-grid .grid-main {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  align-items: center;
+  width: 100%;
+  margin: auto;
+  padding: 15px 25px;
+}
+
+/*# sourceMappingURL=style.css.map */
