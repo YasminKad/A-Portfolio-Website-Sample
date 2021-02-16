@@ -3,6 +3,39 @@ $kamal-gray: #666666;
 $kamal-white: #eeeeee;
 $kamal-light-gray: #d9d9d9;
 
+@mixin grid-fundamentals {
+  display: grid;
+  align-items: center;
+  width: 75%;
+  margin: auto;
+}
+
+@mixin headers-of-sections {
+  height: 100px;
+  font-weight: bold;
+  font-size: 50px;
+  text-align: center;
+  color: $kamal-gray;
+
+  span {
+    color: $kamal-green
+  }
+
+  p {
+    font-size: 30px;
+    font-weight: bolder;
+  }
+}
+
+@mixin sub-header {
+  display: block;
+  text-align: center;
+  width: 100%;
+  color: $kamal-gray;
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+
 @font-face {
   font-family: Parastoo;
   src: url('./fonts/Parastoo.eot');
@@ -176,29 +209,13 @@ a {
   margin-bottom: 50px;
 
   .title-of-section {
-    height: 100px;
-    font-weight: bold;
-    font-size: 50px;
-    text-align: center;
-    color: $kamal-gray;
-
-    span {
-      color: $kamal-green
-    }
-
-    p {
-      font-size: 30px;
-      font-weight: bolder;
-    }
+    @include headers-of-sections();
   }
 
   .about-me-grid {
-    display: grid;
+    @include grid-fundamentals();
     grid-template-columns: 1fr 1fr;
-    align-items: center;
-    width: 70%;
     height: 200px;
-    margin: auto;
 
     .about-me-first-column {
       h1 {
@@ -239,12 +256,9 @@ a {
     }
 
     .about-me-second-column {
-      display: grid;
+      @include grid-fundamentals();
       grid-template-columns: 1fr 1fr;
-      align-items: center;
-      width: 100%;
       height: 450px;
-      margin: auto;
       padding-right: 20px;
       line-height: 40px;
       font-weight: 400;
@@ -276,22 +290,14 @@ a {
   display: block;
 
   .header {
-    text-align: center;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    font-weight: 500;
-    font-size: 1.5rem;
-    color: $kamal-gray;
+    @include sub-header();
   }
 
   .experience-and-education-grid {
     .grid-headers {
-      display: grid;
+      @include grid-fundamentals();
       grid-template-columns: 1fr 1fr;
-      align-items: center;
-      width: 70%;
       height: 100px;
-      margin: auto;
 
       .header-box {
         color: $kamal-gray;
@@ -303,12 +309,9 @@ a {
     }
 
     .grid-main {
-      display: grid;
+      @include grid-fundamentals();
       grid-template-columns: 2fr 2fr;
       grid-template-rows: 1fr 1fr;
-      align-items: center;
-      width: 70%;
-      margin: auto;
 
       .grid-box {
         alignment: center;
@@ -365,21 +368,13 @@ a {
 
 .skills {
   .header {
-    display: block;
-    text-align: center;
-    width: 100%;
-    color: $kamal-gray;
-    font-size: 1.5rem;
-    font-weight: 500;
+    @include sub-header();
   }
 
   .main-grid {
-    display: grid;
+    @include grid-fundamentals();
     grid-template-columns: 1fr 1fr;
-    align-items: center;
-    width: 70%;
     height: 80px;
-    margin: auto;
 
     .first-column {
       .bar-1 {
@@ -406,11 +401,8 @@ a {
 }
 
 .counter-cards {
-  display: grid;
+  @include grid-fundamentals();
   grid-template-columns: 1fr 1fr 1fr 1fr;
-  align-items: center;
-  width: 70%;
-  margin: auto;
   alignment: center;
   padding-bottom: 70px;
 
@@ -464,49 +456,61 @@ a {
   margin-bottom: 50px;
 
   .header {
-    display: block;
-    height: 100px;
-    font-weight: bold;
-    font-size: 50px;
-    text-align: center;
-    color: $kamal-gray;
-    margin-bottom: 100px;
-    span {
-      color: $kamal-green
-    }
-
-    p {
-      font-size: 30px;
-      font-weight: bolder;
-    }
+    @include headers-of-sections();
   }
+}
 
-  .grid-section {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    align-items: center;
-    width: 70%;
-    margin: auto;
-    color: $kamal-gray;
-    .card{
-      display: inline-block;
-      margin-top: 30px;
-      padding: 28px 28px 28px 28px;
-      border: 3px solid $kamal-light-gray;
-      border-radius: 5px;
-      margin-left: 7px;
-      text-align: center;
-      .icon{
-        color: $kamal-green;
-        font-size: 50px;
-      }
-      .title{
-        font-size: 22px;
-        font-weight: 600;
-      }
-      .description{
-        font-size: 15px;
-      }
+.grid-section {
+  @include grid-fundamentals();
+  grid-template-columns: 1fr 1fr 1fr;
+
+  .card {
+    alignment: center;
+    margin-top: 30px;
+    margin-right: 15px;
+    margin-left: 15px;
+    padding: 40px 30px 30px;
+    display: inline-block;
+    border: 1px solid $kamal-light-gray;
+    border-radius: 5px;
+    text-align: center;
+
+    i {
+      color: $kamal-green;
+      font-size: 50px;
+      margin-bottom: 10px;
+    }
+
+    .title {
+      font-size: 22px;
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+
+    .description {
+      font-size: 15px;
+      line-height: 30px;
     }
   }
 }
+
+.testimonial {
+  .header {
+
+  }
+
+  .box {
+    .picture {
+
+    }
+
+    .text {
+
+    }
+
+    .name {
+
+    }
+  }
+}
+
