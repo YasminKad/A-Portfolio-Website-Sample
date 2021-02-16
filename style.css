@@ -235,10 +235,10 @@ a {
   color: #212529;
 }
 .about-me-first .about-me-grid .about-me-second-column .inner-second-column p {
-  color: #d9d9d9;
+  color: #666666;
 }
 .about-me-first .about-me-grid .about-me-second-column .inner-second-column p span {
-  color: #666666;
+  color: #212529;
 }
 
 .experience-and-education {
@@ -316,6 +316,116 @@ a {
 }
 .experience-and-education .experience-and-education-grid .grid-main .grid-box:hover {
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+.skills .header {
+  display: block;
+  text-align: center;
+  width: 100%;
+  color: #666666;
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+.skills .main-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  width: 70%;
+  height: 80px;
+  margin: auto;
+}
+.counter-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  align-items: center;
+  width: 70%;
+  margin: auto;
+  alignment: center;
+  padding-bottom: 70px;
+}
+.counter-cards .card {
+  display: inline-block;
+  margin-top: 30px;
+  padding: 28px 28px 28px 28px;
+  height: 150px;
+  border: 3px solid #d9d9d9;
+  border-radius: 5px;
+  margin-left: 7px;
+  box-shadow: 2px 4px 8px 2px rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+}
+.counter-cards .card .header {
+  display: block;
+  text-align: left;
+  color: #5cbe26;
+  font-size: 52px;
+  font-weight: bolder;
+}
+.counter-cards .card .line {
+  display: block;
+}
+.counter-cards .card .line hr {
+  color: #666666;
+}
+.counter-cards .card .card-title {
+  display: block;
+  text-align: right;
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: #666666;
+}
+.counter-cards .card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+/*************************************services section*******************************/
+.services {
+  display: block;
+  margin-bottom: 50px;
+}
+.services .header {
+  display: block;
+  height: 100px;
+  font-weight: bold;
+  font-size: 50px;
+  text-align: center;
+  color: #666666;
+  margin-bottom: 100px;
+}
+.services .header span {
+  color: #5cbe26;
+}
+.services .header p {
+  font-size: 30px;
+  font-weight: bolder;
+}
+.services .grid-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  align-items: center;
+  width: 70%;
+  margin: auto;
+  color: #666666;
+}
+.services .grid-section .card {
+  display: inline-block;
+  margin-top: 30px;
+  padding: 28px 28px 28px 28px;
+  border: 3px solid #d9d9d9;
+  border-radius: 5px;
+  margin-left: 7px;
+  text-align: center;
+}
+.services .grid-section .card .icon {
+  color: #5cbe26;
+  font-size: 50px;
+}
+.services .grid-section .card .title {
+  font-size: 22px;
+  font-weight: 600;
+}
+.services .grid-section .card .description {
+  font-size: 15px;
 }
 
 /*# sourceMappingURL=style.css.map */
