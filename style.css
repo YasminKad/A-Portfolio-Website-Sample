@@ -18,6 +18,8 @@ body, html {
   height: 100%;
   width: 100%;
   margin: 0;
+  background-color: #f9f9f9;
+  color: #666666;
 }
 
 body {
@@ -165,6 +167,7 @@ a {
   margin-bottom: 50px;
 }
 .about-me-first .title-of-section {
+  display: block;
   height: 100px;
   font-weight: bold;
   font-size: 50px;
@@ -181,7 +184,7 @@ a {
 .about-me-first .about-me-grid {
   display: grid;
   align-items: center;
-  width: 75%;
+  width: 65%;
   margin: auto;
   grid-template-columns: 1fr 1fr;
   height: 200px;
@@ -220,7 +223,7 @@ a {
 .about-me-first .about-me-grid .about-me-second-column {
   display: grid;
   align-items: center;
-  width: 75%;
+  width: 65%;
   margin: auto;
   grid-template-columns: 1fr 1fr;
   height: 450px;
@@ -255,7 +258,7 @@ a {
 .experience-and-education .experience-and-education-grid .grid-headers {
   display: grid;
   align-items: center;
-  width: 75%;
+  width: 65%;
   margin: auto;
   grid-template-columns: 1fr 1fr;
   height: 100px;
@@ -269,7 +272,7 @@ a {
 .experience-and-education .experience-and-education-grid .grid-main {
   display: grid;
   align-items: center;
-  width: 75%;
+  width: 65%;
   margin: auto;
   grid-template-columns: 2fr 2fr;
   grid-template-rows: 1fr 1fr;
@@ -329,7 +332,7 @@ a {
 .skills .main-grid {
   display: grid;
   align-items: center;
-  width: 75%;
+  width: 65%;
   margin: auto;
   grid-template-columns: 1fr 1fr;
   height: 80px;
@@ -337,7 +340,7 @@ a {
 .counter-cards {
   display: grid;
   align-items: center;
-  width: 75%;
+  width: 65%;
   margin: auto;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   alignment: center;
@@ -384,6 +387,7 @@ a {
   margin-bottom: 50px;
 }
 .services .header {
+  display: block;
   height: 100px;
   font-weight: bold;
   font-size: 50px;
@@ -401,9 +405,10 @@ a {
 .grid-section {
   display: grid;
   align-items: center;
-  width: 75%;
+  width: 65%;
   margin: auto;
   grid-template-columns: 1fr 1fr 1fr;
+  color: #666666;
 }
 .grid-section .card {
   alignment: center;
@@ -429,6 +434,109 @@ a {
 .grid-section .card .description {
   font-size: 15px;
   line-height: 30px;
+}
+
+.testimonial {
+  display: grid;
+  align-items: center;
+  width: 65%;
+  margin: auto;
+  grid-template-columns: 1fr;
+}
+.testimonial .header {
+  display: block;
+  text-align: center;
+  width: 100%;
+  color: #666666;
+  font-size: 1.5rem;
+  font-weight: 500;
+  margin-top: 50px;
+}
+.testimonial .box {
+  padding: 20px;
+  border: 3px solid;
+  border-color: #5cbe26 #f9f9f9 #f9f9f9 #f9f9f9;
+  vertical-align: middle;
+}
+.testimonial .box .picture img {
+  height: 90px;
+  width: 90px;
+  border-radius: 40%;
+  margin: auto;
+  display: block;
+  vertical-align: middle;
+}
+.testimonial .box .text {
+  text-align: center;
+  display: block;
+  vertical-align: middle;
+  margin-bottom: 17px;
+  margin-top: 17px;
+  font-style: italic;
+  font-weight: 400;
+}
+.testimonial .box .name {
+  text-align: center;
+  vertical-align: middle;
+  font-weight: 400;
+  display: block;
+}
+.testimonial .other {
+  display: grid;
+  align-items: center;
+  width: 65%;
+  margin: auto;
+  grid-template-columns: 1fr 1fr 1fr;
+  width: 5%;
+  margin: auto;
+  text-align: center;
+  padding-bottom: 160px;
+}
+.testimonial .other i {
+  color: #aadb8f;
+  font-size: 15px;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+.testimonial .other i:hover {
+  font-size: large;
+}
+
+.portfolio .header {
+  display: block;
+  height: 100px;
+  font-weight: bold;
+  font-size: 50px;
+  text-align: center;
+  color: #666666;
+}
+.portfolio .header span {
+  color: #5cbe26;
+}
+.portfolio .header p {
+  font-size: 30px;
+  font-weight: bolder;
+}
+.portfolio .buttons-grid {
+  display: grid;
+  align-items: center;
+  width: 65%;
+  margin: auto;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  display: block;
+  margin: auto;
+}
+.portfolio .buttons-grid a {
+  display: inline-block;
+  color: white;
+  font-size: 15px;
+  position: relative;
+  padding: 12px 34px 12px 34px;
+  border: none;
+  overflow: hidden;
+  border-radius: 26px;
+  font-weight: 500;
+  background-color: #5cbe26;
 }
 
 /*# sourceMappingURL=style.css.map */

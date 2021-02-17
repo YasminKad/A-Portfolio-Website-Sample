@@ -2,15 +2,18 @@ $kamal-green: #5cbe26;
 $kamal-gray: #666666;
 $kamal-white: #eeeeee;
 $kamal-light-gray: #d9d9d9;
+$kamal-background: #f9f9f9;
+
 
 @mixin grid-fundamentals {
   display: grid;
   align-items: center;
-  width: 75%;
+  width: 65%;
   margin: auto;
 }
 
 @mixin headers-of-sections {
+  display: block;
   height: 100px;
   font-weight: bold;
   font-size: 50px;
@@ -36,6 +39,17 @@ $kamal-light-gray: #d9d9d9;
   font-weight: 500;
 }
 
+@mixin button-style{
+  color: white;
+  font-size: 15px;
+  position: relative;
+  padding: 12px 34px 12px 34px;
+  border: none;
+  overflow: hidden;
+  border-radius: 26px;
+  font-weight: 500;
+  background-color: #5cbe26;
+}
 @font-face {
   font-family: Parastoo;
   src: url('./fonts/Parastoo.eot');
@@ -62,6 +76,8 @@ body, html {
   height: 100%;
   width: 100%;
   margin: 0;
+  background-color: #f9f9f9;
+  color: $kamal-gray;
 }
 
 body {
@@ -463,6 +479,8 @@ a {
 .grid-section {
   @include grid-fundamentals();
   grid-template-columns: 1fr 1fr 1fr;
+  color: $kamal-gray;
+
 
   .card {
     alignment: center;
@@ -495,22 +513,90 @@ a {
 }
 
 .testimonial {
-  .header {
+  @include grid-fundamentals();
+  grid-template-columns: 1fr;
 
+  .header {
+    @include sub-header();
+    margin-top: 50px;
   }
 
   .box {
+    padding: 20px;
+    border: 3px solid;
+    border-color: $kamal-green $kamal-background $kamal-background $kamal-background;
+    vertical-align: middle;
+
     .picture {
 
+      img {
+        height: 90px;
+        width: 90px;
+        border-radius: 40%;
+        margin: auto;
+        display: block;
+        vertical-align: middle;
+      }
     }
 
     .text {
-
+      text-align: center;
+      display: block;
+      vertical-align: middle;
+      margin-bottom: 17px;
+      margin-top: 17px;
+      font-style: italic;
+      font-weight: 400;
     }
 
     .name {
-
+      text-align: center;
+      vertical-align: middle;
+      font-weight: 400;
+      display: block;
     }
   }
-}
 
+  .other {
+    @include grid-fundamentals();
+    grid-template-columns: 1fr 1fr 1fr;
+    width: 5%;
+    margin: auto;
+    text-align: center;
+    padding-bottom: 160px;
+
+    i {
+      color: #aadb8f;
+      font-size: 15px;
+      margin-left: 5px;
+      margin-right: 5px;
+    }
+
+    i:hover {
+      font-size: large;
+    }
+  }
+
+  //a {
+  //  display: inline-block;
+  //  font: normal normal normal 14px/1 FontAwesome;
+  //  font-size: inherit;
+  //  text-rendering: auto;
+  //  -webkit-font-smoothing: antialiased;
+  //  text-align: center;
+  //  margin-bottom: 300px;
+  }
+.portfolio{
+  .header{
+    @include headers-of-sections();
+  }
+  .buttons-grid{
+    @include grid-fundamentals();
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    display: block;
+    margin: auto;
+  a{
+    display: inline-block;
+    @include button-style();
+  }
+}}

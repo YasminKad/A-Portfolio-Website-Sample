@@ -3,9 +3,3 @@ the green color: #5cbe26
 the white color: #ffffff
 Q: how to put different images into one class and avoid repeating?
 size of mobile : 600px;
-
-stuff in the mixin:
-  display: grid;
-  align-items: center;
-  width: 75%;
-  margin: auto;
