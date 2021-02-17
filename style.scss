@@ -33,6 +33,7 @@ $kamal-background: #f9f9f9;
 }
 
 @mixin sub-header {
+  padding-top: 15px;
   display: block;
   text-align: center;
   width: 100%;
@@ -133,6 +134,7 @@ a {
   padding-left: 350px;
   background-color: transparent;
 }
+
 .navbar .icon {
   display: none;
 }
@@ -142,6 +144,7 @@ a {
   display: block;
   text-align: right;
 }
+
 /*************************************banner section*******************************/
 #home {
   width: 100%;
@@ -290,6 +293,7 @@ a {
       font-weight: 400;
 
       .inner-first-column {
+        margin-bottom: 50px;
         p {
           color: $kamal-gray;
 
@@ -300,6 +304,7 @@ a {
       }
 
       .inner-second-column {
+        margin-bottom: 50px;
         p {
           color: $kamal-gray;
 
@@ -360,11 +365,17 @@ a {
         h1 {
           display: block;
           margin-bottom: 10px;
+          font-weight: 500;
+          line-height: 1.2;
+          font-size: 1.25rem;
         }
 
         p {
           display: inline-block;
           margin-left: 16px;
+          font-size: 13px;
+          font-weight: 400;
+          margin-bottom: 4px;
 
           i {
             margin-left: 5px;
@@ -374,6 +385,9 @@ a {
         article {
           display: block;
           margin-top: 4px;
+          font-size: 15px;
+          font-weight: 400;
+          line-height: 30px;
         }
 
         span {
@@ -382,6 +396,7 @@ a {
           border-radius: 3px;
           padding-right: 5px;
           padding-left: 5px;
+          vertical-align: baseline;
         }
       }
 
@@ -404,9 +419,7 @@ a {
 
     .first-column {
       .bar-1 {
-        p {
-
-        }
+        background-color: $kamal-light-gray;
 
         .bar-2 {
 
@@ -641,6 +654,7 @@ a {
       border: 1px solid $kamal-background;
       border-radius: 5px;
       text-align: center;
+      overflow: hidden;
 
       img {
         vertical-align: middle;
@@ -657,11 +671,14 @@ a {
     }
   }
 }
+
 /*************************************responsive and @media section*******************************/
 
 
 @media screen and (max-width: 600px) {
-  .navbar a:not(:first-child) {display: none;}
+  .navbar a:not(:first-child) {
+    display: none;
+  }
   .navbar a.icon {
     float: right;
     display: block;
