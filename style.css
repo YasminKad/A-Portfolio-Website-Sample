@@ -74,6 +74,16 @@ a {
   background-color: transparent;
 }
 
+.navbar .icon {
+  display: none;
+}
+
+.navbar.responsive a {
+  float: none;
+  display: block;
+  text-align: right;
+}
+
 /*************************************banner section*******************************/
 #home {
   width: 100%;
@@ -173,6 +183,7 @@ a {
   font-size: 50px;
   text-align: center;
   color: #666666;
+  margin-bottom: 60px;
 }
 .about-me-first .title-of-section span {
   color: #5cbe26;
@@ -180,11 +191,12 @@ a {
 .about-me-first .title-of-section p {
   font-size: 30px;
   font-weight: bolder;
+  margin-bottom: 50px;
 }
 .about-me-first .about-me-grid {
   display: grid;
   align-items: center;
-  width: 65%;
+  width: 75%;
   margin: auto;
   grid-template-columns: 1fr 1fr;
   height: 200px;
@@ -223,7 +235,7 @@ a {
 .about-me-first .about-me-grid .about-me-second-column {
   display: grid;
   align-items: center;
-  width: 65%;
+  width: 75%;
   margin: auto;
   grid-template-columns: 1fr 1fr;
   height: 450px;
@@ -258,7 +270,7 @@ a {
 .experience-and-education .experience-and-education-grid .grid-headers {
   display: grid;
   align-items: center;
-  width: 65%;
+  width: 75%;
   margin: auto;
   grid-template-columns: 1fr 1fr;
   height: 100px;
@@ -272,7 +284,7 @@ a {
 .experience-and-education .experience-and-education-grid .grid-main {
   display: grid;
   align-items: center;
-  width: 65%;
+  width: 75%;
   margin: auto;
   grid-template-columns: 2fr 2fr;
   grid-template-rows: 1fr 1fr;
@@ -332,7 +344,7 @@ a {
 .skills .main-grid {
   display: grid;
   align-items: center;
-  width: 65%;
+  width: 75%;
   margin: auto;
   grid-template-columns: 1fr 1fr;
   height: 80px;
@@ -340,7 +352,7 @@ a {
 .counter-cards {
   display: grid;
   align-items: center;
-  width: 65%;
+  width: 75%;
   margin: auto;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   alignment: center;
@@ -393,6 +405,7 @@ a {
   font-size: 50px;
   text-align: center;
   color: #666666;
+  margin-bottom: 60px;
 }
 .services .header span {
   color: #5cbe26;
@@ -400,12 +413,13 @@ a {
 .services .header p {
   font-size: 30px;
   font-weight: bolder;
+  margin-bottom: 50px;
 }
 
 .grid-section {
   display: grid;
   align-items: center;
-  width: 65%;
+  width: 75%;
   margin: auto;
   grid-template-columns: 1fr 1fr 1fr;
   color: #666666;
@@ -439,7 +453,7 @@ a {
 .testimonial {
   display: grid;
   align-items: center;
-  width: 65%;
+  width: 75%;
   margin: auto;
   grid-template-columns: 1fr;
 }
@@ -484,7 +498,7 @@ a {
 .testimonial .other {
   display: grid;
   align-items: center;
-  width: 65%;
+  width: 75%;
   margin: auto;
   grid-template-columns: 1fr 1fr 1fr;
   width: 5%;
@@ -509,6 +523,7 @@ a {
   font-size: 50px;
   text-align: center;
   color: #666666;
+  margin-bottom: 60px;
 }
 .portfolio .header span {
   color: #5cbe26;
@@ -516,17 +531,21 @@ a {
 .portfolio .header p {
   font-size: 30px;
   font-weight: bolder;
+  margin-bottom: 50px;
 }
 .portfolio .buttons-grid {
   display: grid;
   align-items: center;
-  width: 65%;
+  width: 75%;
   margin: auto;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   display: block;
-  margin: auto;
+  margin-bottom: 15px;
+  margin-top: 15px;
+  text-align: center;
 }
 .portfolio .buttons-grid a {
+  alignment: center;
   display: inline-block;
   color: white;
   font-size: 15px;
@@ -536,7 +555,64 @@ a {
   overflow: hidden;
   border-radius: 26px;
   font-weight: 500;
+  margin-right: 5px;
+  margin-left: 5px;
+  background-color: #666666;
+}
+.portfolio .buttons-grid a:hover {
   background-color: #5cbe26;
+  transition: 0.7s;
+}
+.portfolio .grid-section {
+  display: grid;
+  align-items: center;
+  width: 75%;
+  margin: auto;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+.portfolio .grid-section .card {
+  alignment: center;
+  margin-top: 30px;
+  margin-right: 15px;
+  margin-left: 15px;
+  padding: 0;
+  width: 350px;
+  display: inline-block;
+  border: 1px solid #f9f9f9;
+  border-radius: 5px;
+  text-align: center;
+}
+.portfolio .grid-section .card img {
+  vertical-align: middle;
+  height: 280px;
+  width: 350px;
+}
+.portfolio .grid-section .card:hover img {
+  filter: brightness(30%);
+  transition: 0.7s;
+}
+
+/*************************************responsive and @media section*******************************/
+@media screen and (max-width: 600px) {
+  .navbar a:not(:first-child) {
+    display: none;
+  }
+
+  .navbar a.icon {
+    float: right;
+    display: block;
+  }
+}
+@media screen and (max-width: 600px) {
+  .navbar.responsive {
+    position: relative;
+  }
+
+  .navbar.responsive .icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

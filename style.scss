@@ -8,7 +8,7 @@ $kamal-background: #f9f9f9;
 @mixin grid-fundamentals {
   display: grid;
   align-items: center;
-  width: 65%;
+  width: 75%;
   margin: auto;
 }
 
@@ -19,6 +19,7 @@ $kamal-background: #f9f9f9;
   font-size: 50px;
   text-align: center;
   color: $kamal-gray;
+  margin-bottom: 60px;
 
   span {
     color: $kamal-green
@@ -27,6 +28,7 @@ $kamal-background: #f9f9f9;
   p {
     font-size: 30px;
     font-weight: bolder;
+    margin-bottom: 50px;
   }
 }
 
@@ -39,7 +41,7 @@ $kamal-background: #f9f9f9;
   font-weight: 500;
 }
 
-@mixin button-style{
+@mixin button-style {
   color: white;
   font-size: 15px;
   position: relative;
@@ -48,8 +50,8 @@ $kamal-background: #f9f9f9;
   overflow: hidden;
   border-radius: 26px;
   font-weight: 500;
-  background-color: #5cbe26;
 }
+
 @font-face {
   font-family: Parastoo;
   src: url('./fonts/Parastoo.eot');
@@ -131,7 +133,15 @@ a {
   padding-left: 350px;
   background-color: transparent;
 }
+.navbar .icon {
+  display: none;
+}
 
+.navbar.responsive a {
+  float: none;
+  display: block;
+  text-align: right;
+}
 /*************************************banner section*******************************/
 #home {
   width: 100%;
@@ -585,18 +595,86 @@ a {
   //  -webkit-font-smoothing: antialiased;
   //  text-align: center;
   //  margin-bottom: 300px;
-  }
-.portfolio{
-  .header{
+}
+
+.portfolio {
+  .header {
     @include headers-of-sections();
   }
-  .buttons-grid{
+
+  .buttons-grid {
     @include grid-fundamentals();
     grid-template-columns: 1fr 1fr 1fr 1fr;
     display: block;
-    margin: auto;
-  a{
-    display: inline-block;
-    @include button-style();
+    margin-bottom: 15px;
+    margin-top: 15px;
+    text-align: center;
+
+    a {
+      alignment: center;
+      display: inline-block;
+      @include button-style();
+      margin-right: 5px;
+      margin-left: 5px;
+      background-color: $kamal-gray;
+    }
+
+    a:hover {
+      background-color: $kamal-green;
+      transition: 0.7s;
+
+    }
   }
-}}
+
+  .grid-section {
+    @include grid-fundamentals();
+    grid-template-columns: 1fr 1fr 1fr;
+
+    .card {
+      alignment: center;
+      margin-top: 30px;
+      margin-right: 15px;
+      margin-left: 15px;
+      padding: 0;
+      width: 350px;
+      display: inline-block;
+      border: 1px solid $kamal-background;
+      border-radius: 5px;
+      text-align: center;
+
+      img {
+        vertical-align: middle;
+        height: 280px;
+        width: 350px;
+      }
+    }
+
+    .card:hover {
+      img {
+        filter: brightness(30%);
+        transition: 0.7s;
+      }
+    }
+  }
+}
+/*************************************responsive and @media section*******************************/
+
+
+@media screen and (max-width: 600px) {
+  .navbar a:not(:first-child) {display: none;}
+  .navbar a.icon {
+    float: right;
+    display: block;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .navbar.responsive {
+    position: relative;
+  }
+  .navbar.responsive .icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+}
