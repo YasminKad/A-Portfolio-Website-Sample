@@ -311,8 +311,6 @@ a {
   padding: 15px 25px 15px 25px;
   margin-bottom: 24px;
   margin-right: 50px;
-  box-shadow: 2px 4px 8px 2px rgba(0, 0, 0, 0.2);
-  transition: 0.3s;
 }
 .experience-and-education .experience-and-education-grid .grid-main .grid-box h1 {
   display: block;
@@ -348,6 +346,7 @@ a {
 }
 .experience-and-education .experience-and-education-grid .grid-main .grid-box:hover {
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+  border-left: 0;
 }
 
 .skills .header {
@@ -455,6 +454,7 @@ a {
   border: 1px solid #d9d9d9;
   border-radius: 5px;
   text-align: center;
+  background-color: transparent;
 }
 .grid-section .card i {
   color: #5cbe26;
@@ -469,6 +469,11 @@ a {
 .grid-section .card .description {
   font-size: 15px;
   line-height: 30px;
+}
+.grid-section .card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+  background-color: white;
 }
 
 .testimonial {
@@ -538,6 +543,10 @@ a {
   font-size: large;
 }
 
+.portfolio {
+  margin-bottom: 80px;
+  background-color: white;
+}
 .portfolio .header {
   display: block;
   height: 100px;
@@ -613,6 +622,289 @@ a {
 .portfolio .grid-section .card:hover img {
   filter: brightness(30%);
   transition: 0.7s;
+}
+
+/*************************************my blog section*******************************/
+.blog .title {
+  display: block;
+  height: 100px;
+  font-weight: bold;
+  font-size: 50px;
+  text-align: center;
+  color: #666666;
+  margin-bottom: 60px;
+}
+.blog .title span {
+  color: #5cbe26;
+}
+.blog .title p {
+  font-size: 30px;
+  font-weight: bolder;
+  margin-bottom: 50px;
+}
+.blog .grid {
+  display: grid;
+  align-items: center;
+  width: 75%;
+  margin: auto;
+  grid-template-columns: 1fr 1fr 1fr;
+  margin-bottom: 15px;
+  margin-top: 15px;
+  text-align: right;
+  alignment: center;
+}
+.blog .grid .card {
+  display: grid;
+  align-items: center;
+  width: 75%;
+  margin: auto;
+  grid-template-rows: 1fr 1fr;
+  alignment: center;
+  margin-top: 30px;
+  display: inline-block;
+  border: 1px solid #d9d9d9;
+  border-radius: 5px;
+}
+.blog .grid .card .upper {
+  overflow: hidden;
+  border-bottom: 5px solid #5cbe26;
+}
+.blog .grid .card .upper img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  transition: transform 0.25s, visibility 0.25s ease-in;
+}
+.blog .grid .card .lower {
+  padding: 24px;
+}
+.blog .grid .card .lower h1 {
+  margin-bottom: 10px;
+  font-size: 1.25rem;
+  font-weight: 500;
+  line-height: 1.2;
+  display: block;
+}
+.blog .grid .card .lower .date-and-comments .date {
+  margin-left: 1rem;
+  display: inline-block;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 30px;
+  text-align: right;
+}
+.blog .grid .card .lower .date-and-comments .date p i {
+  color: #5cbe26;
+  margin-left: 8px;
+}
+.blog .grid .card .lower .date-and-comments .comments {
+  margin-left: 1rem;
+  display: inline-block;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 30px;
+  text-align: right;
+}
+.blog .grid .card .lower .date-and-comments .comments p i {
+  color: #5cbe26;
+  margin-left: 8px;
+}
+.blog .grid .card .lower .description article {
+  margin-bottom: 0.25rem;
+  margin-top: 0.25rem;
+  display: block;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 30px;
+}
+.blog .grid .card .lower .read-more a {
+  color: #5cbe26;
+  font-weight: 500;
+  height: 30px;
+  font-size: 15px;
+  text-align: right;
+  line-height: 30px;
+}
+.blog .grid .card .lower .read-more a:hover {
+  transition: 0.3s;
+  color: #666666;
+}
+.blog .card:hover img {
+  filter: brightness(120%);
+  transition: 0.5s;
+  transform: scale(1.1);
+  overflow: hidden;
+}
+
+/*************************************contact-me section*******************************/
+.contact-me {
+  margin-bottom: 50px;
+  background-color: white;
+}
+.contact-me .title {
+  display: block;
+  height: 100px;
+  font-weight: bold;
+  font-size: 50px;
+  text-align: center;
+  color: #666666;
+  margin-bottom: 60px;
+}
+.contact-me .title span {
+  color: #5cbe26;
+}
+.contact-me .title p {
+  font-size: 30px;
+  font-weight: bolder;
+  margin-bottom: 50px;
+}
+.contact-me .cards {
+  display: grid;
+  align-items: center;
+  width: 75%;
+  margin: auto;
+  grid-template-columns: 1fr 1fr;
+  margin-bottom: 15px;
+  margin-top: 15px;
+  text-align: right;
+  alignment: center;
+}
+.contact-me .cards .card {
+  display: grid;
+  align-items: center;
+  width: 75%;
+  margin: auto;
+  grid-template-columns: 1fr 1fr;
+  padding: 15px;
+  alignment: center;
+  margin-top: 30px;
+  display: flex;
+  border: 1px solid #d9d9d9;
+  border-radius: 5px;
+}
+.contact-me .cards .card .icon {
+  margin-left: 0;
+  font-size: 18px;
+  background-color: #d9d9d9;
+  border-radius: 50%;
+  padding: 10px;
+  width: 40px;
+  height: 40px;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  display: flex;
+  color: #5cbe26;
+}
+.contact-me .cards .card .text {
+  margin-right: 16px;
+}
+.contact-me .cards .card .text .title-of-card {
+  margin-bottom: 10px;
+  font-size: 18px;
+  font-weight: 600;
+  color: #666666;
+  word-wrap: break-word;
+  line-height: 1.2;
+  display: block;
+  text-align: right;
+}
+.contact-me .cards .card .text .description {
+  display: block;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 30px;
+  text-align: right;
+}
+.contact-me .cards .card .text .description i {
+  display: inline-block;
+  font-size: 20px;
+  margin-left: 15px;
+  font-weight: 400;
+}
+.contact-me .cards .card .text .description i:hover {
+  color: #5cbe26;
+  transition: 0.7s;
+}
+.contact-me .cards .card:hover .icon {
+  color: white;
+  background-color: #5cbe26;
+  transition: 0.3s;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+.contact-me p {
+  display: grid;
+  align-items: center;
+  width: 75%;
+  margin: auto;
+  grid-template-columns: 1fr;
+  margin-top: 24px;
+  margin-bottom: 16px;
+  width: 75%;
+  padding-right: 110px;
+}
+.contact-me .forms {
+  display: grid;
+  align-items: center;
+  width: 75%;
+  margin: auto;
+  grid-template-columns: 1fr 1fr;
+  margin-bottom: 5px;
+  width: 70%;
+}
+.contact-me .forms .div {
+  margin: 10px;
+}
+.contact-me .forms input {
+  alignment: left;
+  padding: 5px 10px;
+  overflow: hidden;
+  vertical-align: middle;
+  margin: 5px;
+  font-size: 14px;
+  height: 50px;
+  box-shadow: none;
+  outline: none;
+  border: 1px solid #d9d9d9;
+  border-radius: 30px;
+  width: 95%;
+  display: inline-block;
+  line-height: 1.5;
+  background-color: #ffffff;
+  text-align: right;
+}
+.contact-me .forms .message input {
+  width: 195%;
+  height: 106px;
+  text-align: start;
+}
+.contact-me .forms a {
+  color: white;
+  font-size: 15px;
+  position: relative;
+  padding: 12px 34px 12px 34px;
+  border: none;
+  overflow: hidden;
+  border-radius: 26px;
+  font-weight: 500;
+  display: flex;
+  background-color: #5cbe26;
+  width: 18%;
+  text-align: center;
+}
+.contact-me .forms a:hover {
+  background-color: #3d7814;
+  transition: 0.5s;
+}
+
+/*************************************footer section*******************************/
+footer {
+  padding: 25px;
+  text-align: center;
+  background-color: #f9f9f9;
+  display: block;
+  width: 100%;
+  overflow: hidden;
 }
 
 /*************************************responsive and @media section*******************************/
