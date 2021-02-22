@@ -1,13 +1,8 @@
+@import "https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.5/css/bootstrap.min.css";
 @font-face {
   font-family: Parastoo;
-  src: url("./fonts/Parastoo.eot");
-  src: url("./fonts/Parastoo.eot?#iefix") format("embedded-opentype"), url("./fonts/Parastoo.woff") format("woff"), url("./fonts/Parastoo.ttf") format("truetype");
-}
-@font-face {
-  font-family: ParastooBold;
-  src: url("./fonts/Parastoo-Bold.eot");
-  src: url("./fonts/Parastoo-Bold.eot?#iefix") format("embedded-opentype"), url("./fonts/Parastoo-Bold.woff") format("woff"), url("./fonts/Parastoo-Bold.ttf") format("truetype");
-  font-weight: bold;
+  src: url("./fonts/font_iransans/IranSans.eot");
+  src: url("./fonts/font_iransans/IranSans.eot?#iefix") format("embedded-opentype"), url("./fonts/font_iransans/IranSans.woff") format("woff"), url("./fonts/font_iransans/IranSans.ttf") format("truetype");
 }
 * {
   font-family: Parastoo, sans-serif;
@@ -17,16 +12,10 @@
 body, html {
   height: 100%;
   width: 100%;
+  padding: 0;
   margin: 0;
-  background-color: #f9f9f9;
   color: #666666;
-}
-
-body {
-  background-image: url("Media/wallpaper.jpg");
-  background-repeat: no-repeat;
-  background-color: #ffffff;
-  background-size: 100% 100%;
+  -webkit-tap-highlight-color: transparent;
 }
 
 a {
@@ -60,6 +49,12 @@ a {
 .navbar a.navbar-icon-link:hover {
   color: #5cbe26;
 }
+.navbar a.navbar-icon-link:hover a {
+  transition-duration: 0.3s;
+}
+.navbar a.navbar-icon-link:hover i {
+  transition-duration: 1s;
+}
 
 .kamal-name {
   font-weight: bolder;
@@ -70,7 +65,7 @@ a {
 }
 
 .space-in-navbar {
-  padding-left: 350px;
+  padding-left: 365px;
   background-color: transparent;
 }
 
@@ -84,64 +79,131 @@ a {
   text-align: right;
 }
 
+.navbar.scrolled {
+  background-color: #fff !important;
+  transition: background-color 200ms linear;
+}
+
+.navbar.scrolled .navbar-icon-link {
+  color: #666666;
+}
+
 /*************************************banner section*******************************/
 #home {
   width: 100%;
-  height: 985px;
+  min-height: 100vh;
+  position: relative;
 }
-
-.my-first-grid {
+#home .container {
+  vertical-align: middle;
+  display: block;
+}
+#home .container .my-first-grid {
   display: grid;
   grid-template-columns: 1fr 2fr;
+  vertical-align: center;
+  width: 900px;
+  height: 300px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 340px;
+  justify-content: center;
   align-items: center;
-  width: 1040px;
-  height: 280px;
-  margin: auto;
-  padding-top: 345px;
 }
-
-.inner-text {
+#home .container .my-first-grid .text-part {
+  margin-right: 48px;
+  z-index: 999;
+}
+#home .container .my-first-grid .inner-text {
   color: white;
-  padding-bottom: 15px;
+  margin-bottom: 15px;
 }
-
-.im-this-and-that {
+#home .container .my-first-grid .inner-text h2 {
+  font-weight: 400;
+  font-size: 18px;
+}
+#home .container .my-first-grid .im-this-and-that {
   font-size: 45px;
-  font-weight: bold;
+  font-weight: 400;
 }
-
-.my-first-grid a.social-media-icons {
+#home .container .my-first-grid a.social-media-icons {
   color: white;
 }
-
-.my-first-grid a.social-media-icons:hover {
+#home .container .my-first-grid a.social-media-icons:hover {
   color: #5cbe26;
 }
-
-.pro-pic {
+#home .container .my-first-grid .profile-pic {
+  z-index: 999;
+}
+#home .container .my-first-grid .pro-pic {
   border-radius: 1000px;
   height: 280px;
   width: 280px;
-  margin-left: 60px;
+  border: 10px solid rgba(255, 255, 255, 0.1);
+  vertical-align: middle;
 }
-
-.job-title {
+#home .container .my-first-grid .pro-pic .div {
+  height: 300px;
+  width: 300px;
+}
+#home .container .my-first-grid .job-title {
   color: #5cbe26;
-  font-weight: bold;
+  font-weight: 400;
 }
-
-.a-short-article-about-kamal {
+#home .container .my-first-grid .a-short-article-about-kamal {
   font-size: 15px;
   line-height: 30px;
   font-weight: 400;
 }
-
-.social-media-icons {
-  margin: 0 20px 20px 0;
+#home .container .my-first-grid .social-media-icons {
+  z-index: 1;
+  margin-left: 20px;
   font-size: 20px;
 }
-
-.introduction-button-more-about-me {
+#home .container .my-first-grid .introduction-buttons {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 100%;
+}
+#home .container .my-first-grid .introduction-buttons .button {
+  overflow: visible;
+  padding: 12px 0 12px 0;
+}
+#home .container .my-first-grid .introduction-buttons .introduction-button-more-about-me {
+  display: flex;
+  color: white;
+  font-size: 15px;
+  position: relative;
+  padding: 12px 34px 12px 34px;
+  border: none;
+  overflow: hidden;
+  border-radius: 26px;
+  font-weight: 500;
+  background-color: #666666;
+  margin-left: 16px;
+  text-align: center;
+}
+#home .container .my-first-grid .introduction-buttons .introduction-button-more-about-me i {
+  padding-left: 6px;
+  padding-top: 5px;
+  padding-bottom: 6px;
+}
+#home .container .my-first-grid .introduction-buttons .introduction-button-more-about-me:before {
+  content: "";
+  background-color: rgba(0, 0, 0, 0.8);
+}
+#home .container .my-first-grid .introduction-buttons .btn:before {
+  position: absolute;
+  top: 0;
+  height: 102%;
+  left: -25%;
+  width: 0%;
+  transform: skew(-22deg);
+  transition-duration: 0.6s;
+  z-index: 1;
+}
+#home .container .my-first-grid .introduction-buttons .introduction-button-portfolio {
+  display: flex;
   color: white;
   font-size: 15px;
   position: relative;
@@ -151,26 +213,52 @@ a {
   border-radius: 26px;
   font-weight: 500;
   background-color: #5cbe26;
+  justify-content: center;
 }
-
-.introduction-button-portfolio {
-  color: white;
-  font-size: 15px;
-  position: relative;
-  padding: 12px 64px 12px 64px;
-  border: none;
-  overflow: hidden;
-  border-radius: 26px;
-  font-weight: 500;
-  background-color: #6666;
-  margin-left: 10px;
-}
-
-.introduction-button-portfolio i {
+#home .container .my-first-grid .introduction-buttons .introduction-button-portfolio i {
   padding-left: 6px;
+  padding-top: 5px;
+  padding-bottom: 6px;
+}
+#home .container .my-first-grid .introduction-buttons .introduction-button-portfolio:before {
+  content: "";
+  background-color: rgba(0, 0, 0, 0.8);
 }
 
+.header-bg-img {
+  background-image: url("Media/new-wallpaper.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  z-index: -1;
+}
+
+.header-bg-img:after {
+  content: "";
+  background-color: rgba(0, 0, 0, 0.8);
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+}
+
+@keyframes hover-button-animation {
+  0% {
+    width: 0;
+  }
+  50% {
+    width: 90px;
+  }
+  100% {
+    width: 180px;
+  }
+}
 /*************************************about me section*******************************/
+#about {
+  background-color: white;
+}
+
 .about-me-first {
   display: block;
   height: 450px;
@@ -184,6 +272,29 @@ a {
   text-align: center;
   color: #666666;
   margin-bottom: 60px;
+}
+.about-me-first .title-of-section .separator {
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  right: 0;
+  background-color: #666666;
+  width: 150px;
+  height: 15px;
+  margin: 0 auto;
+  border-radius: 50px;
+  overflow: hidden;
+}
+.about-me-first .title-of-section .separator:after {
+  content: "";
+  display: block;
+  width: 10px;
+  height: 5px;
+  position: relative;
+  overflow: hidden;
+  border: 2px;
+  animation: separator 2s linear infinite;
+  transition: all 0.5s;
 }
 .about-me-first .title-of-section span {
   color: #5cbe26;
@@ -231,6 +342,9 @@ a {
 }
 .about-me-first .about-me-grid .about-me-first-column a i {
   padding-left: 10px;
+}
+.about-me-first .about-me-grid .about-me-first-column .social-media-icons:hover i {
+  color: #5cbe26;
 }
 .about-me-first .about-me-grid .about-me-second-column {
   display: grid;
@@ -367,7 +481,15 @@ a {
   height: 80px;
 }
 .skills .main-grid .first-column .bar-1 {
-  background-color: #d9d9d9;
+  background-color: #666666;
+  width: 100%;
+  display: block;
+  border-radius: 3px;
+}
+.skills .main-grid .first-column .bar-1 .fill-in {
+  background-color: #5cbe26;
+  width: 70%;
+  display: flex;
 }
 .counter-cards {
   display: grid;
@@ -426,6 +548,29 @@ a {
   text-align: center;
   color: #666666;
   margin-bottom: 60px;
+}
+.services .header .separator {
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  right: 0;
+  background-color: #666666;
+  width: 150px;
+  height: 15px;
+  margin: 0 auto;
+  border-radius: 50px;
+  overflow: hidden;
+}
+.services .header .separator:after {
+  content: "";
+  display: block;
+  width: 10px;
+  height: 5px;
+  position: relative;
+  overflow: hidden;
+  border: 2px;
+  animation: separator 2s linear infinite;
+  transition: all 0.5s;
 }
 .services .header span {
   color: #5cbe26;
@@ -556,6 +701,29 @@ a {
   color: #666666;
   margin-bottom: 60px;
 }
+.portfolio .header .separator {
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  right: 0;
+  background-color: #666666;
+  width: 150px;
+  height: 15px;
+  margin: 0 auto;
+  border-radius: 50px;
+  overflow: hidden;
+}
+.portfolio .header .separator:after {
+  content: "";
+  display: block;
+  width: 10px;
+  height: 5px;
+  position: relative;
+  overflow: hidden;
+  border: 2px;
+  animation: separator 2s linear infinite;
+  transition: all 0.5s;
+}
 .portfolio .header span {
   color: #5cbe26;
 }
@@ -633,6 +801,29 @@ a {
   text-align: center;
   color: #666666;
   margin-bottom: 60px;
+}
+.blog .title .separator {
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  right: 0;
+  background-color: #666666;
+  width: 150px;
+  height: 15px;
+  margin: 0 auto;
+  border-radius: 50px;
+  overflow: hidden;
+}
+.blog .title .separator:after {
+  content: "";
+  display: block;
+  width: 10px;
+  height: 5px;
+  position: relative;
+  overflow: hidden;
+  border: 2px;
+  animation: separator 2s linear infinite;
+  transition: all 0.5s;
 }
 .blog .title span {
   color: #5cbe26;
@@ -749,6 +940,29 @@ a {
   text-align: center;
   color: #666666;
   margin-bottom: 60px;
+}
+.contact-me .title .separator {
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  right: 0;
+  background-color: #666666;
+  width: 150px;
+  height: 15px;
+  margin: 0 auto;
+  border-radius: 50px;
+  overflow: hidden;
+}
+.contact-me .title .separator:after {
+  content: "";
+  display: block;
+  width: 10px;
+  height: 5px;
+  position: relative;
+  overflow: hidden;
+  border: 2px;
+  animation: separator 2s linear infinite;
+  transition: all 0.5s;
 }
 .contact-me .title span {
   color: #5cbe26;
@@ -902,9 +1116,6 @@ footer {
   padding: 25px;
   text-align: center;
   background-color: #f9f9f9;
-  display: block;
-  width: 100%;
-  overflow: hidden;
 }
 
 /*************************************responsive and @media section*******************************/
@@ -924,9 +1135,73 @@ footer {
   }
 
   .navbar.responsive .icon {
-    position: absolute;
+    position: relative;
     right: 0;
     top: 0;
+  }
+}
+/**********************here comes yasmin bruhhhh*************************/
+@media screen and (max-width: 750px) {
+  .services .grid-section {
+    grid-template-columns: 1fr;
+  }
+
+  .portfolio .buttons-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  .portfolio .buttons-grid div {
+    width: 100%;
+    display: inline-block;
+  }
+  .portfolio .grid-section {
+    grid-template-columns: 1fr;
+  }
+
+  .blog .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-me .cards {
+    grid-template-columns: 1fr;
+  }
+  .contact-me .forms {
+    grid-template-columns: 1fr;
+  }
+  .contact-me .forms .message {
+    width: 50%;
+  }
+
+  .experience-and-education .experience-and-education-grid .grid-main {
+    grid-template-columns: 1fr;
+  }
+  .experience-and-education .experience-and-education-grid .skills .main-grid {
+    grid-template-columns: 1fr;
+  }
+  .experience-and-education .experience-and-education-grid .counter-cards {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media screen and (min-width: 576px) and (max-width: 991px) {
+  .services .grid-section {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .portfolio .buttons-grid {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+  .portfolio .buttons-grid div {
+    display: inline-block;
+  }
+  .portfolio .grid-section {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .blog .grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .experience-and-education .counter-cards {
+    grid-template-columns: 1fr;
   }
 }
 

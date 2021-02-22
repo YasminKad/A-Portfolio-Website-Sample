@@ -1,76 +1,72 @@
 <!DOCTYPE html>
-<html lang="fa">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Demo For Kamal - Personal Website landing Page</title>
     <link rel="stylesheet" type="text/css" media="screen" href="style.css"/>
     <link rel="stylesheet" type="text/css" href="all.css"/>
 </head>
 <body dir="rtl">
-<nav class="navbar" id="navbarid">
-    <a href="index.html" class="kamal-name">کمال</a>
-    <a class="space-in-navbar"> </a>
-    <a href="#home" class="navbar-icon-link"><i class="fas fa-home"></i>خانه</a>
-    <a href="#about" class="navbar-icon-link"><i class="fas fa-user"></i>درباره</a>
-    <a href="#services" class="navbar-icon-link"><i class="fas fa-rocket"></i>سرویس ها</a>
-    <a href="#portfolio" class="navbar-icon-link"><i class="fas fa-briefcase"></i>نمونه کارها</a>
-    <a href="#blog" class="navbar-icon-link"><i class="fas fa-pencil-alt"></i>بلاگ</a>
-    <a href="#contact" class="navbar-icon-link"><i class="fas fa-address-book"></i>ارتباط با من</a>
-    <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-        <i class="fa fa-bars"></i>
-    </a>
-</nav>
-
-<script>
-    function myFunction() {
-        var x = document.getElementById("navbarid");
-        if (x.className === "navbar") {
-            x.className += " responsive";
-        } else {
-            x.className = "navbar";
-        }
-    }
-</script>
-
 <main>
-    <section id="home">
-        <div class="my-first-grid">
-            <div class="profile-pic">
-                <img src="Media/profile.png" alt="profile picture" class="pro-pic">
-            </div>
-            <div class="text-part">
-                <div class="inner-text">
-                    <h1> سلام به شما!</h1>
+    <nav class="navbar" id="navbarid">
+        <a href="index.html" class="kamal-name">کمال</a>
+        <a class="space-in-navbar"> </a>
+        <a href="#home" class="navbar-icon-link"><i class="fas fa-home"></i>خانه</a>
+        <a href="#about" class="navbar-icon-link"><i class="fas fa-user"></i>درباره</a>
+        <a href="#services" class="navbar-icon-link"><i class="fas fa-rocket"></i>سرویس ها</a>
+        <a href="#portfolio" class="navbar-icon-link"><i class="fas fa-briefcase"></i>نمونه کارها</a>
+        <a href="#blog" class="navbar-icon-link"><i class="fas fa-pencil-alt"></i>بلاگ</a>
+        <a href="#contact" class="navbar-icon-link"><i class="fas fa-address-book"></i>ارتباط با من</a>
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+            <i class="fa fa-bars"></i>
+        </a>
+    </nav>
+
+    <section id="home" class="banner-section header-bg-img">
+        <div class="container">
+            <div class="my-first-grid">
+                <div class="profile-pic">
+                    <img src="Media/profile.png" alt="profile picture" class="pro-pic">
                 </div>
-                <div class="inner-text">
-                    <p class="im-this-and-that">
-                        من<span class="job-title"> توسعه دهنده وب </span>هستم
-                    </p>
-                </div>
-                <div class="inner-text">
-                    <article class="a-short-article-about-kamal">من یک UI/UX دیزاینر و دولوپر هستم با بیش از ۵ سال تجربه
-                        و وب‌اپلیکیشن‌هایی<br> زیبا به صورت دقیق طراحی کرده‌ام.
-                    </article>
-                </div>
-                <div class="inner-text">
-                    <a href="https://www.facebook.com" class="social-media-icons" title="faceBook">
-                        <i class="fab fa-facebook-f"></i></a>
-                    <a href="https://www.twitter.com" class="social-media-icons" title="Twitter">
-                        <i class="fab fa-twitter"></i></a>
-                    <a href="https://www.google.com" class="social-media-icons" title="GooglePlus">
-                        <i class="fab fa-google-plus-g"></i></a>
-                    <a href="https://www.instagram.com" class="social-media-icons" title="Instagram">
-                        <i class="fab fa-instagram"></i></a>
-                    <a href="https://www.linked-in.com" class="social-media-icons" title="Linked-in">
-                        <i class="fab fa-linkedin"></i></a>
-                </div>
-                <div class="introduction-buttons">
-                    <div>
+                <div class="text-part">
+                    <div class="inner-text">
+                        <h2> سلام به شما!</h2>
+                    </div>
+                    <div class="inner-text">
+                        <p class="im-this-and-that">
+                            من<span class="job-title"> کمال </span>هستم
+                        </p>
+                    </div>
+                    <div class="inner-text">
+                        <article class="a-short-article-about-kamal">من یک UI/UX دیزاینر و دولوپر هستم با بیش از ۵ سال
+                            تجربه
+                            و وب‌اپلیکیشن‌هایی<br> زیبا به صورت دقیق طراحی کرده‌ام.
+                        </article>
+                    </div>
+                    <div class="inner-text">
+                        <a href="https://www.facebook.com" class="social-media-icons" title="faceBook">
+                            <i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.twitter.com" class="social-media-icons" title="Twitter">
+                            <i class="fab fa-twitter"></i></a>
+                        <a href="https://www.google.com" class="social-media-icons" title="GooglePlus">
+                            <i class="fab fa-google-plus-g"></i></a>
+                        <a href="https://www.instagram.com" class="social-media-icons" title="Instagram">
+                            <i class="fab fa-instagram"></i></a>
+                        <a href="https://www.linked-in.com" class="social-media-icons" title="Linked-in">
+                            <i class="fab fa-linkedin"></i></a>
+                    </div>
+                    <div class="introduction-buttons">
                         <!--                    TODO add hover effect-->
-                        <a href="#about" class="introduction-button-more-about-me"><i class="fas fa-user"></i> اطلاعات
-                            بیشتر درباره من</a>
-                        <a href="#portfolio" class="introduction-button-portfolio"><i class="fas fa-rocket"></i>نمونه
-                            کارهای من </a>
+                        <div class="button">
+                            <a href="#about" class=" btn introduction-button-more-about-me"><i class="fas fa-user"></i>
+                                اطلاعات
+                                بیشتر درباره من</a>
+                        </div>
+                        <div class="button">
+                            <a href="#portfolio" class="btn introduction-button-portfolio"><i class="fas fa-rocket"></i>چندتا از نمونه
+                                کارهای من </a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -81,6 +77,9 @@
         <div class="about-me-first">
             <div class="title-of-section">
                 <h1>درباره <span>من</span><br></h1>
+                <span class="separator">
+                    ::after
+                </span>
             </div>
             <div class="about-me-grid">
                 <div class="about-me-first-column">
@@ -169,8 +168,9 @@
             </div>
             <div class="main-grid">
                 <div class="first-column">
+                    <p>HTML</p><br>
                     <div class="bar-1">
-                        <p>HTML</p>
+                        <div class="fill-in"></div>
                     </div>
                     <div class="bar-2">
                         <p>CSS</p>
@@ -312,14 +312,14 @@
             <a class="music">موزیک</a>
             <a class="video">ویدیو</a>
         </div>
-        <div class="grid-section">
-            <div class="card"><img src="Media/portfolio-1.jpg" alt="portfolio-1"></div>
-            <div class="card"><img src="Media/portfolio-2.jpg" alt="portfolio-2"></div>
-            <div class="card"><img src="Media/portfolio-3.jpg" alt="portfolio-3"></div>
-            <div class="card"><img src="Media/portfolio-4.jpg" alt="portfolio-4"></div>
-            <div class="card"><img src="Media/portfolio-5.jpg" alt="portfolio-5"></div>
-            <div class="card"><img src="Media/portfolio-6.jpg" alt="portfolio-6"></div>
-        </div>
+        <!--        <div class="grid-section">-->
+        <!--            <div class="card"><img src="Media/portfolio-1.jpg" alt="portfolio-1"></div>-->
+        <!--            <div class="card"><img src="Media/portfolio-2.jpg" alt="portfolio-2"></div>-->
+        <!--            <div class="card"><img src="Media/portfolio-3.jpg" alt="portfolio-3"></div>-->
+        <!--            <div class="card"><img src="Media/portfolio-4.jpg" alt="portfolio-4"></div>-->
+        <!--            <div class="card"><img src="Media/portfolio-5.jpg" alt="portfolio-5"></div>-->
+        <!--            <div class="card"><img src="Media/portfolio-6.jpg" alt="portfolio-6"></div>-->
+        <!--        </div>-->
     </section>
 
     <section id="blog" class="blog">
@@ -482,7 +482,11 @@
 
     <section id="contact" class="contact-me">
         <div class="title">
-            <h1>ارتباط با <span>من</span><br></h1>
+            <h1>ارتباط با <span>من</span><br>
+                <span class="separator">
+                    ::after
+                </span>
+            </h1>
         </div>
         <div class="cards">
             <div class="card">
@@ -562,13 +566,29 @@
             <br>
             <a class="send-button">فرستادن اطلاعات</a>
         </div>
-<!--        </div>-->
+        <!--        </div>-->
 
     </section>
 </main>
 <footer>
     <p> تمامی حقوق این وبسایت متعلق به کمال است - ۲۰۲۰</p>
 </footer>
+<script>
+    function myFunction() {
+        var x = document.getElementById("navbarid");
+        if (x.className === "navbar") {
+            x.className += " responsive";
+        } else {
+            x.className = "navbar";
+        }
+    }
+    $(function () {
+        $(document).scroll(function () {
+            var $nav = $(".navbar");
+            $nav.toggleClass('scrolled', $(this).scrollTop() > $nav.height());
+        });
+    });
+</script>
 </body>
 </html>
 

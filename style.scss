@@ -4,6 +4,7 @@ $kamal-white: #eeeeee;
 $kamal-light-gray: #d9d9d9;
 $kamal-background: #f9f9f9;
 
+@import "https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.5/css/bootstrap.min.css";
 
 @mixin grid-fundamentals {
   display: grid;
@@ -20,6 +21,29 @@ $kamal-background: #f9f9f9;
   text-align: center;
   color: $kamal-gray;
   margin-bottom: 60px;
+  .separator {
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    right: 0;
+    background-color: $kamal-gray;
+    width: 150px;
+    height: 15px;
+    margin: 0 auto;
+    border-radius: 50px;
+    overflow: hidden;
+  }
+  .separator:after {
+    content: "";
+    display: block;
+    width: 10px;
+    height: 5px;
+    position: relative;
+    overflow: hidden;
+    border: 2px;
+    animation: separator 2s linear infinite;
+    transition: all .5s;
+  }
 
   span {
     color: $kamal-green
@@ -55,19 +79,10 @@ $kamal-background: #f9f9f9;
 
 @font-face {
   font-family: Parastoo;
-  src: url('./fonts/Parastoo.eot');
-  src: url('./fonts/Parastoo.eot?#iefix') format('embedded-opentype'),
-  url('./fonts/Parastoo.woff') format('woff'),
-  url('./fonts/Parastoo.ttf') format('truetype');
-}
-
-@font-face {
-  font-family: ParastooBold;
-  src: url('./fonts/Parastoo-Bold.eot');
-  src: url('./fonts/Parastoo-Bold.eot?#iefix') format('embedded-opentype'),
-  url('./fonts/Parastoo-Bold.woff') format('woff'),
-  url('./fonts/Parastoo-Bold.ttf') format('truetype');
-  font-weight: bold;
+  src: url('./fonts/font_iransans/IranSans.eot');
+  src: url('./fonts/font_iransans/IranSans.eot?#iefix') format('embedded-opentype'),
+  url('./fonts/font_iransans/IranSans.woff') format('woff'),
+  url('./fonts/font_iransans/IranSans.ttf') format('truetype');
 }
 
 * {
@@ -78,16 +93,10 @@ $kamal-background: #f9f9f9;
 body, html {
   height: 100%;
   width: 100%;
+  padding: 0;
   margin: 0;
-  background-color: #f9f9f9;
   color: $kamal-gray;
-}
-
-body {
-  background-image: url("Media/wallpaper.jpg");
-  background-repeat: no-repeat;
-  background-color: #ffffff;
-  background-size: 100% 100%;
+  -webkit-tap-highlight-color: transparent;
 }
 
 a {
@@ -120,6 +129,12 @@ a {
 
 .navbar a.navbar-icon-link:hover {
   color: #5cbe26;
+  a{
+    transition-duration: 0.3s;
+  }
+  i{
+    transition-duration: 1s;
+  }
 }
 
 .kamal-name {
@@ -131,7 +146,7 @@ a {
 }
 
 .space-in-navbar {
-  padding-left: 350px;
+  padding-left: 365px;
   background-color: transparent;
 }
 
@@ -145,93 +160,220 @@ a {
   text-align: right;
 }
 
+.navbar.scrolled {
+  background-color: #fff !important;
+  transition: background-color 200ms linear;
+}
+.navbar.scrolled .navbar-icon-link {
+  color: $kamal-gray;
+}
+
 /*************************************banner section*******************************/
+
 #home {
   width: 100%;
-  height: 985px;
-}
-
-.my-first-grid {
-  display: grid;
-  grid-template-columns: 1fr 2fr;
-  align-items: center;
-  width: 1040px;
-  height: 280px;
-  margin: auto;
-  padding-top: 345px;
-}
-
-.inner-text {
-  color: white;
-  padding-bottom: 15px;
-}
-
-.im-this-and-that {
-  font-size: 45px;
-  font-weight: bold;
-}
-
-.my-first-grid a.social-media-icons {
-  color: white;
-}
-
-.my-first-grid a.social-media-icons:hover {
-  color: #5cbe26;
-}
-
-.pro-pic {
-  border-radius: 1000px;
-  height: 280px;
-  width: 280px;
-  margin-left: 60px;
-}
-
-.job-title {
-  color: #5cbe26;
-  font-weight: bold;
-}
-
-.a-short-article-about-kamal {
-  font-size: 15px;
-  line-height: 30px;
-  font-weight: 400;
-}
-
-.social-media-icons {
-  margin: 0 20px 20px 0;
-  font-size: 20px;
-}
-
-.introduction-button-more-about-me {
-  color: white;
-  font-size: 15px;
+  min-height: 100vh;
   position: relative;
-  padding: 12px 34px 12px 34px;
-  border: none;
-  overflow: hidden;
-  border-radius: 26px;
-  font-weight: 500;
-  background-color: #5cbe26;
+
+  .container {
+    vertical-align: middle;
+    display: block;
+
+    .my-first-grid {
+
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      vertical-align: center;
+      //position: absolute;
+      width: 900px;
+      height: 300px;
+      margin-left: auto;
+      margin-right: auto;
+      padding-top: 340px;
+      //padding-top: 15%;
+      justify-content: center;
+      align-items: center;
+
+      .text-part {
+        margin-right: 48px;
+        z-index: 999;
+
+      }
+
+      .inner-text {
+        color: white;
+        margin-bottom: 15px;
+
+        h2 {
+          font-weight: 400;
+          font-size: 18px;
+        }
+      }
+
+      .im-this-and-that {
+        font-size: 45px;
+        font-weight: 400;
+      }
+
+      a.social-media-icons {
+        color: white;
+      }
+
+      a.social-media-icons:hover {
+        color: #5cbe26;
+      }
+
+      .profile-pic {
+        z-index: 999;
+      }
+
+      .pro-pic {
+        .div {
+          height: 300px;
+          width: 300px;
+        }
+
+        border-radius: 1000px;
+        height: 280px;
+        width: 280px;
+        //margin-left: 60px;
+        border: 10px solid rgba(255, 255, 255, 0.1);
+        vertical-align: middle;
+      }
+
+      .job-title {
+        color: #5cbe26;
+        font-weight: 400;
+      }
+
+      .a-short-article-about-kamal {
+        font-size: 15px;
+        line-height: 30px;
+        font-weight: 400;
+      }
+
+      .social-media-icons {
+        z-index: 1;
+        margin-left: 20px;
+        //margin-bottom: 20px;
+        font-size: 20px;
+      }
+
+      .introduction-buttons {
+        display: grid;
+        //align-items: right;
+        grid-template-columns: 1fr 1fr;
+        width: 100%;
+
+        .button {
+          overflow: visible;
+          padding: 12px 0 12px 0;
+        }
+
+        .introduction-button-more-about-me {
+          display: flex;
+          color: white;
+          font-size: 15px;
+          position: relative;
+          padding: 12px 34px 12px 34px;
+          border: none;
+          overflow: hidden;
+          border-radius: 26px;
+          font-weight: 500;
+          background-color: #666666;
+          margin-left: 16px;
+          text-align: center;
+
+
+          i {
+            padding-left: 6px;
+            padding-top: 5px;
+            padding-bottom: 6px;
+          }
+        }
+
+        .introduction-button-more-about-me:before {
+          content: "";
+          background-color: rgba(0, 0, 0, 0.8);
+        }
+
+        .btn:before {
+          position: absolute;
+          top: 0;
+          height: 102%;
+          left: -25%;
+          width: 0%;
+          transform: skew(-22deg);
+          transition-duration: 0.6s;
+          z-index: 1;
+        }
+
+
+        .introduction-button-more-about-me:hover {
+          //background-color: #444444;
+          //animation-name: btn-animation;
+          //animation-timing-function: ease;
+          //transition: linear 0.3s;
+        }
+
+        .introduction-button-portfolio {
+          display: flex;
+          color: white;
+          font-size: 15px;
+          position: relative;
+          padding: 12px 34px 12px 34px;
+          border: none;
+          overflow: hidden;
+          border-radius: 26px;
+          font-weight: 500;
+          background-color: $kamal-green;
+          //margin-left: 16px;
+justify-content: center;
+          i {
+            padding-left: 6px;
+            padding-top: 5px;
+            padding-bottom: 6px;
+          }
+        }
+
+        .introduction-button-portfolio:before {
+          content: "";
+          background-color: rgba(0, 0, 0, 0.8);
+        }
+      }
+    }
+  }
 }
 
-.introduction-button-portfolio {
-  color: white;
-  font-size: 15px;
-  position: relative;
-  padding: 12px 64px 12px 64px;
-  border: none;
-  overflow: hidden;
-  border-radius: 26px;
-  font-weight: 500;
-  background-color: #6666;
-  margin-left: 10px;
+.header-bg-img {
+  background-image: url("Media/new-wallpaper.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  //filter: brightness(20%);
+  z-index: -1;
 }
 
-.introduction-button-portfolio i {
-  padding-left: 6px;
+.header-bg-img:after {
+  content: "";
+  background-color: rgba(0, 0, 0, 0.8);
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
 }
 
+@keyframes hover-button-animation {
+  0% {width: 0;}
+  50% {width: 90px;}
+  100% {width: 180px;}
+}
 /*************************************about me section*******************************/
+#about {
+  background-color: white;
+}
+
 .about-me-first {
   display: block;
   height: 450px;
@@ -280,6 +422,11 @@ a {
 
         i {
           padding-left: 10px;
+        }
+      }
+      .social-media-icons:hover{
+        i{
+          color: $kamal-green;
         }
       }
     }
@@ -420,12 +567,22 @@ a {
 
     .first-column {
       .bar-1 {
-        background-color: $kamal-light-gray;
+        background-color: $kamal-gray;
+        width: 100%;
+        display: block;
+        border-radius: 3px;
 
-        .bar-2 {
-
+        .fill-in {
+          background-color: $kamal-green;
+          width: 70%;
+          display: flex;
         }
       }
+
+      .bar-2 {
+
+      }
+
 
       .second-column {
         .bar-3 {
@@ -959,9 +1116,6 @@ footer {
   padding: 25px;
   text-align: center;
   background-color: $kamal-background;
-  display: block;
-  width: 100%;
-  overflow: hidden;
 }
 
 /*************************************responsive and @media section*******************************/
@@ -982,8 +1136,97 @@ footer {
     position: relative;
   }
   .navbar.responsive .icon {
-    position: absolute;
+    position: relative;
     right: 0;
     top: 0;
+  }
+}
+
+/**********************here comes yasmin bruhhhh*************************/
+@media screen and(max-width: 750px) {
+  .services {
+    .grid-section {
+      grid-template-columns: 1fr;
+    }
+  }
+  .portfolio {
+    .buttons-grid {
+      grid-template-columns: 1fr 1fr;
+
+      div {
+        width: 100%;
+        display: inline-block;
+      }
+    }
+
+    .grid-section {
+      grid-template-columns: 1fr;
+    }
+  }
+  .blog {
+    .grid {
+      grid-template-columns: 1fr;
+    }
+  }
+  .contact-me {
+    .cards {
+      grid-template-columns: 1fr;
+    }
+
+    .forms {
+      grid-template-columns: 1fr;
+
+      .message {
+        width: 50%;
+      }
+    }
+  }
+  .experience-and-education {
+    .experience-and-education-grid {
+      .grid-main {
+        grid-template-columns: 1fr;
+      }
+
+      .skills {
+        .main-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      .counter-cards {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 576px) and (max-width: 991px) {
+  .services {
+    .grid-section {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+  .portfolio {
+    .buttons-grid {
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+
+      div {
+        display: inline-block;
+      }
+    }
+
+    .grid-section {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+  .blog {
+    .grid {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+  .experience-and-education {
+    .counter-cards {
+      grid-template-columns: 1fr;
+    }
   }
 }
