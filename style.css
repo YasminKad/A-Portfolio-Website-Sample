@@ -17,6 +17,10 @@ body, html {
   -webkit-tap-highlight-color: transparent;
 }
 
+body {
+  overflow-x: hidden;
+}
+
 a, a i.fa, a img, .button, .btn {
   -moz-transition: all 0.3s ease;
   -webkit-transition: all 0.3s ease;
@@ -93,6 +97,7 @@ a, a i.fa, a img, .button, .btn {
 
 /*************************************banner section*******************************/
 #home {
+  overflow: hidden;
   width: 100%;
   min-height: 100vh;
   position: relative;
@@ -274,7 +279,7 @@ a, a i.fa, a img, .button, .btn {
 
 .about-me-first {
   display: block;
-  height: 450px;
+  margin-bottom: 50px;
 }
 .about-me-first .title-of-section {
   line-height: 1.2;
@@ -402,6 +407,7 @@ a, a i.fa, a img, .button, .btn {
   margin-bottom: 50px;
 }
 .experience-and-education .header {
+  margin-top: 20px;
   margin-bottom: 48px;
   display: block;
   text-align: center;
@@ -479,31 +485,6 @@ a, a i.fa, a img, .button, .btn {
   padding-right: 5px;
   padding-left: 5px;
   vertical-align: baseline;
-}
-.experience-and-education .experience-and-education-grids .education-grid .card:before {
-  content: "";
-  left: -37px;
-  display: block;
-  position: absolute;
-  background-color: white;
-  border: 2px solid #5cbe26;
-  width: 17px;
-  height: 17px;
-  border-radius: 50%;
-  z-index: 999;
-}
-.experience-and-education .experience-and-education-grids .education-grid .card:hover:before {
-  background-color: #5cbe26;
-}
-.experience-and-education .experience-and-education-grids .education-grid .card:after {
-  content: "";
-  display: block;
-  position: absolute;
-  width: 33px;
-  height: 2px;
-  top: 23px;
-  left: -34px;
-  z-index: -1;
 }
 .experience-and-education .experience-and-education-grids .education-grid .last-one {
   margin-bottom: 0;
@@ -595,6 +576,7 @@ a, a i.fa, a img, .button, .btn {
   width: 75%;
   margin: auto;
   grid-template-columns: 1fr 1fr;
+  margin-bottom: 48px;
 }
 .skills .main-grid .first-column, .skills .main-grid .second-column {
   padding: 0 15px;
@@ -910,14 +892,15 @@ a, a i.fa, a img, .button, .btn {
   align-items: center;
   margin: auto;
   grid-template-columns: 1fr 1fr 1fr;
-  width: 7%;
-  text-align: center;
+  width: 20%;
 }
 .testimonial .other .special {
   font-size: 25px;
   color: #5cbe26;
+  alignment: center;
 }
 .testimonial .other i:not(.special) {
+  alignment: center;
   vertical-align: middle;
   height: 25px;
   width: 25px;
@@ -937,6 +920,7 @@ a, a i.fa, a img, .button, .btn {
 
 /***************************my portfolio section**********************************/
 .portfolio {
+  overflow: hidden;
   display: block;
   padding-bottom: 70px;
   padding-top: 70px;
@@ -1477,12 +1461,20 @@ footer {
     top: 0;
   }
 }
-/**********************here comes yasmin bruhhhh*************************/
-@media screen and (max-width: 750px) {
+/*****************************************************************here comes yasmin bruhhhh*********************************************************************/
+@media screen and (max-width: 576px) {
+  /*************************home********************************/
+  #home .my-first-grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+  }
+
+  /*****************services************************************/
   .services .grid-section {
     grid-template-columns: 1fr;
   }
 
+  /****************portfolio*******************/
   .portfolio .buttons-grid {
     grid-template-columns: 1fr 1fr;
   }
@@ -1494,10 +1486,12 @@ footer {
     grid-template-columns: 1fr;
   }
 
+  /**********************blog*********************/
   .blog .grid {
     grid-template-columns: 1fr;
   }
 
+  /*****************************contact me************************/
   .contact-me .cards {
     grid-template-columns: 1fr;
   }
@@ -1508,21 +1502,42 @@ footer {
     width: 50%;
   }
 
-  .experience-and-education .experience-and-education-grid .grid-main {
+  /****************************************about me *****************************/
+  #about .about-me-grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+  }
+  #about .about-me-grid .about-me-second-column {
+    grid-template-columns: 1fr;
+    grid-template-rows: 0.5fr 1fr;
+  }
+  #about .experience-and-education .experience-and-education-grids {
+    grid-template-rows: 1fr 1fr;
     grid-template-columns: 1fr;
   }
-  .experience-and-education .experience-and-education-grid .skills .main-grid {
+  #about .experience-and-education .experience-and-education-grid .grid-main {
     grid-template-columns: 1fr;
   }
-  .experience-and-education .experience-and-education-grid .counter-cards {
+  #about .experience-and-education .experience-and-education-grid .counter-cards {
     grid-template-columns: 1fr 1fr;
   }
+  #about .skills .main-grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+  }
+  #about .counter-cards {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+  }
 }
-@media screen and (min-width: 576px) and (max-width: 991px) {
+/******************************************************************************************************************************************************************/
+@media screen and (min-width: 576px) and (max-width: 1111px) {
+  /*************************services*******************/
   .services .grid-section {
     grid-template-columns: 1fr 1fr;
   }
 
+  /****************portfolio******************************/
   .portfolio .buttons-grid {
     grid-template-columns: 1fr 1fr 1fr 1fr;
   }
@@ -1533,12 +1548,42 @@ footer {
     grid-template-columns: 1fr 1fr;
   }
 
+  /*********************blog*******************/
   .blog .grid {
     grid-template-columns: 1fr 1fr;
   }
 
-  .experience-and-education .counter-cards {
+  /**************************************about me******************************/
+  #about .about-me-grid {
+    display: grid;
+    width: 75%;
+    margin: auto;
     grid-template-columns: 1fr;
+    grid-template-rows: 0.7fr 1fr;
+  }
+  #about .skills .main-grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+  }
+  #about .experience-and-education .experience-and-education-grids {
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr;
+  }
+  #about .counter-cards {
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  /********************contact me*****************************************************/
+  .contact-me .cards {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+  }
+  .contact-me .forms {
+    grid-template-columns: 1fr;
+  }
+  .contact-me .forms .message input {
+    width: 95%;
   }
 }
 
