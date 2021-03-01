@@ -98,7 +98,10 @@ body, html {
   -webkit-tap-highlight-color: transparent;
 }
 
-a {
+a, a i.fa, a img, .button, .btn {
+  -moz-transition: all 0.3s ease;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
   text-decoration: none;
 }
 
@@ -110,6 +113,7 @@ a {
   background-color: transparent;
   display: block;
   position: fixed;
+  z-index: 2;
 }
 
 .navbar-icon-link {
@@ -223,6 +227,7 @@ a {
 
       a.social-media-icons:hover {
         color: #5cbe26;
+        transition: 0.3s;
       }
 
       .profile-pic {
@@ -261,6 +266,10 @@ a {
         font-size: 20px;
       }
 
+      .social-media-icons:hover {
+        color: $kamal-green;
+      }
+
       .introduction-buttons {
         display: grid;
         //align-items: right;
@@ -282,7 +291,7 @@ a {
           overflow: hidden;
           border-radius: 26px;
           font-weight: 500;
-          background-color: #666666;
+          background-color: #444444;
           margin-left: 16px;
           text-align: center;
 
@@ -296,26 +305,40 @@ a {
 
         .introduction-button-more-about-me:before {
           content: "";
-          background-color: rgba(0, 0, 0, 0.8);
-        }
-
-        .btn:before {
+          background-color: #444444;
           position: absolute;
           top: 0;
           height: 102%;
           left: -25%;
-          width: 0;
-          transform: skew(-22deg);
+          width: 0%;
+          -webkit-transform: skew(
+                          -22deg
+          );
+          transform: skew(
+                          -22deg
+          );
+          -webkit-transition-duration: 0.6s;
           transition-duration: 0.6s;
           z-index: 1;
         }
 
+        //.btn:before {
+        //  position: absolute;
+        //  top: 0;
+        //  height: 102%;
+        //  left: -25%;
+        //  width: 0;
+        //  transform: skew(-22deg);
+        //  transition-duration: 0.6s;
+        //  z-index: 1;
+        //}
+
 
         .introduction-button-more-about-me:hover {
-          //background-color: #444444;
-          //animation-name: btn-animation;
-          //animation-timing-function: ease;
-          //transition: linear 0.3s;
+          background-color: #666666;
+          color: white;
+          border-color: #545b62;
+
         }
 
         .introduction-button-portfolio {
@@ -354,7 +377,7 @@ a {
   background-size: cover;
   background-position: center;
   //filter: brightness(20%);
-  z-index: -1;
+  //z-index: -1;
 }
 
 .header-bg-img:after {
@@ -503,6 +526,7 @@ a {
 
   .header {
     @include sub-header();
+    display: block;
   }
 
   .experience-and-education-grids {
@@ -582,6 +606,34 @@ a {
             vertical-align: baseline;
           }
         }
+      }
+
+      .card:before {
+        content: "";
+        left: -37px;
+        display: block;
+        position: absolute;
+        background-color: white;
+        border: 2px solid $kamal-green;
+        width: 17px;
+        height: 17px;
+        border-radius: 50%;
+        z-index: 999;
+      }
+
+      .card:hover:before {
+        background-color: $kamal-green;
+      }
+
+      .card:after {
+        content: "";
+        display: block;
+        position: absolute;
+        width: 33px;
+        height: 2px;
+        top: 23px;
+        left: -34px;
+        z-index: -1;
       }
 
       .last-one {
@@ -682,18 +734,14 @@ a {
 
 .skills {
   .header {
-    display: grid;
-    align-items: center;
-    width: 65%;
-    margin: auto;
-    padding-bottom: 8px;
+    @include sub-header();
   }
 
   .main-grid {
     @include grid-fundamentals();
     grid-template-columns: 1fr 1fr;
 
-    .first-column {
+    .first-column, .second-column {
       padding: 0 15px;
       display: grid;
       align-items: center;
@@ -714,11 +762,86 @@ a {
           float: left;
           clear: both;
           font-weight: 600;
-          margin-top: -45px;
+          margin-top: -38px;
+          display: block;
         }
 
         .bar {
-          //background-color: $kamal-gray;
+          width: 100%;
+          display: block;
+          background-color: $kamal-light-gray;
+          border-radius: 3px;
+          position: relative;
+          box-shadow: inset 0 1px rgb(0 0 0 /10%);
+          font-size: 15px;
+          font-weight: 400;
+          line-height: 30px;
+          height: 10px;
+          margin-bottom: 10px;
+
+          .progress-1 {
+            height: 10px;
+            width: 95%;
+            background-color: $kamal-green;
+            border-radius: 3px;
+            display: block;
+          }
+
+          .progress-2 {
+            height: 10px;
+            width: 90%;
+            background-color: $kamal-green;
+            border-radius: 3px;
+            display: block;
+          }
+
+          .progress-3 {
+            height: 10px;
+            width: 65%;
+            background-color: $kamal-green;
+            border-radius: 3px;
+            display: block;
+          }
+
+          .progress-4 {
+            height: 10px;
+            width: 75%;
+            background-color: $kamal-green;
+            border-radius: 3px;
+            display: block;
+          }
+
+          .progress-5 {
+            height: 10px;
+            width: 95%;
+            background-color: $kamal-green;
+            border-radius: 3px;
+            display: block;
+          }
+
+          .progress-6 {
+            height: 10px;
+            width: 90%;
+            background-color: $kamal-green;
+            border-radius: 3px;
+            display: block;
+          }
+
+          .progress-7 {
+            height: 10px;
+            width: 65%;
+            background-color: $kamal-green;
+            border-radius: 3px;
+            display: block;
+          }
+
+          .progress-8 {
+            height: 10px;
+            width: 75%;
+            background-color: $kamal-green;
+            border-radius: 3px;
+            display: block;
+          }
         }
       }
     }
@@ -759,19 +882,21 @@ a {
   @include grid-fundamentals();
   grid-template-columns: 1fr 1fr 1fr 1fr;
   alignment: center;
-  padding-bottom: 70px;
 
   .card {
-    display: inline-block;
+    //line-height: 30px;
+    position: relative;
+    display: block;
     margin-top: 30px;
-    padding: 28px 28px 28px 28px;
-    height: 150px;
-    border: 3px solid $kamal-light-gray;
-    border-radius: 5px;
-    margin-left: 7px;
-    box-shadow: 2px 4px 8px 2px rgba(0, 0, 0, 0.2);
+    //padding: 28px;
+    padding: 13%;
+    //height: border-box;
+    box-sizing: border-box;
+    border: 1px solid $kamal-light-gray;
+    border-radius: 10px;
+    margin-left: 15px;
+    margin-right: 15px;
     transition: 0.3s;
-
 
     .header {
       display: block;
@@ -779,6 +904,8 @@ a {
       color: $kamal-green;
       font-size: 52px;
       font-weight: bolder;
+      border-bottom: 2px solid rgba(102, 102, 102, 0.4);
+      margin: 10px;
     }
 
     .line {
@@ -795,12 +922,14 @@ a {
       font-size: 1.5rem;
       font-weight: 500;
       color: $kamal-gray;
+      margin-bottom: 10px;
     }
   }
 
   .card:hover {
-    //margin-bottom: 8px;
-    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+    -webkit-transform: translateY(-5px);
+    transform: translateY(-5px);
+    box-shadow: 0 0 10px rgb(33 33 33 / 20%);
   }
 }
 
@@ -809,8 +938,10 @@ a {
 
 .services {
   display: block;
-  margin-bottom: 50px;
+  padding-bottom: 70px;
+  padding-top: 70px;
   background-color: $kamal-background;
+
 
   .header {
     @include headers-of-sections();
@@ -876,11 +1007,13 @@ a {
   .box {
     padding: 20px;
     border: 3px solid;
-    border-color: $kamal-green $kamal-background $kamal-background $kamal-background;
+    border-color: $kamal-green $kamal-light-gray $kamal-light-gray $kamal-light-gray;
     vertical-align: middle;
+    align-items: center;
+    margin-bottom: 20px;
+
 
     .picture {
-
       img {
         height: 90px;
         width: 90px;
@@ -902,37 +1035,70 @@ a {
     }
 
     .name {
+      alignment: center;
       text-align: center;
       vertical-align: middle;
       font-weight: 400;
       display: block;
+      border: 1.8px solid $kamal-light-gray;
+      border-radius: 12px;
+      margin: auto;
+      width: 100px;
+      padding: 6px 30px;
+    }
+
+    .name:hover {
+      background-color: white;
     }
   }
 
   .other {
-    @include grid-fundamentals();
-    grid-template-columns: 1fr 1fr 1fr;
-    width: 5%;
+    display: grid;
+    align-items: center;
+    //width: 75%;
     margin: auto;
+    grid-template-columns: 1fr 1fr 1fr;
+    width: 7%;
     text-align: center;
-    padding-bottom: 160px;
 
-    i {
+    .special {
+      font-size: 25px;
+      color: $kamal-green;
+    }
+
+    i:not(.special) {
+      vertical-align: middle;
+      height: 25px;
+      width: 25px;
+      display: inline-block;
       color: #aadb8f;
       font-size: 15px;
       margin-left: 5px;
       margin-right: 5px;
+      padding-top: 10px;
+
     }
 
     i:hover {
-      font-size: large;
+      font-size: 25px;
+      transition: 0.5s;
+      //margin: 0;
+      padding: 0;
+      //margin: 0;
+      //-webkit-transform: translate3d(0px, -50%, 0px) scale(0.5);
+      //transform: translate3d(0px, -50%, 0px) scale(0.5);
+      -webkit-transition: all 250ms ease-out 0s;
+      //transition: all 250ms ease-out 0s;
     }
   }
 
 }
 
+/***************************my portfolio section**********************************/
 .portfolio {
-  margin-bottom: 80px;
+  display: block;
+  padding-bottom: 70px;
+  padding-top: 70px;
   background-color: white;
 
   .header {
@@ -958,38 +1124,107 @@ a {
 
     a:hover {
       background-color: $kamal-green;
-      transition: 0.7s;
+      transition: 0.3s;
+    }
 
+    a:focus {
+      background-color: $kamal-green;
+      transition: 0.3s;
     }
   }
 
-  .grid-section {
-    @include grid-fundamentals();
+  .grid-section-portfolio {
+    //@include grid-fundamentals();
+    align-content: center;
+    display: grid;
+    align-items: center;
+    width: 80%;
+    margin: auto;
     grid-template-columns: 1fr 1fr 1fr;
 
-    .card {
+    .card-p {
       alignment: center;
       margin-top: 30px;
-      margin-right: 15px;
-      margin-left: 15px;
-      padding: 0;
+      padding-left: 20px;
+      padding-right: 20px;
       width: 350px;
-      display: inline-block;
-      border: 1px solid $kamal-background;
+      display: block;
       border-radius: 5px;
-      text-align: center;
-      overflow: hidden;
+      //text-align: center;
+      //overflow: hidden;
+      justify-content: center;
+
+      .shows-on-hover {
+        padding: 60px 110px;
+        margin-top: -265px;
+        margin-right: 25px;
+        position: absolute;
+        z-index: 999;
+        //align-self: center;
+        text-align: center;
+        border: dashed 2px white;
+
+        h4 {
+          margin-bottom: 15px;
+          font-size: 18px;
+          font-weight: 600;
+          color: white;
+        }
+
+        p {
+          margin-bottom: 15px;
+          font-size: 15px;
+          color: white;
+          font-weight: 400;
+        }
+
+        .icons {
+          a {
+            background-color: white;
+            border-radius: 50%;
+            font-size: 15px;
+            color: $kamal-gray;
+            font-weight: 400;
+            padding: 5px;
+            margin-right: 7px;
+            margin-left: 7px;
+            margin-top: 5px;
+            margin-bottom: 5px;
+            line-height: 15px;
+
+            i {
+              //padding: 5px;
+              display: inline-block;
+              vertical-align: middle;
+              overflow: hidden;
+              //width: 35px;
+              //height: 35px;
+
+            }
+
+            margin-bottom: 15px;
+          }
+        }
+
+        .icons:hover {
+          a {
+            background-color: $kamal-green;
+            color: white;
+            transition-duration: 0.6s;
+          }
+        }
+      }
 
       img {
-        vertical-align: middle;
+        alignment: center;
         height: 280px;
         width: 350px;
       }
     }
 
-    .card:hover {
+    .card-p:hover {
       img {
-        filter: brightness(30%);
+
         transition: 0.7s;
       }
     }
@@ -998,7 +1233,11 @@ a {
 
 /*************************************my blog section*******************************/
 .blog {
+  display: block;
+  padding-bottom: 70px;
+  padding-top: 70px;
   background-color: $kamal-background;
+
 
   .title {
     @include headers-of-sections();
@@ -1006,6 +1245,7 @@ a {
 
   .grid {
     @include grid-fundamentals();
+    width: 65% !important;
     grid-template-columns: 1fr 1fr 1fr;
     margin-bottom: 15px;
     margin-top: 15px;
@@ -1014,6 +1254,7 @@ a {
 
     .card {
       @include grid-fundamentals();
+      width: 90% !important;
       grid-template-rows: 1fr 1fr;
       alignment: center;
       margin-top: 30px;
@@ -1132,7 +1373,9 @@ a {
 
 /*************************************contact-me section*******************************/
 .contact-me {
-  margin-bottom: 50px;
+  display: block;
+  padding-bottom: 70px;
+  padding-top: 70px;
   background-color: white;
 
   .title {
@@ -1141,6 +1384,7 @@ a {
 
   .cards {
     @include grid-fundamentals();
+    width: 65% !important;
     grid-template-columns: 1fr 1fr;
     //padding: 25px;
     margin-bottom: 15px;
@@ -1150,6 +1394,7 @@ a {
 
     .card {
       @include grid-fundamentals();
+      width: 90% !important;
       grid-template-columns: 1fr 1fr;
       padding: 15px;
       alignment: center;
@@ -1159,6 +1404,7 @@ a {
       border-radius: 5px;
 
       .icon {
+        cursor: pointer;
         margin-left: 0;
         font-size: 18px;
         background-color: $kamal-light-gray;
@@ -1211,24 +1457,26 @@ a {
     }
 
     .card:hover {
+      box-shadow: 0 0 10px 0 #e2e2e2 !important;
+
       .icon {
         color: white;
         background-color: $kamal-green;
         transition: 0.3s;
-        box-shadow: 0 8px 16px 0 rgba(0.2, 0.2, 0.2, 0.2);
       }
-
-      // todo add shadow
     }
   }
 
-  p {
-    @include grid-fundamentals();
-    grid-template-columns: 1fr;
-    margin-top: 24px;
-    margin-bottom: 16px;
-    width: 75%;
-    padding-right: 110px;
+
+  .sentence {
+    p {
+      @include grid-fundamentals();
+      grid-template-columns: 1fr;
+      margin-top: 24px;
+      margin-bottom: 16px;
+      margin-right: 18%;
+      margin-left: 18%;
+    }
   }
 
   .forms {
@@ -1236,7 +1484,7 @@ a {
     grid-template-columns: 1fr 1fr;
     //padding: 25px;
     margin-bottom: 5px;
-    width: 70%;
+    width: 65% !important;
 
     .div {
       margin: 10px;
@@ -1272,9 +1520,10 @@ a {
 
     a {
       @include button-style();
+      margin-top: 5px;
       display: flex;
       background-color: $kamal-green;
-      width: 18%;
+      width: 20%;
       text-align: center;
     }
 
@@ -1282,6 +1531,19 @@ a {
       background-color: #3d7814;
       transition: .5s;
     }
+  }
+
+  a {
+    @include button-style();
+    //display: inline-block;
+    background-color: $kamal-green;
+    text-align: center;
+    margin-right: 18%;
+  }
+
+  a:hover {
+    background-color: #3d7814;
+    transition: 0.5s;
   }
 }
 
