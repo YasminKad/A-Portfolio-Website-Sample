@@ -18,9 +18,9 @@
         <a href="#portfolio" class="navbar-icon-link"><i class="fas fa-briefcase"></i>نمونه کارها</a>
         <a href="#blog" class="navbar-icon-link"><i class="fas fa-pencil-alt"></i>بلاگ</a>
         <a href="#contact" class="navbar-icon-link"><i class="fas fa-address-book"></i>ارتباط با من</a>
-<!--        <a href="javascript:void(0);" class="icon" onclick="myFunction()">-->
-            <i class="fa fa-bars"></i>
-<!--        </a>-->
+        <!--        <a href="javascript:void(0);" class="icon" onclick="myFunction()">-->
+        <i class="fa fa-bars"></i>
+        <!--        </a>-->
     </nav>
 
     <section id="home" class="banner-section header-bg-img">
@@ -58,19 +58,28 @@
                     </div>
                     <div class="introduction-buttons">
                         <!--                    TODO add hover effect-->
-                        <div class="button">
-                            <a href="#about" class=" btn introduction-button-more-about-me"><i class="fas fa-user"></i>
+                        <!--                        <div class="button btn-with-layered-hover">-->
+                        <a href="#about" class=" btn introduction-button-more-about-me">
+                                <span>
+                                <i class="fas fa-user"></i>
                                 اطلاعات
-                                بیشتر درباره من</a>
-                        </div>
-                        <div class="button">
-                            <a href="#portfolio" class="btn introduction-button-portfolio"><i class="fas fa-rocket"></i>چندتا
-                                از نمونه
-                                کارهای من </a>
-                        </div>
+                                بیشتر درباره من
+                                </span>
+                        </a>
+                        <!--                        </div>-->
+                        <!--                        <div class="button btn-with-layered-hover">-->
+                        <a href="#portfolio" class="btn introduction-button-portfolio">
+                           <span>
+                            <i class="fas fa-rocket"></i>چندتا
+                            از نمونه
+                            کارهای من
+                            </span>
+                        </a>
+                        <!--                        </div>-->
                     </div>
                 </div>
             </div>
+            <div class="jumper"><a href="#about"> </a></div>
         </div>
     </section>
 
@@ -78,6 +87,7 @@
         <div class="about-me-first">
             <div class="title-of-section">
                 <h1>درباره <span>من</span></h1>
+                <span class="separator"></span>
             </div>
             <div class="container">
                 <div class="about-me-grid">
@@ -89,7 +99,11 @@
                             استفاده
                             شده و وات کن عای سی مور دیس ایز کمال دیل ویث ایت. آره خلاصه.
                         </article>
-                        <a href="index.html"><i class="fas fa-download"></i>دانلود رزومه من</a>
+                        <a href="index.html" class="btn-with-layered-hover">
+                            <span><i class="fas fa-download"></i>دانلود رزومه
+                            من
+                        </span>
+                        </a>
                     </div>
                     <div class="about-me-second-column">
                         <div class="inner-first-column">
@@ -293,6 +307,7 @@
     <section class="services" id="services">
         <div class="header">
             <h1><span> سرویس‌های</span> من‌ </h1>
+            <span class="separator"></span>
         </div>
         <div class="grid-section">
             <div class="card">
@@ -390,6 +405,8 @@
                     من شر حاسد اذا حسد و لاظالین.
                 </div>
                 <div class="name">مامان کمال</div>
+                <div class="previous-button"><i class="fas fa-angle-right"></i></div>
+                <div class="next-button"><i class="fas fa-angle-left"></i></div>
             </div>
             <div class="other">
                 <i class="fas fa-circle"></i>
@@ -397,122 +414,126 @@
                 <i class="fas fa-circle"></i>
             </div>
             <!--             <a class="left-button"><i class="fas fa-chevron-circle-left"></i></a>-->
+
         </div>
+
     </section>
 
-<!--    <section id="portfolio" class="portfolio">-->
-<!--        <div class="header">-->
-<!--            <h1>نمونه‌‌کارهای <span> من </span></h1>-->
-<!--        </div>-->
-<!--        <div class="buttons-grid">-->
-<!--            <a class="all-work">همه کارها</a>-->
-<!--            <a class="design">دیزاین</a>-->
-<!--            <a class="music">موزیک</a>-->
-<!--            <a class="video">ویدیو</a>-->
-<!--        </div>-->
-<!--        <div class="grid-section-portfolio">-->
-<!--            <div class="card-p design">-->
-<!--                <img src="Media/portfolio-1.jpg" alt="portfolio-1">-->
-<!--                <div class="shows-on-hover">-->
-<!--                    <h4>عنوان</h4>-->
-<!--                    <p> توضیح </p>-->
-<!--                    <div class="icons">-->
-<!--                        <a><i class="fas fa-image"></i></a>-->
-<!--                        <a><i class="fas fa-link"></i></a>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--            <div class="card-p video"><img src="Media/portfolio-2.jpg" alt="portfolio-2">-->
-<!--                <div class="shows-on-hover">-->
-<!--                    <h4>عنوان</h4>-->
-<!--                    <p>توضیح </p>-->
-<!--                    <div class="icons">-->
-<!--                        <a><i class="fas fa-image"></i></a>-->
-<!--                        <a><i class="fas fa-link"></i></a>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--            <div class="card-p video">-->
-<!--                <img src="Media/portfolio-3.jpg" alt="portfolio-3">-->
-<!--                <div class="shows-on-hover">-->
-<!--                    <h4> عنوان</h4>-->
-<!--                    <p> توضیح </p>-->
-<!--                    <div class="icons">-->
-<!--                        <a><i class="fab fa-youtube"></i></a>-->
-<!--                        <a><i class="fas fa-link"></i></a>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--            <div class="card-p video">-->
-<!--                <img src="Media/portfolio-4.jpg" alt="portfolio-4">-->
-<!--                <div class="shows-on-hover">-->
-<!--                    <h4>عنوان</h4>-->
-<!--                    <p> توضیح </p>-->
-<!--                    <div class="icons">-->
-<!--                        <a><i class="fas fa-image"></i></a>-->
-<!--                        <a><i class="fas fa-link"></i></a>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--            <div class="card-p music">-->
-<!--                <img src="Media/portfolio-5.jpg" alt="portfolio-5">-->
-<!--                <div class="shows-on-hover">-->
-<!--                    <h4> عنوان</h4>-->
-<!--                    <p> توضیح </p>-->
-<!--                    <div class="icons">-->
-<!--                        <a><i class="fab fa-vimeo-v"></i></a>-->
-<!--                        <a><i class="fas fa-link"></i></a>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--            <div class="card-p music">-->
-<!--                <img src="Media/portfolio-6.jpg" alt="portfolio-6">-->
-<!--                <div class="shows-on-hover design">-->
-<!--                    <h4> عنوان</h4>-->
-<!--                    <p> توضیح </p>-->
-<!--                    <div class="icons">-->
-<!--                        <a><i class="fas fa-music"></i></a>-->
-<!--                        <a><i class="fas fa-link"></i></a>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--            <div class="card-p"><img src="Media/portfolio-7.jpg" alt="portfolio-7">-->
-<!--                <div class="shows-on-hover">-->
-<!--                    <h4> عنوان</h4>-->
-<!--                    <p> توضیح </p>-->
-<!--                    <div class="icons">-->
-<!--                        <a><i class="fas fa-image"></i></a>-->
-<!--                        <a><i class="fas fa-link"></i></a>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--            <div class="card-p music"><img src="Media/portfolio-8.jpg" alt="portfolio-8">-->
-<!--                <div class="shows-on-hover">-->
-<!--                    <h4> عنوان </h4>-->
-<!--                    <p> توضیح </p>-->
-<!--                    <div class="icons">-->
-<!--                        <a><i class="fas fa-image"></i></a>-->
-<!--                        <a><i class="fas fa-link"></i></a>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--            <div class="card-p design"><img src="Media/portfolio-9.jpg" alt="portfolio-9">-->
-<!--                <div class="shows-on-hover">-->
-<!--                    <h4> عنوان </h4>-->
-<!--                    <p> توضیح </p>-->
-<!--                    <div class="icons">-->
-<!--                        <a><i class="fas fa-image"></i></a>-->
-<!--                        <a><i class="fas fa-link"></i></a>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--        </div>-->
+        <section id="portfolio" class="portfolio">
+            <div class="header">
+                <h1>نمونه‌‌کارهای <span> من </span></h1>
+        <span class="separator"></span>
+            </div>
+            <div class="buttons-grid">
+                <a class="all-work">همه کارها</a>
+                <a class="design">دیزاین</a>
+                <a class="music">موزیک</a>
+                <a class="video">ویدیو</a>
+            </div>
+            <div class="grid-section-portfolio">
+                <div class="card-p design">
+                    <img src="Media/portfolio-1.jpg" alt="portfolio-1">
+                    <div class="shows-on-hover">
+                        <h4>عنوان</h4>
+                        <p> توضیح </p>
+                        <div class="icons">
+                            <a><i class="fas fa-image"></i></a>
+                            <a><i class="fas fa-link"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-p video"><img src="Media/portfolio-2.jpg" alt="portfolio-2">
+                    <div class="shows-on-hover">
+                        <h4>عنوان</h4>
+                        <p>توضیح </p>
+                        <div class="icons">
+                            <a><i class="fas fa-image"></i></a>
+                            <a><i class="fas fa-link"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-p video">
+                    <img src="Media/portfolio-3.jpg" alt="portfolio-3">
+                    <div class="shows-on-hover">
+                        <h4> عنوان</h4>
+                        <p> توضیح </p>
+                        <div class="icons">
+                            <a><i class="fab fa-youtube"></i></a>
+                            <a><i class="fas fa-link"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-p video">
+                    <img src="Media/portfolio-4.jpg" alt="portfolio-4">
+                    <div class="shows-on-hover">
+                        <h4>عنوان</h4>
+                        <p> توضیح </p>
+                        <div class="icons">
+                            <a><i class="fas fa-image"></i></a>
+                            <a><i class="fas fa-link"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-p music">
+                    <img src="Media/portfolio-5.jpg" alt="portfolio-5">
+                    <div class="shows-on-hover">
+                        <h4> عنوان</h4>
+                        <p> توضیح </p>
+                        <div class="icons">
+                            <a><i class="fab fa-vimeo-v"></i></a>
+                            <a><i class="fas fa-link"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-p music">
+                    <img src="Media/portfolio-6.jpg" alt="portfolio-6">
+                    <div class="shows-on-hover design">
+                        <h4> عنوان</h4>
+                        <p> توضیح </p>
+                        <div class="icons">
+                            <a><i class="fas fa-music"></i></a>
+                            <a><i class="fas fa-link"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-p"><img src="Media/portfolio-7.jpg" alt="portfolio-7">
+                    <div class="shows-on-hover">
+                        <h4> عنوان</h4>
+                        <p> توضیح </p>
+                        <div class="icons">
+                            <a><i class="fas fa-image"></i></a>
+                            <a><i class="fas fa-link"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-p music"><img src="Media/portfolio-8.jpg" alt="portfolio-8">
+                    <div class="shows-on-hover">
+                        <h4> عنوان </h4>
+                        <p> توضیح </p>
+                        <div class="icons">
+                            <a><i class="fas fa-image"></i></a>
+                            <a><i class="fas fa-link"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-p design"><img src="Media/portfolio-9.jpg" alt="portfolio-9">
+                    <div class="shows-on-hover">
+                        <h4> عنوان </h4>
+                        <p> توضیح </p>
+                        <div class="icons">
+                            <a><i class="fas fa-image"></i></a>
+                            <a><i class="fas fa-link"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-<!--    </section>-->
+        </section>
 
     <section id="blog" class="blog">
         <div class="title">
             <h1>بلاگ <span>من</span><br></h1>
+            <span class="separator"></span>
         </div>
         <div class="grid">
             <div class="card">
@@ -671,6 +692,7 @@
     <section id="contact" class="contact-me">
         <div class="title">
             <h1>ارتباط با <span>من</span></h1>
+            <span class="separator"></span>
         </div>
         <div class="cards">
             <div class="card">
