@@ -13,9 +13,8 @@ $kamal-background: #f9f9f9;
 
 @mixin headers-of-sections {
   position: relative;
-  line-height: 2.2;
+  line-height: 1.6;
   display: block;
-  //height: 100px;
   font-weight: bold;
   font-size: 50px;
   text-align: center;
@@ -112,16 +111,6 @@ body, html {
   margin: 0;
   color: $kamal-gray;
   -webkit-tap-highlight-color: transparent;
-
-
-  //@keyframes btn-animation {
-  //  from {
-  //    width: 0;
-  //  }
-  //  to {
-  //    width: 150%;
-  //  }
-  //}
 }
 
 body {
@@ -129,9 +118,6 @@ body {
 }
 
 a, a i.fa, a img, .button, .btn {
-  //-moz-transition: all 0.3s ease;
-  //-webkit-transition: all 0.3s ease;
-  //transition: all 0.3s ease;
   text-decoration: none;
 }
 
@@ -221,8 +207,6 @@ a, a i.fa, a img, .button, .btn {
       display: grid;
       grid-template-columns: 1fr 2fr;
       vertical-align: center;
-      //width:50%;
-      //height: 300px;
       margin-left: auto;
       margin-right: auto;
       right: 30%;
@@ -273,7 +257,6 @@ a, a i.fa, a img, .button, .btn {
         border-radius: 1000px;
         height: 280px;
         width: 280px;
-        //margin-left: 60px;
         border: 10px solid rgba(255, 255, 255, 0.1);
         vertical-align: middle;
       }
@@ -292,7 +275,6 @@ a, a i.fa, a img, .button, .btn {
       .social-media-icons {
         z-index: 1;
         margin-left: 20px;
-        //margin-bottom: 20px;
         font-size: 20px;
       }
 
@@ -302,7 +284,6 @@ a, a i.fa, a img, .button, .btn {
 
       .introduction-buttons {
         display: grid;
-        //align-items: right;
         grid-template-columns: 1fr 1fr;
         width: 100%;
 
@@ -322,7 +303,6 @@ a, a i.fa, a img, .button, .btn {
           border-radius: 26px;
           font-weight: 500;
           background-color: #666666;
-          margin-left: 16px;
           text-align: center;
 
           span {
@@ -350,28 +330,13 @@ a, a i.fa, a img, .button, .btn {
 
           &:hover::before {
             width: 150%;
-            //animation: btn-animation;
-            //animation-duration: 0.6s;
           }
-
-          //&:hover{
-          //  background:red;
-          //}
-
-
           i {
             padding-left: 6px;
             padding-top: 5px;
             padding-bottom: 6px;
           }
         }
-
-        //
-        //.introduction-button-more-about-me:hover {
-        //  background-color: #666666;
-        //  color: white;
-        //  border-color: #545b62;
-        //}
 
         .introduction-button-portfolio {
           display: flex;
@@ -384,7 +349,6 @@ a, a i.fa, a img, .button, .btn {
           border-radius: 26px;
           font-weight: 500;
           background-color: $kamal-green;
-          //margin-left: 16px;
           justify-content: center;
 
           span {
@@ -407,8 +371,6 @@ a, a i.fa, a img, .button, .btn {
 
           &:hover::before {
             width: 150%;
-            //animation: btn-animation;
-            //animation-duration: 0.6s;
           }
 
           i {
@@ -427,8 +389,6 @@ a, a i.fa, a img, .button, .btn {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  //filter: brightness(20%);
-  //z-index: -1;
 }
 
 .header-bg-img:after {
@@ -526,13 +486,13 @@ a, a i.fa, a img, .button, .btn {
 
 .about-me-first {
   display: block;
-  //height: 450px;
   margin-bottom: 50px;
 
   .title-of-section {
     h1 {
       font-size: 50px !important;
     }
+
     @include headers-of-sections();
 
   }
@@ -546,7 +506,6 @@ a, a i.fa, a img, .button, .btn {
       width: 75%;
       margin: auto;
       grid-template-columns: 1fr 1fr;
-      //height: 200px;
 
       .about-me-first-column {
         padding-right: 15px;
@@ -574,7 +533,7 @@ a, a i.fa, a img, .button, .btn {
         a {
           position: relative;
           display: inline-block;
-          color: $kamal-white;
+          color: white;
           background-color: $kamal-green;
           font-size: 15px;
           font-weight: 500;
@@ -606,8 +565,6 @@ a, a i.fa, a img, .button, .btn {
 
           &:hover::before {
             width: 150%;
-            //animation: btn-animation;
-            //animation-duration: 0.6s;
           }
 
           i {
@@ -657,6 +614,7 @@ a, a i.fa, a img, .button, .btn {
             .becomes-green:hover {
               color: $kamal-green;
               transition-duration: 0.5s;
+              cursor: pointer;
             }
           }
         }
@@ -716,7 +674,6 @@ a, a i.fa, a img, .button, .btn {
           display: block;
           margin-bottom: 10px;
           font-weight: 500;
-          //line-height: 1.2;
           font-size: 1.25rem;
           line-height: 28px;
         }
@@ -778,10 +735,10 @@ a, a i.fa, a img, .button, .btn {
         position: absolute;
         width: 33px;
         height: 2px;
-        top: 23px;
-        left: -34px;
-        z-index: -1;
+        top: 14%;
+        left: 100.5%;
         background-color: $kamal-gray;
+        z-index: 0;
       }
 
       .last-one {
@@ -812,6 +769,7 @@ a, a i.fa, a img, .button, .btn {
 
 
       .card {
+        position: relative;
         alignment: center;
         font-weight: 400;
         align-items: center;
@@ -829,7 +787,6 @@ a, a i.fa, a img, .button, .btn {
           display: block;
           margin-bottom: 10px;
           font-weight: 500;
-          //line-height: 1.2;
           font-size: 1.25rem;
           line-height: 28px;
         }
@@ -859,17 +816,19 @@ a, a i.fa, a img, .button, .btn {
 
           span {
             background-color: $kamal-green;
-            color: $kamal-white;
-            border-radius: 3px;
+            color: white;
+            border-radius: 4px;
             padding-right: 5px;
             padding-left: 5px;
+            margin-right: 5px;
             vertical-align: baseline;
           }
         }
       }
+
       .card:before {
         content: "";
-        right: 49.3%;
+        left: 104.3%;
         display: block;
         position: absolute;
         background-color: white;
@@ -890,10 +849,10 @@ a, a i.fa, a img, .button, .btn {
         position: absolute;
         width: 33px;
         height: 2px;
-        top: 23px;
-        left: -34px;
-        z-index: -1;
+        top: 13%;
+        left: 100.7%;
         background-color: $kamal-gray;
+        z-index: 0;
       }
 
       .last-one {
@@ -921,7 +880,6 @@ a, a i.fa, a img, .button, .btn {
       padding: 0 15px;
       display: grid;
       align-items: center;
-      //width: 20%;
       grid-template-rows: repeat(4, 1fr);
 
       .item {
@@ -1061,10 +1019,6 @@ a, a i.fa, a img, .button, .btn {
           font-weight: 600;
           margin-top: -45px;
         }
-
-        .bar {
-          //background-color: $kamal-gray;
-        }
       }
     }
   }
@@ -1076,13 +1030,10 @@ a, a i.fa, a img, .button, .btn {
   alignment: center;
 
   .card {
-    //line-height: 30px;
     position: relative;
     display: block;
     margin-top: 30px;
-    //padding: 28px;
     padding: 13%;
-    //height: border-box;
     box-sizing: border-box;
     border: 1px solid $kamal-light-gray;
     border-radius: 10px;
@@ -1189,7 +1140,7 @@ a, a i.fa, a img, .button, .btn {
       margin-top: 30px;
       margin-right: 15px;
       margin-left: 15px;
-      padding: 40px 30px 30px;
+      padding: 40px 40px 40px;
       display: inline-block;
       border: 1px solid $kamal-light-gray;
       border-radius: 5px;
@@ -1240,15 +1191,16 @@ a, a i.fa, a img, .button, .btn {
       font-size: 26px;
       text-align: center;
       background-color: white;
-      top: 60%;
-      right: 0;
+      top: 55%;
+      right: -1.7%;
       border-radius: 50%;
-      //opacity: 0;
       transition: all 0.3s ease;
       box-shadow: 0 2px 5px 0 rgb(0 0 0 / 15%);
       z-index: 3;
       opacity: 0;
       color: $kamal-gray;
+      padding-top: 2px;
+      padding-left: 5px;
 
     }
 
@@ -1259,19 +1211,30 @@ a, a i.fa, a img, .button, .btn {
       text-align: center;
       color: $kamal-gray;
       background-color: white;
-      top: 60%;
-      left: 0;
+      top: 55%;
+      left: -1.7%;
       border-radius: 50%;
-      //opacity: 0;
       transition: all 0.3s ease;
       box-shadow: 0 2px 5px 0 rgb(0 0 0 / 15%);
       z-index: 3;
       opacity: 0;
+      transition-duration: 0.5s;
+      padding-right: 5px;
+      padding-top: 2px;
+
+      i {
+        padding-top: 9px;
+      }
 
     }
 
     .previous-button:hover, .next-button:hover {
+      transition-duration: 0.5s;
       background-color: $kamal-green;
+
+      i {
+        color: white;
+      }
     }
 
     .box {
@@ -1291,6 +1254,11 @@ a, a i.fa, a img, .button, .btn {
 
         & .previous-button {
           opacity: 1;
+        }
+
+        .name {
+          background-color: white;
+          transition-duration: 0.3s;
         }
       }
 
@@ -1327,57 +1295,55 @@ a, a i.fa, a img, .button, .btn {
         margin: auto;
         width: 100px;
         padding: 6px 30px;
-      }
-
-      .name:hover {
-        background-color: white;
+        transition-duration: 0.3s;
       }
     }
 
     .other {
       display: grid;
       align-items: center;
-      //width: 75%;
+      height: 35px !important;
       margin: auto;
       grid-template-columns: 1fr 1fr 1fr;
-      width: 20%;
 
       .special {
-        font-size: 25px;
+        font-size: 20px;
         color: $kamal-green;
         alignment: center;
+        margin: auto;
+        transition-duration: 0.5s;
+        padding-left: 5px;
+        padding-right: 5px;
+
+        &:hover {
+          cursor: pointer;
+        }
 
       }
 
       i:not(.special) {
         alignment: center;
         vertical-align: middle;
-        height: 25px;
-        width: 25px;
         display: inline-block;
         color: #aadb8f;
-        font-size: 15px;
-        margin-left: 5px;
-        margin-right: 5px;
+        font-size: 13px;
         padding-top: 10px;
-
+        padding-bottom: 10px;
+        margin: auto;
+        transition-duration: 0.5s;
       }
 
-      i:hover {
-        font-size: 25px;
+      i:not(.special):hover {
+        cursor: pointer;
+        font-size: 20px;
         transition: 0.5s;
-        //margin: 0;
-        padding: 0;
-        //margin: 0;
-        //-webkit-transform: translate3d(0px, -50%, 0px) scale(0.5);
-        //transform: translate3d(0px, -50%, 0px) scale(0.5);
+        padding-top: 0;
+        padding-bottom: 0;
         -webkit-transition: all 250ms ease-out 0s;
-        //transition: all 250ms ease-out 0s;
       }
     }
-
-
-  }}
+  }
+}
 
 /***************************my portfolio section**********************************/
 .portfolio {
@@ -1391,6 +1357,7 @@ a, a i.fa, a img, .button, .btn {
     h1 {
       font-size: 50px !important;
     }
+
     @include headers-of-sections();
 
   }
@@ -1407,9 +1374,12 @@ a, a i.fa, a img, .button, .btn {
       alignment: center;
       display: inline-block;
       @include button-style();
+      padding: 10px 28px !important;
       margin-right: 5px;
       margin-left: 5px;
       background-color: $kamal-gray;
+      transition-duration: 0.7s;
+      cursor: pointer;
     }
 
     a:hover {
@@ -1437,21 +1407,17 @@ a, a i.fa, a img, .button, .btn {
       margin-top: 30px;
       padding-left: 20px;
       padding-right: 20px;
-      width: 350px;
       display: block;
       border-radius: 5px;
-      //text-align: center;
       overflow: hidden;
       justify-content: center;
 
       .shows-on-hover {
-        //background-color: rgba(0, 0,0,0.6);
-        padding: 65px 122px;
-        margin-top: -282px;
+        padding: 3% 6.5%;
+        margin-top: -246px;
         margin-right: 2px;
         position: absolute;
         z-index: 999;
-        //align-self: center;
         text-align: center;
         border: dashed 1.7px white;
         transition: all 0.7s;
@@ -1509,8 +1475,7 @@ a, a i.fa, a img, .button, .btn {
       img {
         overflow: hidden;
         alignment: center;
-        height: 280px;
-        width: 350px;
+        width: 107%;
         filter: brightness(100%);
         transition-duration: 0.5s;
         border-radius: 5px;
@@ -1544,6 +1509,7 @@ a, a i.fa, a img, .button, .btn {
     h1 {
       font-size: 50px !important;
     }
+
     @include headers-of-sections();
 
   }
@@ -1574,7 +1540,6 @@ a, a i.fa, a img, .button, .btn {
           width: 100%;
           height: 100%;
           display: block;
-          //transform-origin: 0 0;
           transition: transform .25s, visibility .25s ease-in;
         }
 
@@ -1587,6 +1552,7 @@ a, a i.fa, a img, .button, .btn {
           transition: 0.5s;
           transform: scale(1.1);
           overflow: hidden;
+          cursor: pointer;
         }
       }
 
@@ -1666,7 +1632,6 @@ a, a i.fa, a img, .button, .btn {
 
     .card:hover {
       img {
-        //filter: brightness(120%);
         transition: 0.5s;
         transform: scale(1.1);
         overflow: hidden;
@@ -1687,6 +1652,7 @@ a, a i.fa, a img, .button, .btn {
     h1 {
       font-size: 50px !important;
     }
+
     @include headers-of-sections();
 
   }
@@ -1745,7 +1711,6 @@ a, a i.fa, a img, .button, .btn {
         }
 
         .description {
-          //margin-bottom: 15px;
           display: block;
           font-size: 15px;
           font-weight: 400;
@@ -1757,12 +1722,24 @@ a, a i.fa, a img, .button, .btn {
             font-size: 20px;
             margin-left: 15px;
             font-weight: 400;
+            transition-duration: 0.3s;
           }
 
           i:hover {
             color: $kamal-green;
-            transition-duration: 0.7s;
+            transition-duration: 0.3s;
+            cursor: pointer !important;
           }
+        }
+
+        .green {
+          transition-duration: 0.3s;
+        }
+
+        .green:hover {
+          cursor: pointer;
+          color: $kamal-green;
+          transition-duration: 0.3s;
         }
       }
     }
@@ -1793,7 +1770,6 @@ a, a i.fa, a img, .button, .btn {
   .forms {
     @include grid-fundamentals();
     grid-template-columns: 1fr 1fr;
-    //padding: 25px;
     margin-bottom: 5px;
     width: 65% !important;
 
@@ -1846,7 +1822,6 @@ a, a i.fa, a img, .button, .btn {
 
   a {
     @include button-style();
-    //display: inline-block;
     background-color: $kamal-green;
     text-align: center;
     margin-right: 18%;
@@ -1860,65 +1835,51 @@ a, a i.fa, a img, .button, .btn {
 
 /*************************************footer section*******************************/
 footer {
-  //margin: 25px;
   padding: 25px;
   text-align: center;
   background-color: $kamal-background;
 }
-
-/*************************************responsive and @media section*******************************/
-
-
-//@media screen and (max-width: 600px) {
-//  .navbar a:not(:first-child) {
-//    display: none;
-//  }
-//  .navbar a.icon {
-//    float: right;
-//    display: block;
-//  }
-//}
-//
-//@media screen and (max-width: 600px) {
-//  .navbar.responsive {
-//    position: relative;
-//  }
-//  .navbar.responsive .icon {
-//    position: relative;
-//    right: 0;
-//    top: 0;
-//  }
-//}
-
 /*****************************************************************here comes yasmin bruhhhh*********************************************************************/
-@media screen and(max-width: 576px) {
+@media screen and(max-width: 750px) {
   /*************************home********************************/
   #home {
+    .btn{
+      width: 203px;
+      margin-right: auto;
+      margin-left: auto;
+    }
     .my-first-grid {
       top: 20% !important;
       grid-template-columns: 1fr !important;
       grid-template-rows: 1fr 1fr;
       justify-content: center;
-      .text-part{
+      right:11% !important;
+
+      .text-part {
         margin-right: 0 !important;
-        .introduction-buttons{
+
+        .introduction-buttons {
           grid-template-columns: 1fr !important;
           grid-template-rows: 1fr 1fr !important;
-          a{
+
+          a {
             padding: 5px;
           }
         }
       }
-      img{
+
+      img {
         display: block;
         margin: auto;
         align-items: center
       }
-      h2{
+
+      h2 {
         margin-top: 10px;
         text-align: center;
       }
-      .inner-text{
+
+      .inner-text {
         text-align: center;
       }
     }
@@ -2020,28 +1981,40 @@ footer {
 }
 
 /******************************************************************************************************************************************************************/
-@media screen and (min-width: 576px) and (max-width: 1111px) {
+@media screen and (min-width: 750px) and (max-width: 1111px) {
   /*******************************banner********************************/
 
   #home {
+    .btn{
+      width: 203px;
+      margin-right: auto;
+      margin-left: auto !important;
+    }
+
     .my-first-grid {
       top: 20% !important;
       grid-template-columns: 1fr !important;
       grid-template-rows: 1fr 1fr;
       justify-content: center;
-      .text-part{
+      right: 23% !important;
+
+
+      .text-part {
         margin-right: 0 !important;
       }
-      img{
+
+      img {
         display: block;
         margin: auto;
         align-items: center
       }
-      h2{
+
+      h2 {
         margin-top: 10px;
         text-align: center;
       }
-      .inner-text{
+
+      .inner-text {
         text-align: center;
       }
     }
@@ -2095,7 +2068,8 @@ footer {
       .experience-and-education-grids {
         grid-template-rows: 1fr 1fr;
         grid-template-columns: 1fr;
-        .experience-grid{
+
+        .experience-grid {
           .card {
             alignment: center;
             font-weight: 400;
@@ -2109,20 +2083,19 @@ footer {
             margin-bottom: 24px;
             transition: all 0.3s ease;
             position: relative;
+            z-index: 2;
 
 
             h1 {
               display: block;
               margin-bottom: 10px;
               font-weight: 500;
-              //line-height: 1.2;
               font-size: 1.25rem;
               line-height: 28px;
             }
 
             .second {
               margin-bottom: 4px;
-              //margin-right: 15px;
 
               p {
                 display: inline-block;
@@ -2155,6 +2128,7 @@ footer {
               }
             }
           }
+
           .card:before {
             content: "";
             right: -37px !important;
@@ -2178,10 +2152,10 @@ footer {
             position: absolute;
             width: 33px;
             height: 2px;
-            top: 23px;
-            left: -34px;
-            z-index: -1;
+            top: 15%;
+            left: 100.5%;
             background-color: $kamal-gray;
+            z-index: 0;
           }
 
           .last-one {
