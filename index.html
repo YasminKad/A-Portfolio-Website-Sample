@@ -6,27 +6,23 @@
     <title>Demo For Kamal - Personal Website landing Page</title>
     <link rel="stylesheet" type="text/css" media="screen" href="style.css"/>
     <link rel="stylesheet" type="text/css" href="all.css"/>
-    <link rel="stylesheet" type="text/css" href="all.css"/>
 </head>
 <body dir="rtl">
 <main>
     <nav class="navbar" id="navbarid">
         <a href="index.html" class="kamal-name">کمال</a>
-        <a class="space-in-navbar"> </a>
         <a href="#home" class="navbar-icon-link"><i class="fas fa-home"></i>خانه</a>
         <a href="#about" class="navbar-icon-link"><i class="fas fa-user"></i>درباره من</a>
         <a href="#services" class="navbar-icon-link"><i class="fas fa-rocket"></i>سرویس ها</a>
         <a href="#portfolio" class="navbar-icon-link"><i class="fas fa-briefcase"></i>نمونه کارها</a>
         <a href="#blog" class="navbar-icon-link"><i class="fas fa-pencil-alt"></i>بلاگ</a>
         <a href="#contact" class="navbar-icon-link"><i class="fas fa-address-book"></i>ارتباط با من</a>
-        <!--        <a href="javascript:void(0);" class="icon" onclick="myFunction()">-->
         <i class="fa fa-bars"></i>
-        <!--        </a>-->
     </nav>
 
     <section id="home" class="banner-section header-bg-img">
         <div class="container">
-            <div class="my-first-grid">
+            <div class="banner-grid">
                 <div class="profile-pic">
                     <img src="Media/profile.png" alt="profile picture" class="pro-pic">
                 </div>
@@ -36,7 +32,10 @@
                     </div>
                     <div class="inner-text">
                         <p class="im-this-and-that">
-                            من<span class="job-title"> کمال </span>هستم
+                            <span id="kamalsname" class="kamal-name">کمال</span>
+                            <span id="kamal-job-1" class="kamal-job-1">وب دیزاینر</span>
+                            <span id="kamal-job-2" class="kamal-job-2">توسعه دهنده وب</span>
+                            <span id="kamal-job-3" class="kamal-job-3">لوگو دیزاینر</span>
                         </p>
                     </div>
                     <div class="inner-text">
@@ -58,14 +57,14 @@
                             <i class="fab fa-linkedin"></i></a>
                     </div>
                     <div class="introduction-buttons">
-                        <a href="#about" class=" btn introduction-button-more-about-me">
+                        <a href="#about" class=" btn more-about-me">
                                 <span>
                                 <i class="fas fa-user"></i>
                                 اطلاعات
                                 بیشتر درباره من
                                 </span>
                         </a>
-                        <a href="#portfolio" class="btn introduction-button-portfolio">
+                        <a href="#portfolio" class="btn portfolio-button">
                            <span>
                             <i class="fas fa-rocket"></i>چندتا
                             از نمونه
@@ -75,13 +74,13 @@
                     </div>
                 </div>
             </div>
-            <div class="jumper"><a href="#about"> </a></div>
+            <a href="#about" class="jumper"></a>
         </div>
     </section>
 
     <section id="about">
         <div class="about-me-first">
-            <div class="title-of-section">
+            <div class="title-of-section-about-me">
                 <h1>
                     <span>
                         درباره
@@ -218,28 +217,28 @@
                         <p>HTML</p>
                         <div class="percentage">95%</div>
                         <div class="bar">
-                            <div class="progress-1"></div>
+                            <div class="progress-1" id="first"></div>
                         </div>
                     </div>
                     <div class="item">
                         <p>CSS</p>
                         <div class="percentage">90%</div>
                         <div class="bar">
-                            <div class="progress-2"></div>
+                            <div class="progress-2" id="second"></div>
                         </div>
                     </div>
                     <div class="item">
                         <p>jQuery</p>
                         <div class="percentage">65%</div>
                         <div class="bar">
-                            <div class="progress-3"></div>
+                            <div class="progress-3" id="third"></div>
                         </div>
                     </div>
                     <div class="item">
                         <p>JavaScript</p>
                         <div class="percentage">75%</div>
                         <div class="bar">
-                            <div class="progress-4"></div>
+                            <div class="progress-4" id="fourth"></div>
                         </div>
                     </div>
                 </div>
@@ -248,54 +247,54 @@
                         <p>WordPress</p>
                         <div class="percentage">95%</div>
                         <div class="bar">
-                            <div class="progress-5"></div>
+                            <div class="progress-5" id="first-2"></div>
                         </div>
                     </div>
                     <div class="item">
                         <p>Web Design</p>
                         <div class="percentage">90%</div>
                         <div class="bar">
-                            <div class="progress-6"></div>
+                            <div class="progress-6" id="second-2"></div>
                         </div>
                     </div>
                     <div class="item">
                         <p>PHP</p>
                         <div class="percentage">65%</div>
                         <div class="bar">
-                            <div class="progress-7"></div>
+                            <div class="progress-7" id="third-2"></div>
                         </div>
                     </div>
                     <div class="item">
                         <p>Web Development</p>
                         <div class="percentage">75%</div>
                         <div class="bar">
-                            <div class="progress-8"></div>
+                            <div class="progress-8" id="fourth-2"></div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
         <div class="counter-cards">
-            <div class="card">
-                <div class="header"><p>۲۹۹</p></div>
+            <div class="counter-card">
+                <div class="header customers" id="number1"><p>۲۹۹</p></div>
                 <div class="line">
                 </div>
                 <div class="card-title"><p> مشتری راضی </p></div>
             </div>
-            <div class="card">
-                <div class="header"><p>۴۵</p></div>
+            <div class="counter-card">
+                <div class="header prizes" id="number2"><p>۴۵</p></div>
                 <div class="line">
                 </div>
-                <div class="card-title"><p> جوایز اخذ شده</p></div>
+                <div class="card-title" ><p> جوایز اخذ شده</p></div>
             </div>
-            <div class="card">
-                <div class="header"><p>۹۹</p></div>
+            <div class="counter-card">
+                <div class="header hours" id="number3"><p>۹۹</p></div>
                 <div class="line">
                 </div>
                 <div class="card-title"><p> ساعت پشتیبانی </p></div>
             </div>
-            <div class="card">
-                <div class="header"><p>۳۶</p></div>
+            <div class="counter-card">
+                <div class="header students" id="number4"><p>۳۶</p></div>
                 <div class="line">
                 </div>
                 <div class="card-title"><p> افراد کارآموخته </p></div>
@@ -412,9 +411,7 @@
                 <i class="fas fa-circle special"></i>
                 <i class="fas fa-circle"></i>
             </div>
-
         </div>
-
     </section>
 
         <section id="portfolio" class="portfolio">
@@ -432,9 +429,8 @@
                 <a class="video">ویدیو</a>
             </div>
             <div class="grid-section-portfolio">
-                <div class="card-p design">
+                <div class="card-p design-card">
                     <img src="Media/portfolio-1.jpg" alt="portfolio-1">
-                    <div class="outer-class">
                     <div class="shows-on-hover">
                         <h4>عنوان</h4>
                         <p> توضیح </p>
@@ -443,9 +439,9 @@
                             <a><i class="fas fa-link"></i></a>
                         </div>
                     </div>
-                    </div>
                 </div>
-                <div class="card-p video"><img src="Media/portfolio-2.jpg" alt="portfolio-2">
+                <div class="card-p video-card">
+                    <img src="Media/portfolio-2.jpg" alt="portfolio-2">
                     <div class="shows-on-hover">
                         <h4>عنوان</h4>
                         <p>توضیح </p>
@@ -455,7 +451,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="card-p video">
+                <div class="card-p video-card">
                     <img src="Media/portfolio-3.jpg" alt="portfolio-3">
                     <div class="shows-on-hover">
                         <h4> عنوان</h4>
@@ -466,7 +462,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="card-p video">
+                <div class="card-p video-card">
                     <img src="Media/portfolio-4.jpg" alt="portfolio-4">
                     <div class="shows-on-hover">
                         <h4>عنوان</h4>
@@ -477,7 +473,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="card-p music">
+                <div class="card-p music-card">
                     <img src="Media/portfolio-5.jpg" alt="portfolio-5">
                     <div class="shows-on-hover">
                         <h4> عنوان</h4>
@@ -488,7 +484,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="card-p music">
+                <div class="card-p music-card">
                     <img src="Media/portfolio-6.jpg" alt="portfolio-6">
                     <div class="shows-on-hover design">
                         <h4> عنوان</h4>
@@ -499,7 +495,8 @@
                         </div>
                     </div>
                 </div>
-                <div class="card-p"><img src="Media/portfolio-7.jpg" alt="portfolio-7">
+                <div class="card-p design-card">
+                    <img src="Media/portfolio-7.jpg" alt="portfolio-7">
                     <div class="shows-on-hover">
                         <h4> عنوان</h4>
                         <p> توضیح </p>
@@ -509,7 +506,8 @@
                         </div>
                     </div>
                 </div>
-                <div class="card-p music"><img src="Media/portfolio-8.jpg" alt="portfolio-8">
+                <div class="card-p music-card">
+                    <img src="Media/portfolio-8.jpg" alt="portfolio-8">
                     <div class="shows-on-hover">
                         <h4> عنوان </h4>
                         <p> توضیح </p>
@@ -519,7 +517,8 @@
                         </div>
                     </div>
                 </div>
-                <div class="card-p design"><img src="Media/portfolio-9.jpg" alt="portfolio-9">
+                <div class="card-p design-card">
+                    <img src="Media/portfolio-9.jpg" alt="portfolio-9">
                     <div class="shows-on-hover">
                         <h4> عنوان </h4>
                         <p> توضیح </p>

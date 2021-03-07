@@ -1,10 +1,10 @@
 @font-face {
-  font-family: Parastoo;
+  font-family: Iran-Sans;
   src: url("./fonts/IranSans.eot");
   src: url("./fonts/IranSans.eot?#iefix") format("embedded-opentype"), url("./fonts/IranSans.woff") format("woff"), url("./fonts/IranSans.ttf") format("truetype");
 }
 * {
-  font-family: Parastoo, sans-serif;
+  font-family: Iran-Sans, sans-serif;
   margin: 0;
 }
 
@@ -15,7 +15,6 @@ body, html {
   margin: 0;
   color: #666666;
   -webkit-tap-highlight-color: transparent;
-  scroll-behavior: smooth;
 }
 
 body {
@@ -26,8 +25,8 @@ a, a i.fa, a img, .button, .btn {
   text-decoration: none;
 }
 
-/*************************************navbar section*******************************/
-.navbar {
+/* N A V B A R -  S E C T I O N */
+nav {
   padding-top: 10px;
   padding-bottom: 10px;
   width: 100%;
@@ -35,10 +34,8 @@ a, a i.fa, a img, .button, .btn {
   display: block;
   position: fixed;
   z-index: 2;
-  transition-duration: 0.5s;
 }
-
-.navbar-icon-link {
+nav a {
   padding-left: 60px;
   overflow: hidden;
   padding-top: 8px;
@@ -47,76 +44,37 @@ a, a i.fa, a img, .button, .btn {
   text-decoration: none;
   color: #ffffff;
 }
-
-.navbar i {
+nav a i {
   padding-left: 10px;
 }
-
-.navbar a.navbar-icon-link:hover {
-  color: #5cbe26;
-}
-.navbar a.navbar-icon-link:hover a {
-  transition-duration: 0.3s;
-}
-.navbar a.navbar-icon-link:hover i {
+nav a i:hover {
   transition-duration: 1s;
 }
-
-.kamal-name {
+nav a:hover {
+  color: #5cbe26;
+  transition-duration: 0.3s;
+}
+nav a .kamal-name {
   font-weight: bolder;
   padding-right: 30%;
-  padding-left: 10%;
+  padding-left: 15%;
   font-size: 25px;
   background-color: transparent;
   color: white;
 }
 
-.space-in-navbar {
-  padding-left: 365px;
-  background-color: transparent;
-}
-
-.navbar .icon {
-  display: none;
-}
-
-.navbar.responsive a {
-  float: none;
-  display: block;
-  text-align: right;
-}
-
-.navbar.scrolled {
-  background-color: #fff !important;
-  transition: background-color 200ms linear;
-}
-
-.navbar.scrolled .navbar-icon-link {
-  color: #666666;
-}
-
-.new-navbar-style {
-  transition-duration: 0.5s;
-  z-index: 9999 !important;
-  box-shadow: 0 8px 6px -6px #666666 !important;
-  background-color: white !important;
-}
-.new-navbar-style a {
-  color: #666666;
-}
-
-/*************************************banner section*******************************/
-#home {
+/* B A N N E R - S E C T I O N */
+.banner-section {
   overflow: hidden;
   width: 100%;
   min-height: 100vh;
   position: relative;
 }
-#home .container {
+.banner-section .container {
   vertical-align: middle;
   display: block;
 }
-#home .container .banner-grid {
+.banner-section .container .banner-grid {
   position: absolute;
   display: grid;
   grid-template-columns: 1fr 2fr;
@@ -128,101 +86,57 @@ a, a i.fa, a img, .button, .btn {
   justify-content: center;
   align-items: center;
 }
-#home .container .banner-grid .text-part {
-  margin-right: 48px;
+.banner-section .container .banner-grid .profile-pic {
   z-index: 999;
+  height: 300px;
+  width: 300px;
 }
-#home .container .banner-grid .inner-text {
-  color: white;
-  margin-bottom: 15px;
-}
-#home .container .banner-grid .inner-text h2 {
-  font-weight: 400;
-  font-size: 18px;
-}
-#home .container .banner-grid .im-this-and-that {
-  font-size: 45px;
-  font-weight: 400;
-  width: fit-content;
-  border-left: 3px solid #d9d9d9;
-  animation: typescript 1s infinite linear;
-  overflow: hidden;
-}
-@keyframes typescript {
-  0% {
-    width: fit-content;
-  }
-  100% {
-    width: 0;
-  }
-}
-#home .container .banner-grid a.social-media-icons {
-  color: white;
-}
-#home .container .banner-grid a.social-media-icons:hover {
-  color: #5cbe26;
-  transition: 0.3s;
-}
-#home .container .banner-grid .profile-pic {
-  z-index: 999;
-}
-#home .container .banner-grid .pro-pic {
+.banner-section .container .banner-grid .profile-pic img {
   border-radius: 1000px;
   height: 280px;
   width: 280px;
   border: 10px solid rgba(255, 255, 255, 0.1);
   vertical-align: middle;
 }
-#home .container .banner-grid .pro-pic .div {
-  height: 300px;
-  width: 300px;
+.banner-section .container .banner-grid .profile-pic .text-part {
+  margin-right: 48px;
+  z-index: 999;
 }
-#home .container .banner-grid .im-this-and-that span {
+.banner-section .container .banner-grid .profile-pic .text-part .inner-text {
+  color: white;
+  margin-bottom: 15px;
+}
+.banner-section .container .banner-grid .profile-pic .text-part .inner-text h2 {
+  font-weight: 400;
+  font-size: 18px;
+}
+.banner-section .container .banner-grid .profile-pic .text-part .inner-text p {
+  font-size: 45px;
+  font-weight: 400;
+}
+.banner-section .container .banner-grid .profile-pic .text-part .inner-text p span {
   color: #5cbe26;
   font-weight: 400;
-  font-size: 45px;
 }
-#home .container .banner-grid .im-this-and-that .kamal-name {
-  display: none;
-}
-#home .container .banner-grid .im-this-and-that .kamal-job-1 {
-  display: none;
-}
-#home .container .banner-grid .im-this-and-that .kamal-job-2 {
-  display: none;
-}
-#home .container .banner-grid .im-this-and-that .kamal-job-3 {
-  display: none;
-}
-#home .container .banner-grid .set-display-to-none {
-  display: none !important;
-}
-#home .container .banner-grid .set-display-to-contents {
-  display: contents !important;
-}
-#home .container .banner-grid .a-short-article-about-kamal {
+.banner-section .container .banner-grid .profile-pic .text-part .inner-text article {
   font-size: 15px;
   line-height: 30px;
   font-weight: 400;
 }
-#home .container .banner-grid .social-media-icons {
-  z-index: 1;
-  margin-left: 20px;
-  font-size: 20px;
+.banner-section .container .banner-grid .profile-pic .text-part .inner-text a {
+  color: white;
+  transition: 0.3s;
 }
-#home .container .banner-grid .social-media-icons:hover {
+.banner-section .container .banner-grid .profile-pic .text-part .inner-text a:hover {
   color: #5cbe26;
+  transition: 0.3s;
 }
-#home .container .banner-grid .introduction-buttons {
+.banner-section .container .banner-grid .profile-pic .text-part .introduction-buttons {
   display: grid;
   grid-template-columns: 1fr 1fr;
   width: 100%;
 }
-#home .container .banner-grid .introduction-buttons .button {
-  overflow: visible;
-  padding: 12px 0 12px 0;
-}
-#home .container .banner-grid .introduction-buttons .more-about-me {
+.banner-section .container .banner-grid .profile-pic .text-part .introduction-buttons .more-about-me {
   display: flex;
   color: white;
   font-size: 15px;
@@ -235,7 +149,7 @@ a, a i.fa, a img, .button, .btn {
   background-color: #666666;
   text-align: center;
 }
-#home .container .banner-grid .introduction-buttons .more-about-me span {
+.banner-section .container .banner-grid .profile-pic .text-part .introduction-buttons .more-about-me span {
   position: absolute;
   left: 50%;
   top: 50%;
@@ -243,7 +157,7 @@ a, a i.fa, a img, .button, .btn {
   z-index: 2;
   transform: translate(-50%, -50%);
 }
-#home .container .banner-grid .introduction-buttons .more-about-me::before {
+.banner-section .container .banner-grid .profile-pic .text-part .introduction-buttons .more-about-me::before {
   content: "";
   position: absolute;
   top: 0;
@@ -255,15 +169,15 @@ a, a i.fa, a img, .button, .btn {
   z-index: 1;
   background: #444444;
 }
-#home .container .banner-grid .introduction-buttons .more-about-me:hover::before {
+.banner-section .container .banner-grid .profile-pic .text-part .introduction-buttons .more-about-me:hover::before {
   width: 150%;
 }
-#home .container .banner-grid .introduction-buttons .more-about-me i {
+.banner-section .container .banner-grid .profile-pic .text-part .introduction-buttons .more-about-me i {
   padding-left: 6px;
   padding-top: 5px;
   padding-bottom: 6px;
 }
-#home .container .banner-grid .introduction-buttons .portfolio-button {
+.banner-section .container .banner-grid .profile-pic .text-part .introduction-buttons .portfolio-button {
   display: flex;
   color: white;
   font-size: 15px;
@@ -276,10 +190,10 @@ a, a i.fa, a img, .button, .btn {
   background-color: #5cbe26;
   justify-content: center;
 }
-#home .container .banner-grid .introduction-buttons .portfolio-button span {
+.banner-section .container .banner-grid .profile-pic .text-part .introduction-buttons .portfolio-button span {
   z-index: 2;
 }
-#home .container .banner-grid .introduction-buttons .portfolio-button::before {
+.banner-section .container .banner-grid .profile-pic .text-part .introduction-buttons .portfolio-button::before {
   content: "";
   position: absolute;
   top: 0;
@@ -291,10 +205,10 @@ a, a i.fa, a img, .button, .btn {
   z-index: 1;
   background: #427700;
 }
-#home .container .banner-grid .introduction-buttons .portfolio-button:hover::before {
+.banner-section .container .banner-grid .profile-pic .text-part .introduction-buttons .portfolio-button:hover::before {
   width: 150%;
 }
-#home .container .banner-grid .introduction-buttons .portfolio-button i {
+.banner-section .container .banner-grid .profile-pic .text-part .introduction-buttons .portfolio-button i {
   padding-left: 6px;
   padding-top: 5px;
   padding-bottom: 6px;
@@ -306,7 +220,6 @@ a, a i.fa, a img, .button, .btn {
   background-size: cover;
   background-position: center;
 }
-
 .header-bg-img:after {
   content: "";
   background-color: rgba(0, 0, 0, 0.8);
@@ -333,13 +246,6 @@ a, a i.fa, a img, .button, .btn {
   animation: jump 2s infinite;
   transition: all 0.3s ease;
 }
-.jumper a {
-  background-color: red;
-  height: 300px;
-  width: 300px;
-  z-index: 999;
-}
-
 .jumper:before {
   content: "";
   position: absolute;
@@ -387,18 +293,8 @@ a, a i.fa, a img, .button, .btn {
     width: 180px;
   }
 }
-/*************************************about me section*******************************/
-#about {
-  background-color: white;
-  padding-top: 80px;
-  padding-bottom: 80px;
-}
-
-.about-me-first {
-  display: block;
-  margin-bottom: 50px;
-}
-.about-me-first .title-of-section-about-me {
+/* A B O U T - M E */
+#about .title-of-section {
   position: relative;
   line-height: 1.6;
   display: block;
@@ -408,10 +304,7 @@ a, a i.fa, a img, .button, .btn {
   color: #666666;
   margin: 0 0 50px;
 }
-.about-me-first .title-of-section-about-me h1 {
-  font-size: 50px !important;
-}
-.about-me-first .title-of-section-about-me .separator {
+#about .title-of-section .separator {
   position: absolute;
   bottom: -10px;
   left: 0;
@@ -423,7 +316,7 @@ a, a i.fa, a img, .button, .btn {
   border-radius: 50px;
   overflow: hidden;
 }
-.about-me-first .title-of-section-about-me .separator:after {
+#about .title-of-section .separator:after {
   content: "";
   display: block;
   width: 10px;
@@ -445,43 +338,43 @@ a, a i.fa, a img, .button, .btn {
     width: 180px;
   }
 }
-.about-me-first .title-of-section-about-me span {
+#about .title-of-section span {
   color: #5cbe26;
 }
-.about-me-first .title-of-section-about-me p {
+#about .title-of-section p {
   font-size: 30px;
   font-weight: bolder;
   margin-bottom: 50px;
 }
-.about-me-first .container {
+#about .title-of-section h1 {
+  font-size: 50px !important;
+}
+#about .about-me-first {
   display: block;
   margin-bottom: 50px;
 }
-.about-me-first .container .about-me-grid {
+#about .about-me-first .container {
+  display: block;
+  margin-bottom: 50px;
+}
+#about .about-me-first .container .about-me-grid {
   display: grid;
   width: 75%;
   margin: auto;
   grid-template-columns: 1fr 1fr;
 }
-.about-me-first .container .about-me-grid .about-me-first-column {
+#about .about-me-first .container .about-me-grid .about-me-first-column {
   padding-right: 15px;
   padding-left: 15px;
 }
-.about-me-first .container .about-me-grid .about-me-first-column h1 {
-  color: #666666;
-  margin-bottom: 10px;
-}
-.about-me-first .container .about-me-grid .about-me-first-column .second p {
-  margin-left: 16px;
-}
-.about-me-first .container .about-me-grid .about-me-first-column article {
+#about .about-me-first .container .about-me-grid .about-me-first-column article {
   font-size: 15px;
   font-weight: 400;
   line-height: 30px;
   color: #666666;
   margin-bottom: 15px;
 }
-.about-me-first .container .about-me-grid .about-me-first-column a {
+#about .about-me-first .container .about-me-grid .about-me-first-column a {
   position: relative;
   display: inline-block;
   color: white;
@@ -495,7 +388,14 @@ a, a i.fa, a img, .button, .btn {
   overflow: hidden;
   border-radius: 26px;
 }
-.about-me-first .container .about-me-grid .about-me-first-column a::before {
+#about .about-me-first .container .about-me-grid .about-me-first-column a span {
+  z-index: 2;
+  position: relative;
+}
+#about .about-me-first .container .about-me-grid .about-me-first-column a i {
+  padding-left: 10px;
+}
+#about .about-me-first .container .about-me-grid .about-me-first-column a::before {
   content: "";
   position: absolute;
   top: 0;
@@ -507,20 +407,10 @@ a, a i.fa, a img, .button, .btn {
   z-index: 1;
   background: #427700;
 }
-.about-me-first .container .about-me-grid .about-me-first-column a span {
-  z-index: 2;
-  position: relative;
-}
-.about-me-first .container .about-me-grid .about-me-first-column a:hover::before {
+#about .about-me-first .container .about-me-grid .about-me-first-column a:hover::before {
   width: 150%;
 }
-.about-me-first .container .about-me-grid .about-me-first-column a i {
-  padding-left: 10px;
-}
-.about-me-first .container .about-me-grid .about-me-first-column .social-media-icons:hover i {
-  color: #5cbe26;
-}
-.about-me-first .container .about-me-grid .about-me-second-column {
+#about .about-me-first .container .about-me-grid .about-me-second-column {
   display: grid;
   width: 100%;
   grid-template-columns: 1fr 1fr;
@@ -529,36 +419,35 @@ a, a i.fa, a img, .button, .btn {
   line-height: 40px;
   font-weight: 400;
 }
-.about-me-first .container .about-me-grid .about-me-second-column .inner-first-column {
+#about .about-me-first .container .about-me-grid .about-me-second-column .inner-first-column {
   font-size: 15px;
   font-weight: 400;
 }
-.about-me-first .container .about-me-grid .about-me-second-column .inner-first-column p {
+#about .about-me-first .container .about-me-grid .about-me-second-column .inner-first-column p {
   color: #666666;
 }
-.about-me-first .container .about-me-grid .about-me-second-column .inner-first-column p span {
+#about .about-me-first .container .about-me-grid .about-me-second-column .inner-first-column p span {
   color: #212529;
 }
-.about-me-first .container .about-me-grid .about-me-second-column .inner-second-column {
+#about .about-me-first .container .about-me-grid .about-me-second-column .inner-second-column {
   align-items: center;
 }
-.about-me-first .container .about-me-grid .about-me-second-column .inner-second-column p {
+#about .about-me-first .container .about-me-grid .about-me-second-column .inner-second-column p {
   color: #666666;
 }
-.about-me-first .container .about-me-grid .about-me-second-column .inner-second-column p span {
+#about .about-me-first .container .about-me-grid .about-me-second-column .inner-second-column p span {
   color: #212529;
 }
-.about-me-first .container .about-me-grid .about-me-second-column .inner-second-column p .becomes-green:hover {
+#about .about-me-first .container .about-me-grid .about-me-second-column .inner-second-column p .becomes-green:hover {
   color: #5cbe26;
   transition-duration: 0.5s;
   cursor: pointer;
 }
-
-.experience-and-education {
+#about .experience-and-education {
   display: block;
   margin-bottom: 50px;
 }
-.experience-and-education .header {
+#about .experience-and-education .header {
   margin-top: 20px;
   margin-bottom: 48px;
   display: block;
@@ -569,14 +458,14 @@ a, a i.fa, a img, .button, .btn {
   font-weight: 500;
   display: block;
 }
-.experience-and-education .experience-and-education-grids {
+#about .experience-and-education .experience-and-education-grids {
   display: grid;
   align-items: center;
   width: 75%;
   margin: auto;
   grid-template-columns: 1fr 1fr;
 }
-.experience-and-education .experience-and-education-grids .education-grid {
+#about .experience-and-education .experience-and-education-grids .education-grid {
   border-right: 2px solid #6666;
   display: grid;
   align-items: center;
@@ -585,12 +474,12 @@ a, a i.fa, a img, .button, .btn {
   padding-left: 15px;
   padding-right: 24px;
 }
-.experience-and-education .experience-and-education-grids .education-grid .header-box {
+#about .experience-and-education .experience-and-education-grids .education-grid .header-box {
   margin-bottom: 24px;
   font-size: 1.5rem;
   text-align: center;
 }
-.experience-and-education .experience-and-education-grids .education-grid .card {
+#about .experience-and-education .experience-and-education-grids .education-grid .card {
   alignment: center;
   font-weight: 400;
   align-items: center;
@@ -604,42 +493,7 @@ a, a i.fa, a img, .button, .btn {
   transition: all 0.3s ease;
   position: relative;
 }
-.experience-and-education .experience-and-education-grids .education-grid .card h1 {
-  display: block;
-  margin-bottom: 10px;
-  font-weight: 500;
-  font-size: 1.25rem;
-  line-height: 28px;
-}
-.experience-and-education .experience-and-education-grids .education-grid .card .second {
-  margin-bottom: 4px;
-}
-.experience-and-education .experience-and-education-grids .education-grid .card .second p {
-  display: inline-block;
-  margin-left: 16px;
-  font-size: 13px;
-  font-weight: 400;
-  margin-bottom: 4px;
-}
-.experience-and-education .experience-and-education-grids .education-grid .card .second p i {
-  margin-left: 5px;
-}
-.experience-and-education .experience-and-education-grids .education-grid .card .second article {
-  display: block;
-  margin-top: 4px;
-  font-size: 15px;
-  font-weight: 400;
-  line-height: 30px;
-}
-.experience-and-education .experience-and-education-grids .education-grid .card .second span {
-  background-color: #5cbe26;
-  color: #eeeeee;
-  border-radius: 3px;
-  padding-right: 5px;
-  padding-left: 5px;
-  vertical-align: baseline;
-}
-.experience-and-education .experience-and-education-grids .education-grid .card:before {
+#about .experience-and-education .experience-and-education-grids .education-grid .card:before {
   content: "";
   right: -37px;
   display: block;
@@ -651,10 +505,10 @@ a, a i.fa, a img, .button, .btn {
   border-radius: 50%;
   z-index: 999;
 }
-.experience-and-education .experience-and-education-grids .education-grid .card:hover:before {
+#about .experience-and-education .experience-and-education-grids .education-grid .card:hover:before {
   background-color: #5cbe26;
 }
-.experience-and-education .experience-and-education-grids .education-grid .card:after {
+#about .experience-and-education .experience-and-education-grids .education-grid .card:after {
   content: "";
   display: block;
   position: absolute;
@@ -665,13 +519,48 @@ a, a i.fa, a img, .button, .btn {
   background-color: #666666;
   z-index: 0;
 }
-.experience-and-education .experience-and-education-grids .education-grid .last-one {
-  margin-bottom: 0;
-}
-.experience-and-education .experience-and-education-grids .education-grid .card:hover {
+#about .experience-and-education .experience-and-education-grids .education-grid .card:hover {
   box-shadow: 0 0 10px rgba(33, 33, 33, 0.2);
 }
-.experience-and-education .experience-and-education-grids .experience-grid {
+#about .experience-and-education .experience-and-education-grids .education-grid .card .last-one {
+  margin-bottom: 0;
+}
+#about .experience-and-education .experience-and-education-grids .education-grid .card h1 {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: 500;
+  font-size: 1.25rem;
+  line-height: 28px;
+}
+#about .experience-and-education .experience-and-education-grids .education-grid .card .second {
+  margin-bottom: 4px;
+}
+#about .experience-and-education .experience-and-education-grids .education-grid .card .second p {
+  display: inline-block;
+  margin-left: 16px;
+  font-size: 13px;
+  font-weight: 400;
+  margin-bottom: 4px;
+}
+#about .experience-and-education .experience-and-education-grids .education-grid .card .second p i {
+  margin-left: 5px;
+}
+#about .experience-and-education .experience-and-education-grids .education-grid .card .second article {
+  display: block;
+  margin-top: 4px;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 30px;
+}
+#about .experience-and-education .experience-and-education-grids .education-grid .card .second span {
+  background-color: #5cbe26;
+  color: #eeeeee;
+  border-radius: 3px;
+  padding-right: 5px;
+  padding-left: 5px;
+  vertical-align: baseline;
+}
+#about .experience-and-education .experience-and-education-grids .experience-grid {
   border-right: 2px solid #dddddd;
   display: grid;
   align-items: center;
@@ -680,12 +569,12 @@ a, a i.fa, a img, .button, .btn {
   padding-left: 15px;
   padding-right: 24px;
 }
-.experience-and-education .experience-and-education-grids .experience-grid .header-box {
+#about .experience-and-education .experience-and-education-grids .experience-grid .header-box {
   margin-bottom: 24px;
   font-size: 1.5rem;
   text-align: center;
 }
-.experience-and-education .experience-and-education-grids .experience-grid .card {
+#about .experience-and-education .experience-and-education-grids .experience-grid .card {
   position: relative;
   alignment: center;
   font-weight: 400;
@@ -699,43 +588,7 @@ a, a i.fa, a img, .button, .btn {
   margin-bottom: 24px;
   transition: all 0.3s ease;
 }
-.experience-and-education .experience-and-education-grids .experience-grid .card h1 {
-  display: block;
-  margin-bottom: 10px;
-  font-weight: 500;
-  font-size: 1.25rem;
-  line-height: 28px;
-}
-.experience-and-education .experience-and-education-grids .experience-grid .card .second {
-  margin-bottom: 4px;
-}
-.experience-and-education .experience-and-education-grids .experience-grid .card .second p {
-  display: inline-block;
-  margin-left: 16px;
-  font-size: 13px;
-  font-weight: 400;
-  margin-bottom: 4px;
-}
-.experience-and-education .experience-and-education-grids .experience-grid .card .second p i {
-  margin-left: 5px;
-}
-.experience-and-education .experience-and-education-grids .experience-grid .card .second article {
-  display: block;
-  margin-top: 4px;
-  font-size: 15px;
-  font-weight: 400;
-  line-height: 30px;
-}
-.experience-and-education .experience-and-education-grids .experience-grid .card .second span {
-  background-color: #5cbe26;
-  color: white;
-  border-radius: 4px;
-  padding-right: 5px;
-  padding-left: 5px;
-  margin-right: 5px;
-  vertical-align: baseline;
-}
-.experience-and-education .experience-and-education-grids .experience-grid .card:before {
+#about .experience-and-education .experience-and-education-grids .experience-grid .card:before {
   content: "";
   left: 104.3%;
   display: block;
@@ -747,10 +600,10 @@ a, a i.fa, a img, .button, .btn {
   border-radius: 50%;
   z-index: 999;
 }
-.experience-and-education .experience-and-education-grids .experience-grid .card:hover:before {
+#about .experience-and-education .experience-and-education-grids .experience-grid .card:hover:before {
   background-color: #5cbe26;
 }
-.experience-and-education .experience-and-education-grids .experience-grid .card:after {
+#about .experience-and-education .experience-and-education-grids .experience-grid .card:after {
   content: "";
   display: block;
   position: absolute;
@@ -761,14 +614,46 @@ a, a i.fa, a img, .button, .btn {
   background-color: #666666;
   z-index: 0;
 }
-.experience-and-education .experience-and-education-grids .experience-grid .last-one {
-  margin-bottom: 0;
-}
-.experience-and-education .experience-and-education-grids .experience-grid .card:hover {
+#about .experience-and-education .experience-and-education-grids .experience-grid .card .card:hover {
   box-shadow: 0 0 10px rgba(33, 33, 33, 0.2);
 }
-
-.skills .header {
+#about .experience-and-education .experience-and-education-grids .experience-grid .card h1 {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: 500;
+  font-size: 1.25rem;
+  line-height: 28px;
+}
+#about .experience-and-education .experience-and-education-grids .experience-grid .card .second {
+  margin-bottom: 4px;
+}
+#about .experience-and-education .experience-and-education-grids .experience-grid .card .second p {
+  display: inline-block;
+  margin-left: 16px;
+  font-size: 13px;
+  font-weight: 400;
+  margin-bottom: 4px;
+}
+#about .experience-and-education .experience-and-education-grids .experience-grid .card .second p i {
+  margin-left: 5px;
+}
+#about .experience-and-education .experience-and-education-grids .experience-grid .card .second article {
+  display: block;
+  margin-top: 4px;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 30px;
+}
+#about .experience-and-education .experience-and-education-grids .experience-grid .card .second span {
+  background-color: #5cbe26;
+  color: white;
+  border-radius: 4px;
+  padding-right: 5px;
+  padding-left: 5px;
+  margin-right: 5px;
+  vertical-align: baseline;
+}
+#about .skills .header {
   margin-bottom: 48px;
   display: block;
   text-align: center;
@@ -777,7 +662,7 @@ a, a i.fa, a img, .button, .btn {
   font-size: 1.75rem;
   font-weight: 500;
 }
-.skills .main-grid {
+#about .skills .main-grid {
   display: grid;
   align-items: center;
   width: 75%;
@@ -785,13 +670,13 @@ a, a i.fa, a img, .button, .btn {
   grid-template-columns: 1fr 1fr;
   margin-bottom: 48px;
 }
-.skills .main-grid .first-column, .skills .main-grid .second-column {
+#about .skills .main-grid .first-column, #about .skills .main-grid .second-column {
   padding: 0 15px;
   display: grid;
   align-items: center;
   grid-template-rows: repeat(4, 1fr);
 }
-.skills .main-grid .first-column .item p, .skills .main-grid .second-column .item p {
+#about .skills .main-grid .first-column .item p, #about .skills .main-grid .second-column .item p {
   margin: 0 0 12px 0;
   line-height: normal;
   opacity: 1;
@@ -799,14 +684,14 @@ a, a i.fa, a img, .button, .btn {
   font-size: 14px;
   display: block;
 }
-.skills .main-grid .first-column .item .percentage, .skills .main-grid .second-column .item .percentage {
+#about .skills .main-grid .first-column .item .percentage, #about .skills .main-grid .second-column .item .percentage {
   float: left;
   clear: both;
   font-weight: 600;
   margin-top: -38px;
   display: block;
 }
-.skills .main-grid .first-column .item .bar, .skills .main-grid .second-column .item .bar {
+#about .skills .main-grid .first-column .item .bar, #about .skills .main-grid .second-column .item .bar {
   width: 100%;
   display: block;
   background-color: #d9d9d9;
@@ -819,85 +704,85 @@ a, a i.fa, a img, .button, .btn {
   height: 10px;
   margin-bottom: 10px;
 }
-.skills .main-grid .first-column .item .bar .progress-1, .skills .main-grid .second-column .item .bar .progress-1 {
+#about .skills .main-grid .first-column .item .bar .progress-1, #about .skills .main-grid .second-column .item .bar .progress-1 {
   height: 10px;
   width: 95%;
   background-color: #5cbe26;
   border-radius: 3px;
   display: block;
-}
-.skills .main-grid .first-column .item .bar .animation-activation-1, .skills .main-grid .second-column .item .bar .animation-activation-1 {
   animation-name: first-bar-animation;
   animation-duration: 2s;
 }
-.skills .main-grid .first-column .item .bar .progress-2, .skills .main-grid .second-column .item .bar .progress-2 {
+#about .skills .main-grid .first-column .item .bar .progress-2, #about .skills .main-grid .second-column .item .bar .progress-2 {
   height: 10px;
   width: 90%;
   background-color: #5cbe26;
   border-radius: 3px;
   display: block;
-}
-.skills .main-grid .first-column .item .bar .animation-activation-2, .skills .main-grid .second-column .item .bar .animation-activation-2 {
   animation-name: second-bar-animation;
   animation-duration: 2s;
 }
-.skills .main-grid .first-column .item .bar .progress-3, .skills .main-grid .second-column .item .bar .progress-3 {
+#about .skills .main-grid .first-column .item .bar .progress-3, #about .skills .main-grid .second-column .item .bar .progress-3 {
   height: 10px;
   width: 65%;
   background-color: #5cbe26;
   border-radius: 3px;
   display: block;
-}
-.skills .main-grid .first-column .item .bar .animation-activation-3, .skills .main-grid .second-column .item .bar .animation-activation-3 {
   animation-name: third-bar-animation;
   animation-duration: 2s;
 }
-.skills .main-grid .first-column .item .bar .progress-4, .skills .main-grid .second-column .item .bar .progress-4 {
+#about .skills .main-grid .first-column .item .bar .progress-4, #about .skills .main-grid .second-column .item .bar .progress-4 {
   height: 10px;
   width: 75%;
   background-color: #5cbe26;
   border-radius: 3px;
   display: block;
-}
-.skills .main-grid .first-column .item .bar .animation-activation-4, .skills .main-grid .second-column .item .bar .animation-activation-4 {
   animation-name: fourth-bar-animation;
   animation-duration: 2s;
 }
-.skills .main-grid .first-column .item .bar .progress-5, .skills .main-grid .second-column .item .bar .progress-5 {
+#about .skills .main-grid .first-column .item .bar .progress-5, #about .skills .main-grid .second-column .item .bar .progress-5 {
   height: 10px;
   width: 95%;
   background-color: #5cbe26;
   border-radius: 3px;
   display: block;
+  animation-name: first-bar-animation;
+  animation-duration: 2s;
 }
-.skills .main-grid .first-column .item .bar .progress-6, .skills .main-grid .second-column .item .bar .progress-6 {
+#about .skills .main-grid .first-column .item .bar .progress-6, #about .skills .main-grid .second-column .item .bar .progress-6 {
   height: 10px;
   width: 90%;
   background-color: #5cbe26;
   border-radius: 3px;
   display: block;
+  animation-name: second-bar-animation;
+  animation-duration: 2s;
 }
-.skills .main-grid .first-column .item .bar .progress-7, .skills .main-grid .second-column .item .bar .progress-7 {
+#about .skills .main-grid .first-column .item .bar .progress-7, #about .skills .main-grid .second-column .item .bar .progress-7 {
   height: 10px;
   width: 65%;
   background-color: #5cbe26;
   border-radius: 3px;
   display: block;
+  animation-name: third-bar-animation;
+  animation-duration: 2s;
 }
-.skills .main-grid .first-column .item .bar .progress-8, .skills .main-grid .second-column .item .bar .progress-8 {
+#about .skills .main-grid .first-column .item .bar .progress-8, #about .skills .main-grid .second-column .item .bar .progress-8 {
   height: 10px;
   width: 75%;
   background-color: #5cbe26;
   border-radius: 3px;
   display: block;
+  animation-name: fourth-bar-animation;
+  animation-duration: 2s;
 }
-.skills .main-grid .second-column {
+#about .skills .main-grid .second-column {
   padding: 0 15px;
   display: grid;
   align-items: center;
   grid-template-rows: repeat(4, 1fr);
 }
-.skills .main-grid .second-column .item p {
+#about .skills .main-grid .second-column .item p {
   margin: 0 0 12px 0;
   line-height: normal;
   opacity: 1;
@@ -905,14 +790,13 @@ a, a i.fa, a img, .button, .btn {
   font-size: 14px;
   display: block;
 }
-.skills .main-grid .second-column .item .percentage {
+#about .skills .main-grid .second-column .item .percentage {
   float: left;
   clear: both;
   font-weight: 600;
   margin-top: -45px;
 }
-
-.counter-cards {
+#about .counter-cards {
   display: grid;
   align-items: center;
   width: 75%;
@@ -920,7 +804,7 @@ a, a i.fa, a img, .button, .btn {
   grid-template-columns: 1fr 1fr 1fr 1fr;
   alignment: center;
 }
-.counter-cards .counter-card {
+#about .counter-cards .card {
   position: relative;
   display: block;
   margin-top: 30px;
@@ -932,7 +816,7 @@ a, a i.fa, a img, .button, .btn {
   margin-right: 15px;
   transition: 0.3s;
 }
-.counter-cards .counter-card .header {
+#about .counter-cards .card .header {
   display: block;
   text-align: left;
   color: #5cbe26;
@@ -941,13 +825,13 @@ a, a i.fa, a img, .button, .btn {
   border-bottom: 2px solid rgba(102, 102, 102, 0.4);
   margin: 10px;
 }
-.counter-cards .counter-card .line {
+#about .counter-cards .card .line {
   display: block;
 }
-.counter-cards .counter-card .line hr {
+#about .counter-cards .card .line hr {
   color: #666666;
 }
-.counter-cards .counter-card .card-title {
+#about .counter-cards .card .card-title {
   display: block;
   text-align: right;
   font-size: 1.5rem;
@@ -955,12 +839,11 @@ a, a i.fa, a img, .button, .btn {
   color: #666666;
   margin-bottom: 10px;
 }
-.counter-cards .card:hover {
+#about .counter-cards .card:hover {
   -webkit-transform: translateY(-5px);
   transform: translateY(-5px);
   box-shadow: 0 0 10px rgba(33, 33, 33, 0.2);
 }
-
 @keyframes first-bar-animation {
   from {
     width: 0;
@@ -993,7 +876,8 @@ a, a i.fa, a img, .button, .btn {
     width: 75%;
   }
 }
-/*************************************services section*******************************/
+
+/* M Y - S E R V I C E S */
 .services {
   display: block;
   padding-bottom: 70px;
@@ -1074,6 +958,13 @@ a, a i.fa, a img, .button, .btn {
   text-align: center;
   background-color: transparent;
 }
+.services .grid-section .card:hover {
+  box-shadow: 0 0 10px rgba(33, 33, 33, 0.2);
+  -webkit-transform: translateY(-8px);
+  transform: translateY(-8px);
+  transition: 0.3s;
+  background-color: #ffffff;
+}
 .services .grid-section .card i {
   color: #5cbe26;
   font-size: 50px;
@@ -1087,13 +978,6 @@ a, a i.fa, a img, .button, .btn {
 .services .grid-section .card .description {
   font-size: 15px;
   line-height: 30px;
-}
-.services .grid-section .card:hover {
-  box-shadow: 0 0 10px rgba(33, 33, 33, 0.2);
-  -webkit-transform: translateY(-8px);
-  transform: translateY(-8px);
-  transition: 0.3s;
-  background-color: #ffffff;
 }
 .services .testimonial {
   display: grid;
@@ -1245,7 +1129,7 @@ a, a i.fa, a img, .button, .btn {
   -webkit-transition: all 250ms ease-out 0s;
 }
 
-/***************************my portfolio section**********************************/
+/* MY - P O R T F O L I O */
 .portfolio {
   overflow: hidden;
   display: block;
@@ -1366,14 +1250,15 @@ a, a i.fa, a img, .button, .btn {
   border-radius: 5px;
   overflow: hidden;
   justify-content: center;
-  position: relative;
 }
-.portfolio .grid-section-portfolio .card-p .shows-on-hover {
-  padding-top: 10%;
-  top: 5px;
-  left: 5px;
-  bottom: 12px;
-  right: 26px;
+.portfolio .grid-section-portfolio .card-p:hover img {
+  transition: 0.5s;
+  filter: brightness(10%);
+}
+.portfolio .grid-section-portfolio .card-p:hover .shows-on-hover {
+  padding: 3% 6.5%;
+  margin-top: -246px;
+  margin-right: 2px;
   position: absolute;
   z-index: 999;
   text-align: center;
@@ -1382,47 +1267,44 @@ a, a i.fa, a img, .button, .btn {
   opacity: 0;
   transform: scale(0.5);
 }
-.portfolio .grid-section-portfolio .card-p .shows-on-hover h4 {
+.portfolio .grid-section-portfolio .card-p:hover .shows-on-hover h4 {
   margin-bottom: 25px;
   font-size: 18px;
   font-weight: 600;
   color: white;
 }
-.portfolio .grid-section-portfolio .card-p .shows-on-hover p {
+.portfolio .grid-section-portfolio .card-p:hover .shows-on-hover p {
   margin-bottom: 15px;
   font-size: 15px;
   color: white;
   font-weight: 400;
 }
-.portfolio .grid-section-portfolio .card-p .shows-on-hover .icons {
+.portfolio .grid-section-portfolio .card-p:hover .shows-on-hover .icons {
   margin-top: 25px;
 }
-.portfolio .grid-section-portfolio .card-p .shows-on-hover .icons a {
+.portfolio .grid-section-portfolio .card-p:hover .shows-on-hover .icons a {
   background-color: white;
   border-radius: 50%;
   font-size: 15px;
   color: #666666;
   font-weight: 400;
   padding: 5px;
-  margin-right: 7px;
-  margin-left: 7px;
-  margin-top: 5px;
   line-height: 15px;
-  margin-bottom: 15px;
+  margin: 5px 7px 15px;
 }
-.portfolio .grid-section-portfolio .card-p .shows-on-hover .icons a i {
+.portfolio .grid-section-portfolio .card-p:hover .shows-on-hover .icons a:hover {
+  background-color: #5cbe26;
+  color: white;
+  transition-duration: 0.5s;
+}
+.portfolio .grid-section-portfolio .card-p:hover .shows-on-hover .icons a i {
   display: inline-block;
   vertical-align: middle;
   overflow: hidden;
   margin-left: 4px;
   margin-right: 4px;
 }
-.portfolio .grid-section-portfolio .card-p .shows-on-hover a:hover {
-  background-color: #5cbe26;
-  color: white;
-  transition-duration: 0.5s;
-}
-.portfolio .grid-section-portfolio .card-p img {
+.portfolio .grid-section-portfolio .card-p:hover img {
   overflow: hidden;
   alignment: center;
   width: 107%;
@@ -1430,17 +1312,13 @@ a, a i.fa, a img, .button, .btn {
   transition-duration: 0.5s;
   border-radius: 5px;
 }
-.portfolio .grid-section-portfolio .card-p:hover img {
-  transition: 0.5s;
-  filter: brightness(10%);
-}
-.portfolio .grid-section-portfolio .card-p:hover .shows-on-hover {
+.portfolio .grid-section-portfolio .card-p .shows-on-hover {
   transform: scale(0.9);
   opacity: 1;
   transition: all 0.5s ease-in-out;
 }
 
-/*************************************my blog section*******************************/
+/* M Y - B L O G */
 .blog {
   display: block;
   padding-bottom: 70px;
@@ -1527,6 +1405,11 @@ a, a i.fa, a img, .button, .btn {
   border: 1px solid #d9d9d9;
   border-radius: 5px;
 }
+.blog .grid .card:hover img {
+  transition: 0.5s;
+  transform: scale(1.1);
+  overflow: hidden;
+}
 .blog .grid .card .upper {
   overflow: hidden;
   border-bottom: 5px solid #5cbe26;
@@ -1598,13 +1481,8 @@ a, a i.fa, a img, .button, .btn {
   transition: 0.3s;
   color: #666666;
 }
-.blog .grid .card:hover img {
-  transition: 0.5s;
-  transform: scale(1.1);
-  overflow: hidden;
-}
 
-/*************************************contact-me section*******************************/
+/* C O N T A C T - M E */
 .contact-me {
   display: block;
   padding-bottom: 70px;
@@ -1678,6 +1556,14 @@ a, a i.fa, a img, .button, .btn {
   text-align: right;
   alignment: center;
 }
+.contact-me .cards:hover {
+  box-shadow: 0 0 10px 0 #e2e2e2 !important;
+}
+.contact-me .cards:hover .icon {
+  color: white;
+  background-color: #5cbe26;
+  transition: 0.3s;
+}
 .contact-me .cards .card {
   display: grid;
   align-items: center;
@@ -1748,14 +1634,6 @@ a, a i.fa, a img, .button, .btn {
   cursor: pointer;
   color: #5cbe26;
   transition-duration: 0.3s;
-}
-.contact-me .cards .card:hover {
-  box-shadow: 0 0 10px 0 #e2e2e2 !important;
-}
-.contact-me .cards .card:hover .icon {
-  color: white;
-  background-color: #5cbe26;
-  transition: 0.3s;
 }
 .contact-me .sentence p {
   display: grid;
@@ -1840,57 +1718,57 @@ a, a i.fa, a img, .button, .btn {
   transition: 0.5s;
 }
 
-/*************************************footer section*******************************/
+/* F O O T E R */
 footer {
   padding: 25px;
   text-align: center;
   background-color: #f9f9f9;
 }
 
-/*****************************************************************here comes yasmin bruhhhh*********************************************************************/
+/* R E S P O N S I V E - @ M E D I A - Q U E R I E S */
 @media screen and (max-width: 750px) {
-  /*************************home********************************/
+  /* home-responsive-750 */
   #home .btn {
     width: 203px;
     margin-right: auto;
     margin-left: auto;
   }
-  #home .my-first-grid {
+  #home .banner-grid {
     top: 20% !important;
     grid-template-columns: 1fr !important;
     grid-template-rows: 1fr 1fr;
     justify-content: center;
     right: 11% !important;
   }
-  #home .my-first-grid .text-part {
+  #home .banner-grid .text-part {
     margin-right: 0 !important;
   }
-  #home .my-first-grid .text-part .introduction-buttons {
+  #home .banner-grid .text-part .introduction-buttons {
     grid-template-columns: 1fr !important;
     grid-template-rows: 1fr 1fr !important;
   }
-  #home .my-first-grid .text-part .introduction-buttons a {
+  #home .banner-grid .text-part .introduction-buttons a {
     padding: 5px;
   }
-  #home .my-first-grid img {
+  #home .banner-grid img {
     display: block;
     margin: auto;
     align-items: center;
   }
-  #home .my-first-grid h2 {
+  #home .banner-grid h2 {
     margin-top: 10px;
     text-align: center;
   }
-  #home .my-first-grid .inner-text {
+  #home .banner-grid .inner-text {
     text-align: center;
   }
 
-  /*****************services************************************/
+  /* my-services-responsive-750 */
   .services .grid-section {
     grid-template-columns: 1fr;
   }
 
-  /****************portfolio*******************/
+  /* my-portfolio-responsive-750 */
   .portfolio .buttons-grid {
     grid-template-columns: 1fr 1fr;
   }
@@ -1898,16 +1776,22 @@ footer {
     width: 100%;
     display: inline-block;
   }
+  .portfolio .buttons-grid .grid-section-portfolio {
+    grid-template-columns: 1fr;
+  }
+  .portfolio .buttons-grid .buttons-grid {
+    grid-template-columns: 1fr;
+  }
   .portfolio .grid-section {
     grid-template-columns: 1fr;
   }
 
-  /**********************blog*********************/
+  /* my-blog-responsive-750 */
   .blog .grid {
     grid-template-columns: 1fr;
   }
 
-  /*****************************contact me************************/
+  /*contact-me-responsive-750 */
   .contact-me .cards {
     grid-template-columns: 1fr;
   }
@@ -1918,7 +1802,7 @@ footer {
     width: 50%;
   }
 
-  /****************************************about me *****************************/
+  /* about-me-responsive-750 */
   #about .about-me-grid {
     grid-template-columns: 1fr;
     grid-template-rows: auto;
@@ -1945,52 +1829,43 @@ footer {
     grid-template-columns: 1fr;
     grid-template-rows: 1fr 1fr 1fr 1fr;
   }
-
-  /******************************************************portfolio**************************************************/
-  .portfolio .grid-section-portfolio {
-    grid-template-columns: 1fr;
-  }
-  .portfolio .buttons-grid {
-    grid-template-columns: 1fr;
-  }
 }
-/******************************************************************************************************************************************************************/
 @media screen and (min-width: 750px) and (max-width: 1111px) {
-  /*******************************banner********************************/
+  /* banner-responsive-1111 */
   #home .btn {
     width: 203px;
     margin-right: auto;
     margin-left: auto !important;
   }
-  #home .my-first-grid {
+  #home .banner-grid {
     top: 20% !important;
     grid-template-columns: 1fr !important;
     grid-template-rows: 1fr 1fr;
     justify-content: center;
     right: 23% !important;
   }
-  #home .my-first-grid .text-part {
+  #home .banner-grid .text-part {
     margin-right: 0 !important;
   }
-  #home .my-first-grid img {
+  #home .banner-grid img {
     display: block;
     margin: auto;
     align-items: center;
   }
-  #home .my-first-grid h2 {
+  #home .banner-grid h2 {
     margin-top: 10px;
     text-align: center;
   }
-  #home .my-first-grid .inner-text {
+  #home .banner-grid .inner-text {
     text-align: center;
   }
 
-  /*************************services*******************/
+  /* my-services-responsive-1111 */
   .services .grid-section {
     grid-template-columns: 1fr 1fr;
   }
 
-  /****************portfolio******************************/
+  /* my-portfolio-responsive-1111 */
   .portfolio .buttons-grid {
     grid-template-columns: 1fr 1fr 1fr 1fr;
   }
@@ -2000,13 +1875,20 @@ footer {
   .portfolio .grid-section {
     grid-template-columns: 1fr 1fr;
   }
+  .portfolio .buttons-grid {
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+  }
+  .portfolio .grid-section-portfolio {
+    grid-template-columns: 1fr 1fr;
+  }
 
-  /*********************blog*******************/
+  /*my-blog-responsive-1111*/
   .blog .grid {
     grid-template-columns: 1fr 1fr;
   }
 
-  /**************************************about me******************************/
+  /*about-me-responsive-1111*/
   #about .about-me-grid {
     display: grid;
     width: 75%;
@@ -2110,7 +1992,7 @@ footer {
     grid-template-columns: 1fr 1fr;
   }
 
-  /********************contact me*****************************************************/
+  /* contact-me-responsive-1111 */
   .contact-me .cards {
     grid-template-columns: 1fr;
     grid-template-rows: 1fr 1fr 1fr;
@@ -2121,15 +2003,6 @@ footer {
   .contact-me .forms .message input {
     width: 95%;
   }
-
-  /*******************************portfolio************************************/
-  .portfolio .buttons-grid {
-    grid-template-rows: 1fr 1fr;
-    grid-template-columns: 1fr 1fr;
-  }
-  .portfolio .grid-section-portfolio {
-    grid-template-columns: 1fr 1fr;
-  }
 }
 
-/*# sourceMappingURL=style.css.map */
+/*# sourceMappingURL=newStyle.css.map */

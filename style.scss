@@ -111,6 +111,7 @@ body, html {
   margin: 0;
   color: $kamal-gray;
   -webkit-tap-highlight-color: transparent;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -130,6 +131,7 @@ a, a i.fa, a img, .button, .btn {
   display: block;
   position: fixed;
   z-index: 2;
+  transition-duration: 0.5s;
 }
 
 .navbar-icon-link {
@@ -160,7 +162,8 @@ a, a i.fa, a img, .button, .btn {
 
 .kamal-name {
   font-weight: bolder;
-  padding-right: 350px;
+  padding-right: 30%;
+  padding-left: 10%;
   font-size: 25px;
   background-color: transparent;
   color: white;
@@ -189,6 +192,15 @@ a, a i.fa, a img, .button, .btn {
 .navbar.scrolled .navbar-icon-link {
   color: $kamal-gray;
 }
+.new-navbar-style{
+  transition-duration: 0.5s;
+  z-index: 9999 !important;
+  box-shadow: 0 8px 6px -6px $kamal-gray !important;
+  background-color: white !important ;
+  a{
+    color: $kamal-gray;
+  }
+}
 
 /*************************************banner section*******************************/
 
@@ -202,7 +214,7 @@ a, a i.fa, a img, .button, .btn {
     vertical-align: middle;
     display: block;
 
-    .my-first-grid {
+    .banner-grid {
       position: absolute;
       display: grid;
       grid-template-columns: 1fr 2fr;
@@ -233,6 +245,14 @@ a, a i.fa, a img, .button, .btn {
       .im-this-and-that {
         font-size: 45px;
         font-weight: 400;
+        width: fit-content;
+        border-left: 3px solid $kamal-light-gray;
+        animation: typescript 1s infinite linear;
+        overflow: hidden;
+      }
+      @keyframes typescript {
+        0% { width: fit-content;}
+        100% {width: 0;}
       }
 
       a.social-media-icons {
@@ -261,9 +281,30 @@ a, a i.fa, a img, .button, .btn {
         vertical-align: middle;
       }
 
-      .job-title {
-        color: #5cbe26;
-        font-weight: 400;
+      .im-this-and-that {
+        span {
+          color: #5cbe26;
+          font-weight: 400;
+          font-size: 45px;
+        }
+        .kamal-name{
+          display: none;
+        }
+        .kamal-job-1{
+          display: none;
+        }
+        .kamal-job-2{
+          display: none;
+        }
+        .kamal-job-3{
+          display: none;
+        }
+      }
+      .set-display-to-none{
+        display: none !important;
+      }
+      .set-display-to-contents{
+        display: contents !important;
       }
 
       .a-short-article-about-kamal {
@@ -292,7 +333,7 @@ a, a i.fa, a img, .button, .btn {
           padding: 12px 0 12px 0;
         }
 
-        .introduction-button-more-about-me {
+        .more-about-me {
           display: flex;
           color: white;
           font-size: 15px;
@@ -338,7 +379,7 @@ a, a i.fa, a img, .button, .btn {
           }
         }
 
-        .introduction-button-portfolio {
+        .portfolio-button {
           display: flex;
           color: white;
           font-size: 15px;
@@ -488,7 +529,7 @@ a, a i.fa, a img, .button, .btn {
   display: block;
   margin-bottom: 50px;
 
-  .title-of-section {
+  .title-of-section-about-me {
     h1 {
       font-size: 50px !important;
     }
@@ -750,7 +791,6 @@ a, a i.fa, a img, .button, .btn {
       }
     }
 
-
     .experience-grid {
       border-right: 2px solid #dddddd;
       display: grid;
@@ -760,13 +800,11 @@ a, a i.fa, a img, .button, .btn {
       padding-left: 15px;
       padding-right: 24px;
 
-
       .header-box {
         margin-bottom: 24px;
         font-size: 1.5rem;
         text-align: center;
       }
-
 
       .card {
         position: relative;
@@ -919,6 +957,8 @@ a, a i.fa, a img, .button, .btn {
             background-color: $kamal-green;
             border-radius: 3px;
             display: block;
+          }
+          .animation-activation-1{
             animation-name: first-bar-animation;
             animation-duration: 2s;
           }
@@ -929,6 +969,9 @@ a, a i.fa, a img, .button, .btn {
             background-color: $kamal-green;
             border-radius: 3px;
             display: block;
+
+          }
+          .animation-activation-2{
             animation-name: second-bar-animation;
             animation-duration: 2s;
           }
@@ -939,9 +982,12 @@ a, a i.fa, a img, .button, .btn {
             background-color: $kamal-green;
             border-radius: 3px;
             display: block;
+
+          }
+          .animation-activation-3{
             animation-name: third-bar-animation;
             animation-duration: 2s;
-          }
+          };
 
           .progress-4 {
             height: 10px;
@@ -949,6 +995,8 @@ a, a i.fa, a img, .button, .btn {
             background-color: $kamal-green;
             border-radius: 3px;
             display: block;
+          }
+          .animation-activation-4{
             animation-name: fourth-bar-animation;
             animation-duration: 2s;
           }
@@ -959,8 +1007,7 @@ a, a i.fa, a img, .button, .btn {
             background-color: $kamal-green;
             border-radius: 3px;
             display: block;
-            animation-name: first-bar-animation;
-            animation-duration: 2s;
+
           }
 
           .progress-6 {
@@ -969,8 +1016,7 @@ a, a i.fa, a img, .button, .btn {
             background-color: $kamal-green;
             border-radius: 3px;
             display: block;
-            animation-name: second-bar-animation;
-            animation-duration: 2s;
+
           }
 
           .progress-7 {
@@ -979,8 +1025,6 @@ a, a i.fa, a img, .button, .btn {
             background-color: $kamal-green;
             border-radius: 3px;
             display: block;
-            animation-name: third-bar-animation;
-            animation-duration: 2s;
           }
 
           .progress-8 {
@@ -989,8 +1033,6 @@ a, a i.fa, a img, .button, .btn {
             background-color: $kamal-green;
             border-radius: 3px;
             display: block;
-            animation-name: fourth-bar-animation;
-            animation-duration: 2s;
           }
         }
       }
@@ -1029,7 +1071,7 @@ a, a i.fa, a img, .button, .btn {
   grid-template-columns: 1fr 1fr 1fr 1fr;
   alignment: center;
 
-  .card {
+  .counter-card {
     position: relative;
     display: block;
     margin-top: 30px;
@@ -1411,11 +1453,14 @@ a, a i.fa, a img, .button, .btn {
       border-radius: 5px;
       overflow: hidden;
       justify-content: center;
+      position: relative;
 
       .shows-on-hover {
-        padding: 3% 6.5%;
-        margin-top: -246px;
-        margin-right: 2px;
+        padding-top: 10%;
+        top: 5px;
+        left: 5px;
+        bottom: 12px;
+        right: 26px;
         position: absolute;
         z-index: 999;
         text-align: center;
