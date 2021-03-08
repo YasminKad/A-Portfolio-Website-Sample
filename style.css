@@ -145,15 +145,29 @@ a, a i.fa, a img, .button, .btn {
   font-weight: 400;
   width: fit-content;
   border-left: 3px solid #d9d9d9;
-  animation: typescript 1s infinite linear;
   overflow: hidden;
 }
-@keyframes typescript {
-  0% {
-    width: fit-content;
+#home .container .banner-grid .animation-go {
+  animation: typescriptGo 0.8s ease;
+}
+#home .container .banner-grid .animation-back {
+  animation: typescriptBack 0.8s ease;
+  animation-delay: 0.5s;
+}
+@keyframes typescriptBack {
+  from {
+    width: 100px;
   }
-  100% {
+  to {
     width: 0;
+  }
+}
+@keyframes typescriptGo {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100px;
   }
 }
 #home .container .banner-grid a.social-media-icons {
@@ -177,28 +191,14 @@ a, a i.fa, a img, .button, .btn {
   height: 300px;
   width: 300px;
 }
+#home .container .banner-grid .im-this-and-that {
+  height: 75px !important;
+}
 #home .container .banner-grid .im-this-and-that span {
   color: #5cbe26;
   font-weight: 400;
   font-size: 45px;
-}
-#home .container .banner-grid .im-this-and-that .kamal-name {
-  display: none;
-}
-#home .container .banner-grid .im-this-and-that .kamal-job-1 {
-  display: none;
-}
-#home .container .banner-grid .im-this-and-that .kamal-job-2 {
-  display: none;
-}
-#home .container .banner-grid .im-this-and-that .kamal-job-3 {
-  display: none;
-}
-#home .container .banner-grid .set-display-to-none {
-  display: none !important;
-}
-#home .container .banner-grid .set-display-to-contents {
-  display: contents !important;
+  display: contents;
 }
 #home .container .banner-grid .a-short-article-about-kamal {
   font-size: 15px;
@@ -662,7 +662,7 @@ a, a i.fa, a img, .button, .btn {
   height: 2px;
   top: 14%;
   left: 100.5%;
-  background-color: #666666;
+  background-color: #5cbe26;
   z-index: 0;
 }
 .experience-and-education .experience-and-education-grids .education-grid .last-one {
@@ -758,7 +758,7 @@ a, a i.fa, a img, .button, .btn {
   height: 2px;
   top: 13%;
   left: 100.7%;
-  background-color: #666666;
+  background-color: #5cbe26;
   z-index: 0;
 }
 .experience-and-education .experience-and-education-grids .experience-grid .last-one {
@@ -1341,9 +1341,12 @@ a, a i.fa, a img, .button, .btn {
   background-color: #5cbe26;
   transition: 0.3s;
 }
-.portfolio .buttons-grid a:focus {
-  background-color: #5cbe26;
+.portfolio .buttons-grid a:active {
+  background-color: #5cbe26 !important;
   transition: 0.3s;
+}
+.portfolio .buttons-grid .all-work {
+  background-color: #5cbe26;
 }
 .portfolio .grid-section-portfolio {
   display: grid;

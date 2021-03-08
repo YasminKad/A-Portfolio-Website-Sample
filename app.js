@@ -17,9 +17,18 @@ var bannerGrid = document.querySelector(".banner-grid");
 
 var skillsHeader = document.querySelector(".skills");
 
+const buttonAll = document.querySelector(".all-work");
+const buttonDesign = document.querySelector(".design");
+const buttonMusic = document.querySelector(".music");
+const buttonVideo = document.querySelector(".video");
 
+/* E V E N T - L I S T E N E R S */
 
-// const portfolioList = document.querySelector(".grid-section-portfolio");
+buttonAll.addEventListener('click', showAll);
+buttonDesign.addEventListener('click',  showDesign);
+buttonMusic.addEventListener('click', showMusic);
+buttonVideo.addEventListener('click', showVideo);
+
 /* F U N C T I O N S */
 const symbolMap = ["۰", "۱", "۲", "۳", "۴", "۵", "۶", "۷", "۸", "۹"];
 
@@ -36,7 +45,6 @@ function customerCard() {
         isCountingC = false;
     }
 }
-
 
 function prizesCard() {
     counterp++;
@@ -68,7 +76,6 @@ function studentsCard() {
         isCountingS = false;
     }
 }
-
 
 window.onscroll = function () {
 
@@ -114,19 +121,91 @@ window.onscroll = function () {
         students = setInterval(studentsCard, 60);
     }
 }
-function kamalJobs(){
+
+var speed = 150;
+function typeWriterGenerator(){
+    var i = 0;
+    return function typeWriter(txt){
+        if( i < txt.length){
+            document.getElementById("kamalsname").innerHTML+= txt.charAt(i);
+            i++;
+            setTimeout(()=>typeWriter(txt),speed);
+        }
+        return new Promise(resolve => {
+            setTimeout(()=>{
+                resolve()
+            }, txt.length * speed + 500)
+        })
+    }
+}
+
+setTimeout(async ()=>{
+    while (true){
+        await typeWriterGenerator()("کمال");
+        document.getElementById("kamalsname").innerHTML = ''
+        await typeWriterGenerator()("یک وب دیزاینر");
+        document.getElementById("kamalsname").innerHTML = ''
+        await typeWriterGenerator()("یک توسعه دهنده وب");
+        document.getElementById("kamalsname").innerHTML = ''
+        await typeWriterGenerator()("یک لوگو دیزاینر");
+        document.getElementById("kamalsname").innerHTML = ''
+    }
+
+}, 1000)
+
+function showAll(){
+    document.querySelectorAll(".card-p").forEach(e=>(e.style.display = 'none'));
+    document.querySelectorAll(".card-p").forEach(e=>{
+        if( e.className.includes("card-p")){
+            e.style.display = 'block';
+        }
+    })
+    buttonAll.style.backgroundColor = "#5cbe26";
+    buttonDesign.style.backgroundColor = "#666666";
+    buttonMusic.style.backgroundColor = "#666666";
+    buttonVideo.style.backgroundColor = "#666666";
 
 }
 
-// function filterPortfolioCards(event) {
-//     const portfolioCards = portfolioList.childNodes;
-//     //WHAT THE FUCK IS THE PARAMETER THAT I HAVE TO PASS TO IT
-//     portfolioCards.forEach(function () {
-//         switch (event.target.className) {
-//             case "all-work":
-//                 break;
-//             case "design":
-//                 if(portfolioCards[])
-//         }
-//     }
-// }
+function showDesign(){
+    document.querySelectorAll(".card-p").forEach(e=>(e.style.display = 'none'));
+    document.querySelectorAll(".card-p").forEach(e=>{
+        if( e.className.includes("design-card")){
+            e.style.display = 'block';
+        }
+    })
+    buttonDesign.style.backgroundColor = "#5cbe26";
+    buttonAll.style.backgroundColor = "#666666";
+    buttonMusic.style.backgroundColor = "#666666";
+    buttonVideo.style.backgroundColor = "#666666";
+
+}
+
+function showVideo(){
+    document.querySelectorAll(".card-p").forEach(e=>(e.style.display = 'none'));
+    document.querySelectorAll(".card-p").forEach(e=>{
+        if( e.className.includes("video-card")){
+            e.style.display = 'block';
+        }
+    })
+    buttonVideo.style.backgroundColor = "#5cbe26";
+    buttonDesign.style.backgroundColor = "#666666";
+    buttonMusic.style.backgroundColor = "#666666";
+    buttonAll.style.backgroundColor = "#666666";
+}
+
+function showMusic(){
+    document.querySelectorAll(".card-p").forEach(e=>(e.style.display = 'none'));
+    document.querySelectorAll(".card-p").forEach(e=>{
+        if( e.className.includes("music-card")){
+            e.style.display = 'block';
+        }
+    })
+    buttonMusic.style.backgroundColor = "#5cbe26";
+    buttonDesign.style.backgroundColor = "#666666";
+    buttonAll.style.backgroundColor = "#666666";
+    buttonVideo.style.backgroundColor = "#666666";
+
+}
+
+
