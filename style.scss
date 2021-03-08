@@ -123,8 +123,81 @@ a, a i.fa, a img, .button, .btn {
 }
 
 /*************************************navbar section*******************************/
+
+.navbar-full-page {
+  display: none;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 9999999;
+
+  .navbar-responsive {
+    display: block;
+    background-color: white;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: -100%;
+    width: 300px;
+    transition: all 0.7s;
+
+    a:not(.close-navbar) {
+      display: block;
+      border-top: 1px solid $kamal-light-gray;
+      padding: 8px 15px 8px 30px;
+      color: $kamal-gray;
+      font-size: 14px;
+      font-weight: 500;
+      transition-duration: 0.3s;
+
+      i {
+        padding-left: 10px;
+        padding-right: 10px;
+      }
+    }
+
+    .close-navbar {
+      font-weight: 500;
+      padding: 10px 15px;
+      font-size: 14px;
+      display: block;
+      transition-duration: 0.3s;
+      text-align: left;
+
+      i {
+        padding-left: 10px;
+        padding-right: 10px;
+      }
+    }
+
+    a:hover {
+      color: #5cbe26;
+
+      a {
+        transition-duration: 0.3s;
+      }
+
+      i {
+        transition-duration: 1s;
+      }
+    }
+
+    .go-green {
+      color: $kamal-green !important;
+    }
+  }
+
+  .navbar-width-change {
+    right: 0;
+  }
+}
+
 .navbar {
   padding-top: 10px;
+
   padding-bottom: 10px;
   width: 100%;
   background-color: transparent;
@@ -132,6 +205,48 @@ a, a i.fa, a img, .button, .btn {
   position: fixed;
   z-index: 2;
   transition-duration: 0.5s;
+  margin: auto;
+
+
+  .bars {
+    display: none;
+    background-color: transparent;
+    border: 0;
+  }
+
+  a {
+    display: initial !important;
+    position: absolute;
+  }
+
+  //  .bars{
+  //display: none;
+  //  }
+
+  .i-home {
+    right: 54%;
+  }
+
+  .i-about {
+    right: 60%;
+  }
+
+  .i-services {
+    right: 68%;
+  }
+
+  .i-portfolio {
+    right: 76%;
+  }
+
+  .i-blog {
+    right: 83.5%;
+  }
+
+  .i-contact {
+    right: 90%;
+    padding-left: 0 !important;
+  }
 }
 
 .navbar-icon-link {
@@ -162,43 +277,34 @@ a, a i.fa, a img, .button, .btn {
 
 .kamal-name {
   font-weight: bolder;
-  padding-right: 30%;
-  padding-left: 10%;
+  right: 30%;
+  left: 10%;
   font-size: 25px;
   background-color: transparent;
   color: white;
-
+  position: absolute;
+  display: inline-block;
 }
 
-.space-in-navbar {
-  padding-left: 365px;
-  background-color: transparent;
-}
-
-.navbar .icon {
+.bars {
   display: none;
 }
 
-.navbar.responsive a {
-  float: none;
-  display: block;
-  text-align: right;
+.navbar .icon {
+  display: none !important;
 }
 
-.navbar.scrolled {
-  background-color: #fff !important;
-  transition: background-color 200ms linear;
-}
-
-.navbar.scrolled .navbar-icon-link {
-  color: $kamal-gray;
-}
 
 .new-navbar-style {
   transition-duration: 0.5s;
   z-index: 9999 !important;
   box-shadow: 0 8px 6px -6px $kamal-gray !important;
   background-color: white !important;
+  height: 40px;
+
+  .bars {
+    color: $kamal-gray;
+  }
 
   a {
     color: $kamal-gray;
@@ -252,12 +358,14 @@ a, a i.fa, a img, .button, .btn {
         border-left: 3px solid $kamal-light-gray;
         overflow: hidden;
       }
-      .animation-go{
+
+      .animation-go {
         animation: typescriptGo 0.8s ease;
         //animation-duration: 800ms;
         //animation-delay: 0.5s;
       }
-      .animation-back{
+
+      .animation-back {
         animation: typescriptBack 0.8s ease;
         //animation-duration: 800ms;
         animation-delay: 0.5s;
@@ -308,6 +416,7 @@ a, a i.fa, a img, .button, .btn {
 
       .im-this-and-that {
         height: 75px !important;
+
         span {
           color: #5cbe26;
           font-weight: 400;
@@ -316,1956 +425,2027 @@ a, a i.fa, a img, .button, .btn {
         }
       }
 
-        .a-short-article-about-kamal {
-          font-size: 15px;
-          line-height: 30px;
-          font-weight: 400;
-        }
-
-        .social-media-icons {
-          z-index: 1;
-          margin-left: 20px;
-          font-size: 20px;
-        }
-
-        .social-media-icons:hover {
-          color: $kamal-green;
-        }
-
-        .introduction-buttons {
-          display: grid;
-          grid-template-columns: 1fr 1fr;
-          width: 100%;
-
-          .button {
-            overflow: visible;
-            padding: 12px 0 12px 0;
-          }
-
-          .more-about-me {
-            display: flex;
-            color: white;
-            font-size: 15px;
-            position: relative;
-            padding: 12px 34px 12px 34px;
-            border: none;
-            overflow: hidden;
-            border-radius: 26px;
-            font-weight: 500;
-            background-color: #666666;
-            text-align: center;
-
-            span {
-              position: absolute;
-              left: 50%;
-              top: 50%;
-              width: 100%;
-              z-index: 2;
-              transform: translate(-50%, -50%);
-            }
-
-            &::before {
-              content: "";
-              position: absolute;
-              top: 0;
-              height: 102%;
-              left: -25%;
-              width: 0;
-              transform: skew(-22deg);
-              transition-duration: 0.6s;
-              z-index: 1;
-              background: #444444;
-            }
-
-
-            &:hover::before {
-              width: 150%;
-            }
-
-            i {
-              padding-left: 6px;
-              padding-top: 5px;
-              padding-bottom: 6px;
-            }
-          }
-
-          .portfolio-button {
-            display: flex;
-            color: white;
-            font-size: 15px;
-            position: relative;
-            padding: 12px 34px 12px 34px;
-            border: none;
-            overflow: hidden;
-            border-radius: 26px;
-            font-weight: 500;
-            background-color: $kamal-green;
-            justify-content: center;
-
-            span {
-              z-index: 2;
-            }
-
-            &::before {
-              content: "";
-              position: absolute;
-              top: 0;
-              height: 102%;
-              left: -25%;
-              width: 0;
-              transform: skew(-22deg);
-              transition-duration: 0.6s;
-              z-index: 1;
-              background: #427700;
-            }
-
-
-            &:hover::before {
-              width: 150%;
-            }
-
-            i {
-              padding-left: 6px;
-              padding-top: 5px;
-              padding-bottom: 6px;
-            }
-          }
-        }
-      }
-    }
-  }
-
-  .header-bg-img {
-    background-image: url("Media/new-wallpaper.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-  }
-
-  .header-bg-img:after {
-    content: "";
-    background-color: rgba(0, 0, 0, 0.8);
-    position: absolute;
-    top: 0;
-    right: 0;
-    left: 0;
-    bottom: 0;
-  }
-
-  .jumper {
-    position: absolute;
-    bottom: 5vh;
-    left: 0;
-    right: 0;
-    margin: 0 auto;
-    z-index: 999;
-    cursor: pointer;
-    width: 30px;
-    height: 60px;
-    border: 2px solid white;
-    border-radius: 50px;
-    box-shadow: 0 1px 2px rgb(0 0 0 / 40%);
-    animation: jump 2s infinite;
-    transition: all 0.3s ease;
-
-    a {
-      background-color: red;
-      height: 300px;
-      width: 300px;
-      z-index: 999;
-
-    }
-  }
-
-  .jumper:before {
-    content: "";
-    position: absolute;
-    top: 10px;
-    left: 50%;
-    width: 8px;
-    height: 8px;
-    margin-left: -3px;
-    background-color: white;
-    border-radius: 50%;
-    animation: scroll-down 2s infinite;
-  }
-
-  @keyframes scroll-down {
-    0% {
-      transform: translateY(0);
-    }
-    40% {
-      opacity: 1;
-    }
-    100% {
-      transform: translateY(30px);
-      opacity: 0;
-    }
-
-  }
-
-  @keyframes jump {
-    0%, 20%, 50%, 80%, 100% {
-      transform: translateY(0);
-    }
-    40% {
-      transform: translateY(-30px);
-    }
-    60% {
-      transform: translateY(-15px);
-    }
-  }
-
-  @keyframes hover-button-animation {
-    0% {
-      width: 0;
-    }
-    50% {
-      width: 90px;
-    }
-    100% {
-      width: 180px;
-    }
-  }
-
-  /*************************************about me section*******************************/
-  #about {
-    background-color: white;
-    padding-top: 80px;
-    padding-bottom: 80px;
-  }
-
-  .about-me-first {
-    display: block;
-    margin-bottom: 50px;
-
-    .title-of-section-about-me {
-      h1 {
-        font-size: 50px !important;
+      .a-short-article-about-kamal {
+        font-size: 15px;
+        line-height: 30px;
+        font-weight: 400;
       }
 
-      @include headers-of-sections();
+      .social-media-icons {
+        z-index: 1;
+        margin-left: 20px;
+        font-size: 20px;
+      }
 
-    }
+      .social-media-icons:hover {
+        color: $kamal-green;
+      }
 
-    .container {
-      display: block;
-      margin-bottom: 50px;
-
-      .about-me-grid {
+      .introduction-buttons {
         display: grid;
-        width: 75%;
-        margin: auto;
         grid-template-columns: 1fr 1fr;
+        width: 100%;
 
-        .about-me-first-column {
-          padding-right: 15px;
-          padding-left: 15px;
+        .button {
+          overflow: visible;
+          padding: 12px 0 12px 0;
+        }
 
-          h1 {
-            color: $kamal-gray;
-            margin-bottom: 10px;
+        .more-about-me {
+          display: flex;
+          color: white;
+          font-size: 15px;
+          position: relative;
+          padding: 12px 34px 12px 34px;
+          border: none;
+          overflow: hidden;
+          border-radius: 26px;
+          font-weight: 500;
+          background-color: #666666;
+          text-align: center;
+
+          span {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            width: 100%;
+            z-index: 2;
+            transform: translate(-50%, -50%);
           }
 
-          .second {
-            p {
-              margin-left: 16px;
-            }
+          &::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            height: 102%;
+            left: -25%;
+            width: 0;
+            transform: skew(-22deg);
+            transition-duration: 0.6s;
+            z-index: 1;
+            background: #444444;
           }
 
-          article {
-            font-size: 15px;
-            font-weight: 400;
-            line-height: 30px;
-            color: $kamal-gray;
-            margin-bottom: 15px;
+
+          &:hover::before {
+            width: 150%;
           }
 
-          a {
-            position: relative;
-            display: inline-block;
-            color: white;
-            background-color: $kamal-green;
-            font-size: 15px;
-            font-weight: 500;
-            text-align: center;
-            line-height: 1.5;
-            padding: 12px 34px;
-            border: none;
-            overflow: hidden;
-            border-radius: 26px;
-
-            &::before {
-              content: "";
-              position: absolute;
-              top: 0;
-              height: 102%;
-              left: -25%;
-              width: 0;
-              transform: skew(-22deg);
-              transition-duration: 0.6s;
-              z-index: 1;
-              background: #427700;
-            }
-
-            span {
-              z-index: 2;
-              position: relative;
-            }
-
-
-            &:hover::before {
-              width: 150%;
-            }
-
-            i {
-              padding-left: 10px;
-            }
-          }
-
-          .social-media-icons:hover {
-            i {
-              color: $kamal-green;
-            }
+          i {
+            padding-left: 6px;
+            padding-top: 5px;
+            padding-bottom: 6px;
           }
         }
 
-        .about-me-second-column {
-          display: grid;
-          width: 100%;
-          grid-template-columns: 1fr 1fr;
-          padding-right: 15px;
-          padding-left: 15px;
-          line-height: 40px;
-          font-weight: 400;
+        .portfolio-button {
+          display: flex;
+          color: white;
+          font-size: 15px;
+          position: relative;
+          padding: 12px 34px 12px 34px;
+          border: none;
+          overflow: hidden;
+          border-radius: 26px;
+          font-weight: 500;
+          background-color: $kamal-green;
+          justify-content: center;
 
-          .inner-first-column {
-            font-size: 15px;
-            font-weight: 400;
-
-            p {
-              color: $kamal-gray;
-
-              span {
-                color: #212529;
-              }
-            }
+          span {
+            z-index: 2;
           }
 
-          .inner-second-column {
-            align-items: center;
+          &::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            height: 102%;
+            left: -25%;
+            width: 0;
+            transform: skew(-22deg);
+            transition-duration: 0.6s;
+            z-index: 1;
+            background: #427700;
+          }
 
-            p {
-              color: #666666;
 
-              span {
-                color: #212529;
-              }
+          &:hover::before {
+            width: 150%;
+          }
 
-              .becomes-green:hover {
-                color: $kamal-green;
-                transition-duration: 0.5s;
-                cursor: pointer;
-              }
-            }
+          i {
+            padding-left: 6px;
+            padding-top: 5px;
+            padding-bottom: 6px;
           }
         }
       }
     }
   }
+}
 
-  .experience-and-education {
+.header-bg-img {
+  background-image: url("Media/new-wallpaper.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.header-bg-img:after {
+  content: "";
+  background-color: rgba(0, 0, 0, 0.8);
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+}
+
+.jumper {
+  position: absolute;
+  bottom: 5vh;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  z-index: 999;
+  cursor: pointer;
+  width: 30px;
+  height: 60px;
+  border: 2px solid white;
+  border-radius: 50px;
+  box-shadow: 0 1px 2px rgb(0 0 0 / 40%);
+  animation: jump 2s infinite;
+  transition: all 0.3s ease;
+
+  a {
+    background-color: red;
+    height: 300px;
+    width: 300px;
+    z-index: 999;
+
+  }
+}
+
+.jumper:before {
+  content: "";
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  width: 8px;
+  height: 8px;
+  margin-left: -3px;
+  background-color: white;
+  border-radius: 50%;
+  animation: scroll-down 2s infinite;
+}
+
+@keyframes scroll-down {
+  0% {
+    transform: translateY(0);
+  }
+  40% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+
+}
+
+@keyframes jump {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-30px);
+  }
+  60% {
+    transform: translateY(-15px);
+  }
+}
+
+@keyframes hover-button-animation {
+  0% {
+    width: 0;
+  }
+  50% {
+    width: 90px;
+  }
+  100% {
+    width: 180px;
+  }
+}
+
+/*************************************about me section*******************************/
+#about {
+  background-color: white;
+  padding-top: 80px;
+  padding-bottom: 80px;
+}
+
+.about-me-first {
+  display: block;
+  margin-bottom: 50px;
+
+  .title-of-section-about-me {
+    h1 {
+      font-size: 50px !important;
+    }
+
+    @include headers-of-sections();
+
+  }
+
+  .container {
     display: block;
     margin-bottom: 50px;
 
-    .header {
-      margin-top: 20px;
-      @include sub-header();
-      display: block;
-    }
-
-    .experience-and-education-grids {
+    .about-me-grid {
       display: grid;
-      align-items: center;
       width: 75%;
       margin: auto;
       grid-template-columns: 1fr 1fr;
 
-      .education-grid {
-        border-right: 2px solid #6666;
-        display: grid;
-        align-items: center;
-        width: 85%;
-        grid-template-rows: 0.25fr 1fr 1fr 0.75fr;
+      .about-me-first-column {
+        padding-right: 15px;
         padding-left: 15px;
-        padding-right: 24px;
 
-        .header-box {
-          margin-bottom: 24px;
-          font-size: 1.5rem;
-          text-align: center;
-        }
-
-        .card {
-          alignment: center;
-          font-weight: 400;
-          align-items: center;
+        h1 {
           color: $kamal-gray;
-          border-radius: 3px;
-          display: block;
-          border-right: 3px solid $kamal-green;
-          box-shadow: -2px 0 0 1px #dddddd;
-          padding: 15px 25px 15px 25px;
-          margin-bottom: 24px;
-          transition: all 0.3s ease;
+          margin-bottom: 10px;
+        }
+
+        .second {
+          p {
+            margin-left: 16px;
+          }
+        }
+
+        article {
+          font-size: 15px;
+          font-weight: 400;
+          line-height: 30px;
+          color: $kamal-gray;
+          margin-bottom: 15px;
+        }
+
+        a {
           position: relative;
+          display: inline-block;
+          color: white;
+          background-color: $kamal-green;
+          font-size: 15px;
+          font-weight: 500;
+          text-align: center;
+          line-height: 1.5;
+          padding: 12px 34px;
+          border: none;
+          overflow: hidden;
+          border-radius: 26px;
 
-
-          h1 {
-            display: block;
-            margin-bottom: 10px;
-            font-weight: 500;
-            font-size: 1.25rem;
-            line-height: 28px;
+          &::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            height: 102%;
+            left: -25%;
+            width: 0;
+            transform: skew(-22deg);
+            transition-duration: 0.6s;
+            z-index: 1;
+            background: #427700;
           }
 
-          .second {
-            margin-bottom: 4px;
+          span {
+            z-index: 2;
+            position: relative;
+          }
 
-            p {
-              display: inline-block;
-              margin-left: 16px;
-              font-size: 13px;
-              font-weight: 400;
-              margin-bottom: 4px;
 
-              i {
-                margin-left: 5px;
-              }
-            }
+          &:hover::before {
+            width: 150%;
+          }
 
-            article {
-              display: block;
-              margin-top: 4px;
-              font-size: 15px;
-              font-weight: 400;
-              line-height: 30px;
-            }
-
-            span {
-              background-color: $kamal-green;
-              color: $kamal-white;
-              border-radius: 3px;
-              padding-right: 5px;
-              padding-left: 5px;
-              vertical-align: baseline;
-            }
+          i {
+            padding-left: 10px;
           }
         }
 
-        .card:before {
-          content: "";
-          right: -37px;
-          display: block;
-          position: absolute;
-          background-color: white;
-          border: 2px solid $kamal-green;
-          width: 17px;
-          height: 17px;
-          border-radius: 50%;
-          z-index: 999;
-        }
-
-        .card:hover:before {
-          background-color: $kamal-green;
-        }
-
-        .card:after {
-          content: "";
-          display: block;
-          position: absolute;
-          width: 33px;
-          height: 2px;
-          top: 14%;
-          left: 100.5%;
-          background-color: $kamal-green;
-          z-index: 0;
-        }
-
-        .last-one {
-          margin-bottom: 0;
-        }
-
-        .card:hover {
-          box-shadow: 0 0 10px rgb(33 33 33 / 20%);
+        .social-media-icons:hover {
+          i {
+            color: $kamal-green;
+          }
         }
       }
 
-      .experience-grid {
-        border-right: 2px solid #dddddd;
+      .about-me-second-column {
         display: grid;
-        align-items: center;
-        width: 85%;
-        grid-template-rows: 0.25fr 1fr 1fr 0.75fr;
+        width: 100%;
+        grid-template-columns: 1fr 1fr;
+        padding-right: 15px;
         padding-left: 15px;
-        padding-right: 24px;
+        line-height: 40px;
+        font-weight: 400;
 
-        .header-box {
-          margin-bottom: 24px;
-          font-size: 1.5rem;
-          text-align: center;
-        }
-
-        .card {
-          position: relative;
-          alignment: center;
+        .inner-first-column {
+          font-size: 15px;
           font-weight: 400;
-          align-items: center;
-          color: $kamal-gray;
-          border-radius: 3px;
-          display: block;
-          border-right: 3px solid $kamal-green;
-          box-shadow: -2px 0 0 1px #dddddd;
-          padding: 15px 25px 15px 25px;
-          margin-bottom: 24px;
-          transition: all 0.3s ease;
 
-
-          h1 {
-            display: block;
-            margin-bottom: 10px;
-            font-weight: 500;
-            font-size: 1.25rem;
-            line-height: 28px;
-          }
-
-          .second {
-            margin-bottom: 4px;
-
-            p {
-              display: inline-block;
-              margin-left: 16px;
-              font-size: 13px;
-              font-weight: 400;
-              margin-bottom: 4px;
-
-              i {
-                margin-left: 5px;
-              }
-            }
-
-            article {
-              display: block;
-              margin-top: 4px;
-              font-size: 15px;
-              font-weight: 400;
-              line-height: 30px;
-            }
+          p {
+            color: $kamal-gray;
 
             span {
-              background-color: $kamal-green;
-              color: white;
-              border-radius: 4px;
-              padding-right: 5px;
-              padding-left: 5px;
-              margin-right: 5px;
-              vertical-align: baseline;
+              color: #212529;
             }
           }
         }
 
-        .card:before {
-          content: "";
-          left: 104.3%;
-          display: block;
-          position: absolute;
-          background-color: white;
-          border: 2px solid $kamal-green;
-          width: 17px;
-          height: 17px;
-          border-radius: 50%;
-          z-index: 999;
-        }
+        .inner-second-column {
+          align-items: center;
 
-        .card:hover:before {
-          background-color: $kamal-green;
-        }
+          p {
+            color: #666666;
 
-        .card:after {
-          content: "";
-          display: block;
-          position: absolute;
-          width: 33px;
-          height: 2px;
-          top: 13%;
-          left: 100.7%;
-          background-color: $kamal-green;
-          z-index: 0;
-        }
+            span {
+              color: #212529;
+            }
 
-        .last-one {
-          margin-bottom: 0;
-        }
-
-        .card:hover {
-          box-shadow: 0 0 10px rgb(33 33 33 / 20%);
+            .becomes-green:hover {
+              color: $kamal-green;
+              transition-duration: 0.5s;
+              cursor: pointer;
+            }
+          }
         }
       }
     }
   }
+}
 
-  .skills {
-    .header {
-      @include sub-header();
-    }
+.experience-and-education {
+  display: block;
+  margin-bottom: 50px;
 
-    .main-grid {
-      @include grid-fundamentals();
-      grid-template-columns: 1fr 1fr;
-      margin-bottom: 48px;
+  .header {
+    margin-top: 20px;
+    @include sub-header();
+    display: block;
+  }
 
-      .first-column, .second-column {
-        padding: 0 15px;
-        display: grid;
+  .experience-and-education-grids {
+    display: grid;
+    align-items: center;
+    width: 75%;
+    margin: auto;
+    grid-template-columns: 1fr 1fr;
+
+    .education-grid {
+      border-right: 2px solid #6666;
+      display: grid;
+      align-items: center;
+      width: 85%;
+      grid-template-rows: 0.25fr 1fr 1fr 0.75fr;
+      padding-left: 15px;
+      padding-right: 24px;
+
+      .header-box {
+        margin-bottom: 24px;
+        font-size: 1.5rem;
+        text-align: center;
+      }
+
+      .card {
+        alignment: center;
+        font-weight: 400;
         align-items: center;
-        grid-template-rows: repeat(4, 1fr);
+        color: $kamal-gray;
+        border-radius: 3px;
+        display: block;
+        border-right: 3px solid $kamal-green;
+        box-shadow: -2px 0 0 1px #dddddd;
+        padding: 15px 25px 15px 25px;
+        margin-bottom: 24px;
+        transition: all 0.3s ease;
+        position: relative;
 
-        .item {
+
+        h1 {
+          display: block;
+          margin-bottom: 10px;
+          font-weight: 500;
+          font-size: 1.25rem;
+          line-height: 28px;
+        }
+
+        .second {
+          margin-bottom: 4px;
+
           p {
-            margin: 0 0 12px 0;
-            line-height: normal;
-            opacity: 1;
-            font-weight: 600;
-            font-size: 14px;
-            display: block;
+            display: inline-block;
+            margin-left: 16px;
+            font-size: 13px;
+            font-weight: 400;
+            margin-bottom: 4px;
+
+            i {
+              margin-left: 5px;
+            }
           }
 
-          .percentage {
-            float: left;
-            clear: both;
-            font-weight: 600;
-            margin-top: -38px;
+          article {
             display: block;
-          }
-
-          .bar {
-            width: 100%;
-            display: block;
-            background-color: $kamal-light-gray;
-            border-radius: 3px;
-            position: relative;
-            box-shadow: inset 0 1px rgb(0 0 0 /10%);
+            margin-top: 4px;
             font-size: 15px;
             font-weight: 400;
             line-height: 30px;
-            height: 10px;
-            margin-bottom: 10px;
+          }
 
-            .progress-1 {
-              height: 10px;
-              width: 95%;
-              background-color: $kamal-green;
-              border-radius: 3px;
-              display: block;
-            }
-
-            .animation-activation-1 {
-              animation-name: first-bar-animation;
-              animation-duration: 2s;
-            }
-
-            .progress-2 {
-              height: 10px;
-              width: 90%;
-              background-color: $kamal-green;
-              border-radius: 3px;
-              display: block;
-
-            }
-
-            .animation-activation-2 {
-              animation-name: second-bar-animation;
-              animation-duration: 2s;
-            }
-
-            .progress-3 {
-              height: 10px;
-              width: 65%;
-              background-color: $kamal-green;
-              border-radius: 3px;
-              display: block;
-
-            }
-
-            .animation-activation-3 {
-              animation-name: third-bar-animation;
-              animation-duration: 2s;
-            }
-          ;
-
-            .progress-4 {
-              height: 10px;
-              width: 75%;
-              background-color: $kamal-green;
-              border-radius: 3px;
-              display: block;
-            }
-
-            .animation-activation-4 {
-              animation-name: fourth-bar-animation;
-              animation-duration: 2s;
-            }
-
-            .progress-5 {
-              height: 10px;
-              width: 95%;
-              background-color: $kamal-green;
-              border-radius: 3px;
-              display: block;
-
-            }
-
-            .progress-6 {
-              height: 10px;
-              width: 90%;
-              background-color: $kamal-green;
-              border-radius: 3px;
-              display: block;
-
-            }
-
-            .progress-7 {
-              height: 10px;
-              width: 65%;
-              background-color: $kamal-green;
-              border-radius: 3px;
-              display: block;
-            }
-
-            .progress-8 {
-              height: 10px;
-              width: 75%;
-              background-color: $kamal-green;
-              border-radius: 3px;
-              display: block;
-            }
+          span {
+            background-color: $kamal-green;
+            color: $kamal-white;
+            border-radius: 3px;
+            padding-right: 5px;
+            padding-left: 5px;
+            vertical-align: baseline;
           }
         }
       }
 
-      .second-column {
-        padding: 0 15px;
-        display: grid;
-        align-items: center;
-        //width: 20%;
-        grid-template-rows: repeat(4, 1fr);
-
-        .item {
-          p {
-            margin: 0 0 12px 0;
-            line-height: normal;
-            opacity: 1;
-            font-weight: 600;
-            font-size: 14px;
-            display: block;
-          }
-
-          .percentage {
-            float: left;
-            clear: both;
-            font-weight: 600;
-            margin-top: -45px;
-          }
-        }
-      }
-    }
-  }
-
-  .counter-cards {
-    @include grid-fundamentals();
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    alignment: center;
-
-    .counter-card {
-      position: relative;
-      display: block;
-      margin-top: 30px;
-      padding: 13%;
-      box-sizing: border-box;
-      border: 1px solid $kamal-light-gray;
-      border-radius: 10px;
-      margin-left: 15px;
-      margin-right: 15px;
-      transition: 0.3s;
-
-      .header {
+      .card:before {
+        content: "";
+        right: -37px;
         display: block;
-        text-align: left;
-        color: $kamal-green;
-        font-size: 52px;
-        font-weight: bolder;
-        border-bottom: 2px solid rgba(102, 102, 102, 0.4);
-        margin: 10px;
+        position: absolute;
+        background-color: white;
+        border: 2px solid $kamal-green;
+        width: 17px;
+        height: 17px;
+        border-radius: 50%;
+        z-index: 999;
       }
 
-      .line {
+      .card:hover:before {
+        background-color: $kamal-green;
+      }
+
+      .card:after {
+        content: "";
         display: block;
-
-        hr {
-          color: $kamal-gray;
-        }
+        position: absolute;
+        width: 33px;
+        height: 2px;
+        top: 14%;
+        left: 100.5%;
+        background-color: $kamal-green;
+        z-index: 0;
       }
 
-      .card-title {
-        display: block;
-        text-align: right;
-        font-size: 1.5rem;
-        font-weight: 500;
-        color: $kamal-gray;
-        margin-bottom: 10px;
-      }
-    }
-
-    .card:hover {
-      -webkit-transform: translateY(-5px);
-      transform: translateY(-5px);
-      box-shadow: 0 0 10px rgb(33 33 33 / 20%);
-    }
-  }
-
-  @keyframes first-bar-animation {
-    from {
-      width: 0;
-    }
-    to {
-      width: 95%;
-    }
-  }
-
-  @keyframes second-bar-animation {
-    from {
-      width: 0;
-    }
-    to {
-      width: 90%;
-    }
-  }
-
-  @keyframes third-bar-animation {
-    from {
-      width: 0;
-    }
-    to {
-      width: 65%;
-    }
-  }
-
-  @keyframes fourth-bar-animation {
-    from {
-      width: 0;
-    }
-    to {
-      width: 75%;
-    }
-  }
-
-
-  /*************************************services section*******************************/
-
-  .services {
-    display: block;
-    padding-bottom: 70px;
-    padding-top: 70px;
-    background-color: $kamal-background;
-
-
-    .header {
-
-      @include headers-of-sections();
-    }
-
-    .grid-section {
-      @include grid-fundamentals();
-      grid-template-columns: 1fr 1fr 1fr;
-      color: $kamal-gray;
-
-
-      .card {
-        -webkit-transition: cubic-bezier(0.57, 0.11, 0.27, 0.9) .3s;
-        transition: cubic-bezier(0.57, 0.11, 0.27, 0.9) .3s;
-        alignment: center;
-        margin-top: 30px;
-        margin-right: 15px;
-        margin-left: 15px;
-        padding: 40px 40px 40px;
-        display: inline-block;
-        border: 1px solid $kamal-light-gray;
-        border-radius: 5px;
-        text-align: center;
-        background-color: transparent;
-
-        i {
-          color: $kamal-green;
-          font-size: 50px;
-          margin-bottom: 10px;
-        }
-
-        .title {
-          font-size: 22px;
-          font-weight: 600;
-          margin-bottom: 10px;
-        }
-
-        .description {
-          font-size: 15px;
-          line-height: 30px;
-        }
+      .last-one {
+        margin-bottom: 0;
       }
 
       .card:hover {
         box-shadow: 0 0 10px rgb(33 33 33 / 20%);
-        -webkit-transform: translateY(-8px);
-        transform: translateY(-8px);
-        transition: 0.3s;
-        background-color: #ffffff;
       }
     }
 
+    .experience-grid {
+      border-right: 2px solid #dddddd;
+      display: grid;
+      align-items: center;
+      width: 85%;
+      grid-template-rows: 0.25fr 1fr 1fr 0.75fr;
+      padding-left: 15px;
+      padding-right: 24px;
 
-    .testimonial {
-      @include grid-fundamentals();
-      grid-template-columns: 1fr;
-      position: relative;
-
-      .header {
-        @include sub-header();
-        margin-top: 50px;
-      }
-
-      .previous-button {
-        position: absolute;
-        width: 40px;
-        font-size: 26px;
+      .header-box {
+        margin-bottom: 24px;
+        font-size: 1.5rem;
         text-align: center;
-        background-color: white;
-        top: 55%;
-        right: -1.7%;
-        border-radius: 50%;
-        transition: all 0.3s ease;
-        box-shadow: 0 2px 5px 0 rgb(0 0 0 / 15%);
-        z-index: 3;
-        opacity: 0;
-        color: $kamal-gray;
-        padding-top: 2px;
-        padding-left: 5px;
-
       }
 
-      .next-button {
-        position: absolute;
-        width: 40px;
-        font-size: 26px;
-        text-align: center;
-        color: $kamal-gray;
-        background-color: white;
-        top: 55%;
-        left: -1.7%;
-        border-radius: 50%;
-        transition: all 0.3s ease;
-        box-shadow: 0 2px 5px 0 rgb(0 0 0 / 15%);
-        z-index: 3;
-        opacity: 0;
-        transition-duration: 0.5s;
-        padding-right: 5px;
-        padding-top: 2px;
-
-        i {
-          padding-top: 9px;
-        }
-
-      }
-
-      .previous-button:hover, .next-button:hover {
-        transition-duration: 0.5s;
-        background-color: $kamal-green;
-
-        i {
-          color: white;
-        }
-      }
-
-      .box {
-        padding: 20px;
-        border: 3px solid;
-        border-color: $kamal-green $kamal-light-gray $kamal-light-gray $kamal-light-gray;
-        vertical-align: middle;
+      .card {
+        position: relative;
+        alignment: center;
+        font-weight: 400;
         align-items: center;
-        margin-bottom: 20px;
+        color: $kamal-gray;
+        border-radius: 3px;
+        display: block;
+        border-right: 3px solid $kamal-green;
+        box-shadow: -2px 0 0 1px #dddddd;
+        padding: 15px 25px 15px 25px;
+        margin-bottom: 24px;
+        transition: all 0.3s ease;
 
 
-        &:hover {
-
-          & .next-button {
-            opacity: 1;
-          }
-
-          & .previous-button {
-            opacity: 1;
-          }
-
-          .name {
-            background-color: white;
-            transition-duration: 0.3s;
-          }
-        }
-
-
-        .picture {
-          img {
-            height: 90px;
-            width: 90px;
-            border-radius: 40%;
-            margin: auto;
-            display: block;
-            vertical-align: middle;
-          }
-        }
-
-        .text {
-          text-align: center;
+        h1 {
           display: block;
-          vertical-align: middle;
-          margin-bottom: 17px;
-          margin-top: 17px;
-          font-style: italic;
+          margin-bottom: 10px;
+          font-weight: 500;
+          font-size: 1.25rem;
+          line-height: 28px;
+        }
+
+        .second {
+          margin-bottom: 4px;
+
+          p {
+            display: inline-block;
+            margin-left: 16px;
+            font-size: 13px;
+            font-weight: 400;
+            margin-bottom: 4px;
+
+            i {
+              margin-left: 5px;
+            }
+          }
+
+          article {
+            display: block;
+            margin-top: 4px;
+            font-size: 15px;
+            font-weight: 400;
+            line-height: 30px;
+          }
+
+          span {
+            background-color: $kamal-green;
+            color: white;
+            border-radius: 4px;
+            padding-right: 5px;
+            padding-left: 5px;
+            margin-right: 5px;
+            vertical-align: baseline;
+          }
+        }
+      }
+
+      .card:before {
+        content: "";
+        left: 104.3%;
+        display: block;
+        position: absolute;
+        background-color: white;
+        border: 2px solid $kamal-green;
+        width: 17px;
+        height: 17px;
+        border-radius: 50%;
+        z-index: 999;
+      }
+
+      .card:hover:before {
+        background-color: $kamal-green;
+      }
+
+      .card:after {
+        content: "";
+        display: block;
+        position: absolute;
+        width: 33px;
+        height: 2px;
+        top: 13%;
+        left: 100.7%;
+        background-color: $kamal-green;
+        z-index: 0;
+      }
+
+      .last-one {
+        margin-bottom: 0;
+      }
+
+      .card:hover {
+        box-shadow: 0 0 10px rgb(33 33 33 / 20%);
+      }
+    }
+  }
+}
+
+.skills {
+  .header {
+    @include sub-header();
+  }
+
+  .main-grid {
+    @include grid-fundamentals();
+    grid-template-columns: 1fr 1fr;
+    margin-bottom: 48px;
+
+    .first-column, .second-column {
+      padding: 0 15px;
+      display: grid;
+      align-items: center;
+      grid-template-rows: repeat(4, 1fr);
+
+      .item {
+        p {
+          margin: 0 0 12px 0;
+          line-height: normal;
+          opacity: 1;
+          font-weight: 600;
+          font-size: 14px;
+          display: block;
+        }
+
+        .percentage {
+          float: left;
+          clear: both;
+          font-weight: 600;
+          margin-top: -38px;
+          display: block;
+        }
+
+        .bar {
+          width: 100%;
+          display: block;
+          background-color: $kamal-light-gray;
+          border-radius: 3px;
+          position: relative;
+          box-shadow: inset 0 1px rgb(0 0 0 /10%);
+          font-size: 15px;
           font-weight: 400;
+          line-height: 30px;
+          height: 10px;
+          margin-bottom: 10px;
+
+          .progress-1 {
+            height: 10px;
+            width: 95%;
+            background-color: $kamal-green;
+            border-radius: 3px;
+            display: block;
+          }
+
+          .animation-activation-1 {
+            animation-name: first-bar-animation;
+            animation-duration: 2s;
+          }
+
+          .progress-2 {
+            height: 10px;
+            width: 90%;
+            background-color: $kamal-green;
+            border-radius: 3px;
+            display: block;
+
+          }
+
+          .animation-activation-2 {
+            animation-name: second-bar-animation;
+            animation-duration: 2s;
+          }
+
+          .progress-3 {
+            height: 10px;
+            width: 65%;
+            background-color: $kamal-green;
+            border-radius: 3px;
+            display: block;
+
+          }
+
+          .animation-activation-3 {
+            animation-name: third-bar-animation;
+            animation-duration: 2s;
+          }
+        ;
+
+          .progress-4 {
+            height: 10px;
+            width: 75%;
+            background-color: $kamal-green;
+            border-radius: 3px;
+            display: block;
+          }
+
+          .animation-activation-4 {
+            animation-name: fourth-bar-animation;
+            animation-duration: 2s;
+          }
+
+          .progress-5 {
+            height: 10px;
+            width: 95%;
+            background-color: $kamal-green;
+            border-radius: 3px;
+            display: block;
+
+          }
+
+          .progress-6 {
+            height: 10px;
+            width: 90%;
+            background-color: $kamal-green;
+            border-radius: 3px;
+            display: block;
+
+          }
+
+          .progress-7 {
+            height: 10px;
+            width: 65%;
+            background-color: $kamal-green;
+            border-radius: 3px;
+            display: block;
+          }
+
+          .progress-8 {
+            height: 10px;
+            width: 75%;
+            background-color: $kamal-green;
+            border-radius: 3px;
+            display: block;
+          }
+        }
+      }
+    }
+
+    .second-column {
+      padding: 0 15px;
+      display: grid;
+      align-items: center;
+      //width: 20%;
+      grid-template-rows: repeat(4, 1fr);
+
+      .item {
+        p {
+          margin: 0 0 12px 0;
+          line-height: normal;
+          opacity: 1;
+          font-weight: 600;
+          font-size: 14px;
+          display: block;
+        }
+
+        .percentage {
+          float: left;
+          clear: both;
+          font-weight: 600;
+          margin-top: -45px;
+        }
+      }
+    }
+  }
+}
+
+.counter-cards {
+  @include grid-fundamentals();
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  alignment: center;
+
+  .counter-card {
+    position: relative;
+    display: block;
+    margin-top: 30px;
+    padding: 13%;
+    box-sizing: border-box;
+    border: 1px solid $kamal-light-gray;
+    border-radius: 10px;
+    margin-left: 15px;
+    margin-right: 15px;
+    transition: 0.3s;
+
+    .header {
+      display: block;
+      text-align: left;
+      color: $kamal-green;
+      font-size: 52px;
+      font-weight: bolder;
+      border-bottom: 2px solid rgba(102, 102, 102, 0.4);
+      margin: 10px;
+    }
+
+    .line {
+      display: block;
+
+      hr {
+        color: $kamal-gray;
+      }
+    }
+
+    .card-title {
+      display: block;
+      text-align: right;
+      font-size: 1.5rem;
+      font-weight: 500;
+      color: $kamal-gray;
+      margin-bottom: 10px;
+    }
+  }
+
+  .card:hover {
+    -webkit-transform: translateY(-5px);
+    transform: translateY(-5px);
+    box-shadow: 0 0 10px rgb(33 33 33 / 20%);
+  }
+}
+
+@keyframes first-bar-animation {
+  from {
+    width: 0;
+  }
+  to {
+    width: 95%;
+  }
+}
+
+@keyframes second-bar-animation {
+  from {
+    width: 0;
+  }
+  to {
+    width: 90%;
+  }
+}
+
+@keyframes third-bar-animation {
+  from {
+    width: 0;
+  }
+  to {
+    width: 65%;
+  }
+}
+
+@keyframes fourth-bar-animation {
+  from {
+    width: 0;
+  }
+  to {
+    width: 75%;
+  }
+}
+
+
+/*************************************services section*******************************/
+
+.services {
+  display: block;
+  padding-bottom: 70px;
+  padding-top: 70px;
+  background-color: $kamal-background;
+
+
+  .header {
+
+    @include headers-of-sections();
+  }
+
+  .grid-section {
+    @include grid-fundamentals();
+    grid-template-columns: 1fr 1fr 1fr;
+    color: $kamal-gray;
+
+
+    .card {
+      -webkit-transition: cubic-bezier(0.57, 0.11, 0.27, 0.9) .3s;
+      transition: cubic-bezier(0.57, 0.11, 0.27, 0.9) .3s;
+      alignment: center;
+      margin-top: 30px;
+      margin-right: 15px;
+      margin-left: 15px;
+      padding: 40px 40px 40px;
+      display: inline-block;
+      border: 1px solid $kamal-light-gray;
+      border-radius: 5px;
+      text-align: center;
+      background-color: transparent;
+
+      i {
+        color: $kamal-green;
+        font-size: 50px;
+        margin-bottom: 10px;
+      }
+
+      .title {
+        font-size: 22px;
+        font-weight: 600;
+        margin-bottom: 10px;
+      }
+
+      .description {
+        font-size: 15px;
+        line-height: 30px;
+      }
+    }
+
+    .card:hover {
+      box-shadow: 0 0 10px rgb(33 33 33 / 20%);
+      -webkit-transform: translateY(-8px);
+      transform: translateY(-8px);
+      transition: 0.3s;
+      background-color: #ffffff;
+    }
+  }
+
+
+  .testimonial {
+    @include grid-fundamentals();
+    grid-template-columns: 1fr;
+    position: relative;
+
+    .header {
+      @include sub-header();
+      margin-top: 50px;
+    }
+
+    .previous-button {
+      position: absolute;
+      width: 40px;
+      font-size: 26px;
+      text-align: center;
+      background-color: white;
+      top: 55%;
+      right: -1.7%;
+      border-radius: 50%;
+      transition: all 0.3s ease;
+      box-shadow: 0 2px 5px 0 rgb(0 0 0 / 15%);
+      z-index: 3;
+      opacity: 0;
+      color: $kamal-gray;
+      padding-top: 2px;
+      padding-left: 5px;
+
+    }
+
+    .next-button {
+      position: absolute;
+      width: 40px;
+      font-size: 26px;
+      text-align: center;
+      color: $kamal-gray;
+      background-color: white;
+      top: 55%;
+      left: -1.7%;
+      border-radius: 50%;
+      transition: all 0.3s ease;
+      box-shadow: 0 2px 5px 0 rgb(0 0 0 / 15%);
+      z-index: 3;
+      opacity: 0;
+      transition-duration: 0.5s;
+      padding-right: 5px;
+      padding-top: 2px;
+
+      i {
+        padding-top: 9px;
+      }
+
+    }
+
+    .previous-button:hover, .next-button:hover {
+      transition-duration: 0.5s;
+      background-color: $kamal-green;
+
+      i {
+        color: white;
+      }
+    }
+
+    .box {
+      padding: 20px;
+      border: 3px solid;
+      border-color: $kamal-green $kamal-light-gray $kamal-light-gray $kamal-light-gray;
+      vertical-align: middle;
+      align-items: center;
+      margin-bottom: 20px;
+
+
+      &:hover {
+
+        & .next-button {
+          opacity: 1;
+        }
+
+        & .previous-button {
+          opacity: 1;
         }
 
         .name {
-          alignment: center;
-          text-align: center;
-          vertical-align: middle;
-          font-weight: 400;
-          display: block;
-          border: 1.8px solid $kamal-light-gray;
-          border-radius: 12px;
-          margin: auto;
-          width: 100px;
-          padding: 6px 30px;
+          background-color: white;
           transition-duration: 0.3s;
         }
       }
 
-      .other {
-        display: grid;
-        align-items: center;
-        height: 35px !important;
-        margin: auto;
-        grid-template-columns: 1fr 1fr 1fr;
 
-        .special {
-          font-size: 20px;
-          color: $kamal-green;
-          alignment: center;
+      .picture {
+        img {
+          height: 90px;
+          width: 90px;
+          border-radius: 40%;
           margin: auto;
-          transition-duration: 0.5s;
-          padding-left: 5px;
-          padding-right: 5px;
-
-          &:hover {
-            cursor: pointer;
-          }
-
-        }
-
-        i:not(.special) {
-          alignment: center;
+          display: block;
           vertical-align: middle;
-          display: inline-block;
-          color: #aadb8f;
-          font-size: 13px;
-          padding-top: 10px;
-          padding-bottom: 10px;
-          margin: auto;
-          transition-duration: 0.5s;
-        }
-
-        i:not(.special):hover {
-          cursor: pointer;
-          font-size: 20px;
-          transition: 0.5s;
-          padding-top: 0;
-          padding-bottom: 0;
-          -webkit-transition: all 250ms ease-out 0s;
         }
       }
-    }
-  }
 
-  /***************************my portfolio section**********************************/
-  .portfolio {
-    overflow: hidden;
-    display: block;
-    padding-bottom: 70px;
-    padding-top: 70px;
-    background-color: white;
-
-    .header {
-      h1 {
-        font-size: 50px !important;
-      }
-
-      @include headers-of-sections();
-
-    }
-
-    .buttons-grid {
-      @include grid-fundamentals();
-      grid-template-columns: 1fr 1fr 1fr 1fr;
-      display: block;
-      margin-bottom: 15px;
-      margin-top: 15px;
-      text-align: center;
-
-      a {
-        alignment: center;
-        display: inline-block;
-        @include button-style();
-        padding: 10px 28px !important;
-        margin-right: 5px;
-        margin-left: 5px;
-        background-color: $kamal-gray;
-        transition-duration: 0.7s;
-        cursor: pointer;
-      }
-
-      a:hover {
-        background-color: $kamal-green;
-        transition: 0.3s;
-      }
-
-      a:active {
-        background-color: $kamal-green !important;
-        transition: 0.3s;
-      }
-      .all-work{
-        background-color: $kamal-green;
-      }
-    }
-
-    .grid-section-portfolio {
-      @include grid-fundamentals();
-      width: 65% !important;
-      grid-template-columns: 1fr 1fr 1fr;
-      margin-bottom: 15px;
-      margin-top: 15px;
-      text-align: right;
-      alignment: center;
-
-      .card-p {
-        alignment: center;
-        margin-top: 30px;
-        padding-left: 20px;
-        padding-right: 20px;
+      .text {
+        text-align: center;
         display: block;
-        border-radius: 5px;
-        overflow: hidden;
-        justify-content: center;
-        position: relative;
-
-        .shows-on-hover {
-          padding-top: 10%;
-          top: 5px;
-          left: 5px;
-          bottom: 12px;
-          right: 26px;
-          position: absolute;
-          z-index: 999;
-          text-align: center;
-          border: dashed 1.7px white;
-          transition: all 0.7s;
-          opacity: 0;
-          transform: scale(0.5);
-
-          h4 {
-            margin-bottom: 25px;
-            font-size: 18px;
-            font-weight: 600;
-            color: white;
-          }
-
-          p {
-            margin-bottom: 15px;
-            font-size: 15px;
-            color: white;
-            font-weight: 400;
-          }
-
-          .icons {
-            margin-top: 25px;
-
-            a {
-              background-color: white;
-              border-radius: 50%;
-              font-size: 15px;
-              color: $kamal-gray;
-              font-weight: 400;
-              padding: 5px;
-              margin-right: 7px;
-              margin-left: 7px;
-              margin-top: 5px;
-              line-height: 15px;
-
-              i {
-                display: inline-block;
-                vertical-align: middle;
-                overflow: hidden;
-                margin-left: 4px;
-                margin-right: 4px;
-              }
-
-              margin-bottom: 15px;
-            }
-          }
-
-          a:hover {
-            background-color: $kamal-green;
-            color: white;
-            transition-duration: 0.5s;
-          }
-        }
-
-        img {
-          overflow: hidden;
-          alignment: center;
-          width: 107%;
-          filter: brightness(100%);
-          transition-duration: 0.5s;
-          border-radius: 5px;
-        }
+        vertical-align: middle;
+        margin-bottom: 17px;
+        margin-top: 17px;
+        font-style: italic;
+        font-weight: 400;
       }
 
-      .card-p:hover {
-        img {
-          transition: 0.5s;
-          filter: brightness(10%);
+      .name {
+        alignment: center;
+        text-align: center;
+        vertical-align: middle;
+        font-weight: 400;
+        display: block;
+        border: 1.8px solid $kamal-light-gray;
+        border-radius: 12px;
+        margin: auto;
+        width: 100px;
+        padding: 6px 30px;
+        transition-duration: 0.3s;
+      }
+    }
+
+    .other {
+      display: grid;
+      align-items: center;
+      height: 35px !important;
+      margin: auto;
+      grid-template-columns: 1fr 1fr 1fr;
+
+      .special {
+        font-size: 20px;
+        color: $kamal-green;
+        alignment: center;
+        margin: auto;
+        transition-duration: 0.5s;
+        padding-left: 5px;
+        padding-right: 5px;
+
+        &:hover {
+          cursor: pointer;
         }
 
-        .shows-on-hover {
-          transform: scale(0.9);
-          opacity: 1;
-          transition: all 0.5s ease-in-out;
-        }
+      }
+
+      i:not(.special) {
+        alignment: center;
+        vertical-align: middle;
+        display: inline-block;
+        color: #aadb8f;
+        font-size: 13px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        margin: auto;
+        transition-duration: 0.5s;
+      }
+
+      i:not(.special):hover {
+        cursor: pointer;
+        font-size: 20px;
+        transition: 0.5s;
+        padding-top: 0;
+        padding-bottom: 0;
+        -webkit-transition: all 250ms ease-out 0s;
       }
     }
   }
+}
 
-  /*************************************my blog section*******************************/
-  .blog {
-    display: block;
-    padding-bottom: 70px;
-    padding-top: 70px;
-    background-color: $kamal-background;
+/***************************my portfolio section**********************************/
+.portfolio {
+  overflow: hidden;
+  display: block;
+  padding-bottom: 70px;
+  padding-top: 70px;
+  background-color: white;
 
-
-    .title {
-      h1 {
-        font-size: 50px !important;
-      }
-
-      @include headers-of-sections();
-
+  .header {
+    h1 {
+      font-size: 50px !important;
     }
 
-    .grid {
-      @include grid-fundamentals();
-      width: 65% !important;
-      grid-template-columns: 1fr 1fr 1fr;
-      margin-bottom: 15px;
-      margin-top: 15px;
-      text-align: right;
+    @include headers-of-sections();
+
+  }
+
+  .buttons-grid {
+    @include grid-fundamentals();
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    display: block;
+    margin-bottom: 15px;
+    margin-top: 15px;
+    text-align: center;
+
+    a {
       alignment: center;
+      display: inline-block;
+      @include button-style();
+      padding: 10px 28px !important;
+      margin-right: 5px;
+      margin-left: 5px;
+      background-color: $kamal-gray;
+      transition-duration: 0.7s;
+      cursor: pointer;
+    }
 
-      .card {
-        @include grid-fundamentals();
-        width: 90% !important;
-        grid-template-rows: 1fr 1fr;
-        alignment: center;
-        margin-top: 30px;
-        display: inline-block;
-        border: 1px solid $kamal-light-gray;
-        border-radius: 5px;
+    a:hover {
+      background-color: $kamal-green;
+      transition: 0.3s;
+    }
 
-        .upper {
-          overflow: hidden;
+    a:active {
+      background-color: $kamal-green !important;
+      transition: 0.3s;
+    }
 
-          img {
-            width: 100%;
-            height: 100%;
-            display: block;
-            transition: transform .25s, visibility .25s ease-in;
-          }
+    .all-work {
+      background-color: $kamal-green;
+    }
+  }
 
-          border-bottom: 5px solid $kamal-green;
+  .grid-section-portfolio {
+    @include grid-fundamentals();
+    width: 65% !important;
+    grid-template-columns: 1fr 1fr 1fr;
+    margin-bottom: 15px;
+    margin-top: 15px;
+    text-align: right;
+    alignment: center;
+
+    .card-p {
+      alignment: center;
+      margin-top: 30px;
+      padding-left: 20px;
+      padding-right: 20px;
+      display: block;
+      border-radius: 5px;
+      overflow: hidden;
+      justify-content: center;
+      position: relative;
+
+      .shows-on-hover {
+        padding-top: 10%;
+        top: 5px;
+        left: 5px;
+        bottom: 12px;
+        right: 26px;
+        position: absolute;
+        z-index: 999;
+        text-align: center;
+        border: dashed 1.7px white;
+        transition: all 0.7s;
+        opacity: 0;
+        transform: scale(0.5);
+
+        h4 {
+          margin-bottom: 25px;
+          font-size: 18px;
+          font-weight: 600;
+          color: white;
         }
 
-        .upper:hover {
-          img {
-            filter: brightness(110%);
-            transition: 0.5s;
-            transform: scale(1.1);
-            overflow: hidden;
-            cursor: pointer;
+        p {
+          margin-bottom: 15px;
+          font-size: 15px;
+          color: white;
+          font-weight: 400;
+        }
+
+        .icons {
+          margin-top: 25px;
+
+          a {
+            background-color: white;
+            border-radius: 50%;
+            font-size: 15px;
+            color: $kamal-gray;
+            font-weight: 400;
+            padding: 5px;
+            margin-right: 7px;
+            margin-left: 7px;
+            margin-top: 5px;
+            line-height: 15px;
+
+            i {
+              display: inline-block;
+              vertical-align: middle;
+              overflow: hidden;
+              margin-left: 4px;
+              margin-right: 4px;
+            }
+
+            margin-bottom: 15px;
           }
         }
 
-        .lower {
-          padding: 24px;
-
-          h1 {
-            margin-bottom: 10px;
-            font-size: 1.25rem;
-            font-weight: 500;
-            line-height: 1.2;
-            display: block;
-          }
-
-          .date-and-comments {
-            .date {
-              margin-left: 1rem;
-              display: inline-block;
-              font-size: 13px;
-              font-weight: 400;
-              line-height: 30px;
-              text-align: right;
-
-              p {
-                i {
-                  color: $kamal-green;
-                  margin-left: 8px;
-                }
-              }
-            }
-
-            .comments {
-              margin-left: 1rem;
-              display: inline-block;
-              font-size: 13px;
-              font-weight: 400;
-              line-height: 30px;
-              text-align: right;
-
-              p {
-                i {
-                  color: $kamal-green;
-                  margin-left: 8px;
-                }
-              }
-            }
-          }
-
-          .description {
-            article {
-              margin-bottom: 0.25rem;
-              margin-top: 0.25rem;
-              display: block;
-              font-size: 15px;
-              font-weight: 400;
-              line-height: 30px;
-            }
-          }
-
-          .read-more {
-            a {
-              color: $kamal-green;
-              font-weight: 500;
-              height: 30px;
-              font-size: 15px;
-              text-align: right;
-              line-height: 30px;
-            }
-
-            a:hover {
-              transition: 0.3s;
-              color: $kamal-gray;
-            }
-          }
+        a:hover {
+          background-color: $kamal-green;
+          color: white;
+          transition-duration: 0.5s;
         }
       }
 
-      .card:hover {
+      img {
+        overflow: hidden;
+        alignment: center;
+        width: 107%;
+        filter: brightness(100%);
+        transition-duration: 0.5s;
+        border-radius: 5px;
+      }
+    }
+
+    .card-p:hover {
+      img {
+        transition: 0.5s;
+        filter: brightness(10%);
+      }
+
+      .shows-on-hover {
+        transform: scale(0.9);
+        opacity: 1;
+        transition: all 0.5s ease-in-out;
+      }
+    }
+  }
+}
+
+/*************************************my blog section*******************************/
+.blog {
+  display: block;
+  padding-bottom: 70px;
+  padding-top: 70px;
+  background-color: $kamal-background;
+
+
+  .title {
+    h1 {
+      font-size: 50px !important;
+    }
+
+    @include headers-of-sections();
+
+  }
+
+  .grid {
+    @include grid-fundamentals();
+    width: 65% !important;
+    grid-template-columns: 1fr 1fr 1fr;
+    margin-bottom: 15px;
+    margin-top: 15px;
+    text-align: right;
+    alignment: center;
+
+    .card {
+      @include grid-fundamentals();
+      width: 90% !important;
+      grid-template-rows: 1fr 1fr;
+      alignment: center;
+      margin-top: 30px;
+      display: inline-block;
+      border: 1px solid $kamal-light-gray;
+      border-radius: 5px;
+
+      .upper {
+        overflow: hidden;
+
         img {
+          width: 100%;
+          height: 100%;
+          display: block;
+          transition: transform .25s, visibility .25s ease-in;
+        }
+
+        border-bottom: 5px solid $kamal-green;
+      }
+
+      .upper:hover {
+        img {
+          filter: brightness(110%);
           transition: 0.5s;
           transform: scale(1.1);
           overflow: hidden;
-        }
-      }
-    }
-  }
-
-
-  /*************************************contact-me section*******************************/
-  .contact-me {
-    display: block;
-    padding-bottom: 70px;
-    padding-top: 70px;
-    background-color: white;
-
-    .title {
-      h1 {
-        font-size: 50px !important;
-      }
-
-      @include headers-of-sections();
-
-    }
-
-    .cards {
-      @include grid-fundamentals();
-      width: 65% !important;
-      grid-template-columns: 1fr 1fr;
-      margin-bottom: 15px;
-      margin-top: 15px;
-      text-align: right;
-      alignment: center;
-
-      .card {
-        @include grid-fundamentals();
-        width: 90% !important;
-        grid-template-columns: 1fr 1fr;
-        padding: 15px;
-        alignment: center;
-        margin-top: 30px;
-        display: flex;
-        border: 1px solid $kamal-light-gray;
-        border-radius: 5px;
-        transition-duration: 0.7s;
-
-        .icon {
           cursor: pointer;
-          margin-left: 0;
-          font-size: 18px;
-          background-color: $kamal-light-gray;
-          border-radius: 50%;
-          padding: 10px;
-          width: 40px;
-          height: 40px;
-          align-items: center;
-          justify-content: center;
-          flex-wrap: wrap;
-          display: flex;
-          color: $kamal-green;
-          transition-duration: 0.7s;
+        }
+      }
 
+      .lower {
+        padding: 24px;
+
+        h1 {
+          margin-bottom: 10px;
+          font-size: 1.25rem;
+          font-weight: 500;
+          line-height: 1.2;
+          display: block;
         }
 
-        .text {
-          margin-right: 16px;
-
-          .title-of-card {
-            margin-bottom: 10px;
-            font-size: 18px;
-            font-weight: 600;
-            color: $kamal-gray;
-            word-wrap: break-word;
-            line-height: 1.2;
-            display: block;
-            text-align: right;
-          }
-
-          .description {
-            display: block;
-            font-size: 15px;
+        .date-and-comments {
+          .date {
+            margin-left: 1rem;
+            display: inline-block;
+            font-size: 13px;
             font-weight: 400;
             line-height: 30px;
             text-align: right;
 
-            i {
-              display: inline-block;
-              font-size: 20px;
-              margin-left: 15px;
-              font-weight: 400;
-              transition-duration: 0.3s;
-            }
-
-            i:hover {
-              color: $kamal-green;
-              transition-duration: 0.3s;
-              cursor: pointer !important;
+            p {
+              i {
+                color: $kamal-green;
+                margin-left: 8px;
+              }
             }
           }
 
-          .green {
+          .comments {
+            margin-left: 1rem;
+            display: inline-block;
+            font-size: 13px;
+            font-weight: 400;
+            line-height: 30px;
+            text-align: right;
+
+            p {
+              i {
+                color: $kamal-green;
+                margin-left: 8px;
+              }
+            }
+          }
+        }
+
+        .description {
+          article {
+            margin-bottom: 0.25rem;
+            margin-top: 0.25rem;
+            display: block;
+            font-size: 15px;
+            font-weight: 400;
+            line-height: 30px;
+          }
+        }
+
+        .read-more {
+          a {
+            color: $kamal-green;
+            font-weight: 500;
+            height: 30px;
+            font-size: 15px;
+            text-align: right;
+            line-height: 30px;
+          }
+
+          a:hover {
+            transition: 0.3s;
+            color: $kamal-gray;
+          }
+        }
+      }
+    }
+
+    .card:hover {
+      img {
+        transition: 0.5s;
+        transform: scale(1.1);
+        overflow: hidden;
+      }
+    }
+  }
+}
+
+
+/*************************************contact-me section*******************************/
+.contact-me {
+  display: block;
+  padding-bottom: 70px;
+  padding-top: 70px;
+  background-color: white;
+
+  .title {
+    h1 {
+      font-size: 50px !important;
+    }
+
+    @include headers-of-sections();
+
+  }
+
+  .cards {
+    @include grid-fundamentals();
+    width: 65% !important;
+    grid-template-columns: 1fr 1fr;
+    margin-bottom: 15px;
+    margin-top: 15px;
+    text-align: right;
+    alignment: center;
+
+    .card {
+      @include grid-fundamentals();
+      width: 90% !important;
+      grid-template-columns: 1fr 1fr;
+      padding: 15px;
+      alignment: center;
+      margin-top: 30px;
+      display: flex;
+      border: 1px solid $kamal-light-gray;
+      border-radius: 5px;
+      transition-duration: 0.7s;
+
+      .icon {
+        cursor: pointer;
+        margin-left: 0;
+        font-size: 18px;
+        background-color: $kamal-light-gray;
+        border-radius: 50%;
+        padding: 10px;
+        width: 40px;
+        height: 40px;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+        display: flex;
+        color: $kamal-green;
+        transition-duration: 0.7s;
+
+      }
+
+      .text {
+        margin-right: 16px;
+
+        .title-of-card {
+          margin-bottom: 10px;
+          font-size: 18px;
+          font-weight: 600;
+          color: $kamal-gray;
+          word-wrap: break-word;
+          line-height: 1.2;
+          display: block;
+          text-align: right;
+        }
+
+        .description {
+          display: block;
+          font-size: 15px;
+          font-weight: 400;
+          line-height: 30px;
+          text-align: right;
+
+          i {
+            display: inline-block;
+            font-size: 20px;
+            margin-left: 15px;
+            font-weight: 400;
             transition-duration: 0.3s;
           }
 
-          .green:hover {
-            cursor: pointer;
+          i:hover {
             color: $kamal-green;
             transition-duration: 0.3s;
+            cursor: pointer !important;
           }
         }
-      }
 
-      .card:hover {
-        box-shadow: 0 0 10px 0 #e2e2e2 !important;
+        .green {
+          transition-duration: 0.3s;
+        }
 
-        .icon {
-          color: white;
-          background-color: $kamal-green;
-          transition: 0.3s;
+        .green:hover {
+          cursor: pointer;
+          color: $kamal-green;
+          transition-duration: 0.3s;
         }
       }
     }
 
+    .card:hover {
+      box-shadow: 0 0 10px 0 #e2e2e2 !important;
 
-    .sentence {
-      p {
-        @include grid-fundamentals();
-        grid-template-columns: 1fr;
-        margin-top: 24px;
-        margin-bottom: 16px;
-        margin-right: 18%;
-        margin-left: 18%;
-      }
-    }
-
-    .forms {
-      @include grid-fundamentals();
-      grid-template-columns: 1fr 1fr;
-      margin-bottom: 5px;
-      width: 65% !important;
-
-      .div {
-        margin: 10px;
-      }
-
-      input {
-        alignment: left;
-        padding: 5px 10px;
-        overflow: hidden;
-        vertical-align: middle;
-        margin: 5px;
-        font-size: 14px;
-        height: 50px;
-        box-shadow: none;
-        outline: none;
-        border: 1px solid $kamal-light-gray;
-        border-radius: 30px;
-        width: 95%;
-        display: inline-block;
-        line-height: 1.5;
-        background-color: #ffffff;
-        text-align: right;
-
-      }
-
-      .message {
-        input {
-          width: 195%;
-          height: 106px;
-          text-align: start;
-        }
-      }
-
-      a {
-        @include button-style();
-        margin-top: 5px;
-        display: flex;
+      .icon {
+        color: white;
         background-color: $kamal-green;
-        width: 20%;
-        text-align: center;
+        transition: 0.3s;
       }
+    }
+  }
 
-      a:hover {
-        background-color: #3d7814;
-        transition: .5s;
+
+  .sentence {
+    p {
+      @include grid-fundamentals();
+      grid-template-columns: 1fr;
+      margin-top: 24px;
+      margin-bottom: 16px;
+      margin-right: 18%;
+      margin-left: 18%;
+    }
+  }
+
+  .forms {
+    @include grid-fundamentals();
+    grid-template-columns: 1fr 1fr;
+    margin-bottom: 5px;
+    width: 65% !important;
+
+    .div {
+      margin: 10px;
+    }
+
+    input {
+      alignment: left;
+      padding: 5px 10px;
+      overflow: hidden;
+      vertical-align: middle;
+      margin: 5px;
+      font-size: 14px;
+      height: 50px;
+      box-shadow: none;
+      outline: none;
+      border: 1px solid $kamal-light-gray;
+      border-radius: 30px;
+      width: 95%;
+      display: inline-block;
+      line-height: 1.5;
+      background-color: #ffffff;
+      text-align: right;
+
+    }
+
+    .message {
+      input {
+        width: 195%;
+        height: 106px;
+        text-align: start;
       }
     }
 
     a {
       @include button-style();
+      margin-top: 5px;
+      display: flex;
       background-color: $kamal-green;
+      width: 20%;
       text-align: center;
-      margin-right: 18%;
     }
 
     a:hover {
       background-color: #3d7814;
-      transition: 0.5s;
+      transition: .5s;
     }
   }
 
-  /*************************************footer section*******************************/
-  footer {
-    padding: 25px;
+  a {
+    @include button-style();
+    background-color: $kamal-green;
     text-align: center;
-    background-color: $kamal-background;
+    margin-right: 18%;
   }
 
-  /*****************************************************************here comes yasmin bruhhhh*********************************************************************/
-  @media screen and(max-width: 750px) {
-    /*************************home********************************/
-    #home {
-      .btn {
-        width: 203px;
-        margin-right: auto;
-        margin-left: auto;
-      }
-
-      .my-first-grid {
-        top: 20% !important;
-        grid-template-columns: 1fr !important;
-        grid-template-rows: 1fr 1fr;
-        justify-content: center;
-        right: 11% !important;
-
-        .text-part {
-          margin-right: 0 !important;
-
-          .introduction-buttons {
-            grid-template-columns: 1fr !important;
-            grid-template-rows: 1fr 1fr !important;
-
-            a {
-              padding: 5px;
-            }
-          }
-        }
-
-        img {
-          display: block;
-          margin: auto;
-          align-items: center
-        }
-
-        h2 {
-          margin-top: 10px;
-          text-align: center;
-        }
-
-        .inner-text {
-          text-align: center;
-        }
-      }
-    }
-
-    /*****************services************************************/
-    .services {
-      .grid-section {
-        grid-template-columns: 1fr;
-      }
-    }
-    /****************portfolio*******************/
-    .portfolio {
-      .buttons-grid {
-        grid-template-columns: 1fr 1fr;
-
-        div {
-          width: 100%;
-          display: inline-block;
-        }
-      }
-
-      .grid-section {
-        grid-template-columns: 1fr;
-      }
-    }
-    /**********************blog*********************/
-    .blog {
-      .grid {
-        grid-template-columns: 1fr;
-      }
-    }
-    /*****************************contact me************************/
-    .contact-me {
-      .cards {
-        grid-template-columns: 1fr;
-      }
-
-      .forms {
-        grid-template-columns: 1fr;
-
-        .message {
-          width: 50%;
-        }
-      }
-    }
-    /****************************************about me *****************************/
-    #about {
-
-      .about-me-grid {
-        grid-template-columns: 1fr;
-        grid-template-rows: auto;
-
-        .about-me-second-column {
-          grid-template-columns: 1fr;
-          grid-template-rows: 0.5fr 1fr;
-        }
-      }
-
-      .experience-and-education {
-        .experience-and-education-grids {
-          grid-template-rows: 1fr 1fr;
-          grid-template-columns: 1fr;
-        }
-
-        .experience-and-education-grid {
-          .grid-main {
-            grid-template-columns: 1fr;
-          }
-
-          .counter-cards {
-            grid-template-columns: 1fr 1fr;
-          }
-        }
-      }
-
-      .skills {
-        .main-grid {
-          grid-template-columns: 1fr;
-          grid-template-rows: 1fr 1fr;
-        }
-      }
-
-      .counter-cards {
-        grid-template-columns: 1fr;
-        grid-template-rows: 1fr 1fr 1fr 1fr;
-      }
-    }
-    /******************************************************portfolio**************************************************/
-    .portfolio {
-      .grid-section-portfolio {
-        grid-template-columns: 1fr;
-      }
-
-      .buttons-grid {
-        grid-template-columns: 1fr;
-      }
-    }
+  a:hover {
+    background-color: #3d7814;
+    transition: 0.5s;
   }
+}
 
-  /******************************************************************************************************************************************************************/
-  @media screen and (min-width: 750px) and (max-width: 1111px) {
-    /*******************************banner********************************/
+/*************************************footer section*******************************/
+footer {
+  padding: 25px;
+  text-align: center;
+  background-color: $kamal-background;
+}
 
-    #home {
-      .btn {
-        width: 203px;
-        margin-right: auto;
-        margin-left: auto !important;
-      }
-
-      .my-first-grid {
-        top: 20% !important;
-        grid-template-columns: 1fr !important;
-        grid-template-rows: 1fr 1fr;
-        justify-content: center;
-        right: 23% !important;
-
-
-        .text-part {
-          margin-right: 0 !important;
-        }
-
-        img {
-          display: block;
-          margin: auto;
-          align-items: center
-        }
-
-        h2 {
-          margin-top: 10px;
-          text-align: center;
-        }
-
-        .inner-text {
-          text-align: center;
-        }
-      }
+/*****************************************************************here comes yasmin bruhhhh*********************************************************************/
+@media screen and(max-width: 750px) {
+  /*************************home********************************/
+  #home {
+    .btn {
+      width: 203px;
+      margin-right: auto;
+      margin-left: auto;
     }
 
-    /*************************services*******************/
-    .services {
-      .grid-section {
-        grid-template-columns: 1fr 1fr;
-      }
-    }
-    /****************portfolio******************************/
-    .portfolio {
-      .buttons-grid {
-        grid-template-columns: 1fr 1fr 1fr 1fr;
+    .banner-grid {
+      top: 20% !important;
+      grid-template-columns: 1fr !important;
+      grid-template-rows: 1fr 1fr;
+      justify-content: center;
+      right: 11% !important;
 
-        div {
-          display: inline-block;
+      .im-this-and-that {
+        margin: auto
+      }
+
+      .text-part {
+        margin-right: 0 !important;
+
+        .introduction-buttons {
+          grid-template-columns: 1fr !important;
+          grid-template-rows: 1fr 1fr !important;
+
+          a {
+            padding: 5px;
+          }
         }
       }
 
-      .grid-section {
-        grid-template-columns: 1fr 1fr;
-      }
-    }
-    /*********************blog*******************/
-    .blog {
-      .grid {
-        grid-template-columns: 1fr 1fr;
-      }
-    }
-    /**************************************about me******************************/
-    #about {
-      .about-me-grid {
-        display: grid;
-        width: 75%;
+      img {
+        display: block;
         margin: auto;
-        grid-template-columns: 1fr;
-        grid-template-rows: 0.7fr 1fr;
+        align-items: center
       }
 
-      .skills {
-        .main-grid {
-          grid-template-columns: 1fr;
-          grid-template-rows: 1fr 1fr;
+      h2 {
+        margin-top: 10px;
+        text-align: center;
+      }
 
+      .inner-text {
+        text-align: center;
+      }
+    }
+  }
+
+  /*****************services************************************/
+  .services {
+    .grid-section {
+      grid-template-columns: 1fr;
+    }
+  }
+  /****************portfolio*******************/
+  .portfolio {
+    .buttons-grid {
+      grid-template-columns: 1fr 1fr;
+
+      div {
+        width: 100%;
+        display: inline-block;
+      }
+    }
+
+    .grid-section {
+      grid-template-columns: 1fr;
+    }
+  }
+  /**********************blog*********************/
+  .blog {
+    .grid {
+      grid-template-columns: 1fr;
+    }
+  }
+  /*****************************contact me************************/
+  .contact-me {
+    .cards {
+      grid-template-columns: 1fr;
+    }
+
+    .forms {
+      grid-template-columns: 1fr;
+
+      .message {
+        width: 50%;
+      }
+    }
+  }
+  /****************************************about me *****************************/
+  #about {
+
+    .about-me-grid {
+      grid-template-columns: 1fr;
+      grid-template-rows: auto;
+
+      .about-me-second-column {
+        grid-template-columns: 1fr;
+        grid-template-rows: 0.5fr 1fr;
+      }
+    }
+
+    .experience-and-education {
+      .experience-and-education-grids {
+        grid-template-rows: 1fr 1fr;
+        grid-template-columns: 1fr;
+      }
+
+      .experience-and-education-grid {
+        .grid-main {
+          grid-template-columns: 1fr;
+        }
+
+        .counter-cards {
+          grid-template-columns: 1fr 1fr;
         }
       }
+    }
 
-      .experience-and-education {
-        .experience-and-education-grids {
-          grid-template-rows: 1fr 1fr;
-          grid-template-columns: 1fr;
+    .skills {
+      .main-grid {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr;
+      }
+    }
 
-          .experience-grid {
-            .card {
-              alignment: center;
-              font-weight: 400;
-              align-items: center;
-              color: $kamal-gray;
-              border-radius: 3px;
+    .counter-cards {
+      grid-template-columns: 1fr;
+      grid-template-rows: 1fr 1fr 1fr 1fr;
+    }
+  }
+  /******************************************************portfolio**************************************************/
+  .portfolio {
+    .grid-section-portfolio {
+      grid-template-columns: 1fr;
+    }
+
+    .buttons-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+  /***********8navbar**********/
+  nav {
+    height: 40px;
+
+    a:not(.bars, .kamal-name) {
+      display: none !important;
+      position: relative;
+    }
+
+    .bars {
+      display: initial !important;
+      color: white;
+      font-size: 32px;
+      position: absolute;
+      left: 10%;
+      top: 10%;
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+
+    .kamal-name {
+      padding: 0 !important;
+      right: 30%;
+      position: absolute;
+      display: initial;
+      top: 10%;
+    }
+  }
+}
+
+
+/******************************************************************************************************************************************************************/
+@media screen and (min-width: 750px) and (max-width: 1111px) {
+  /*******************************banner********************************/
+
+  #home {
+    .btn {
+      width: 203px;
+      margin-right: auto;
+      margin-left: auto !important;
+    }
+
+    .banner-grid {
+      top: 20% !important;
+      grid-template-columns: 1fr !important;
+      grid-template-rows: 1fr 1fr;
+      justify-content: center;
+      right: 23% !important;
+
+      .im-this-and-that{
+        margin: auto;
+      }
+
+
+      .text-part {
+        margin-right: 0 !important;
+      }
+
+      img {
+        display: block;
+        margin: auto;
+        align-items: center
+      }
+
+      h2 {
+        margin-top: 10px;
+        text-align: center;
+      }
+
+      .inner-text {
+        text-align: center;
+      }
+    }
+  }
+
+  /*************************services*******************/
+  .services {
+    .grid-section {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+  /****************portfolio******************************/
+  .portfolio {
+    .buttons-grid {
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+
+      div {
+        display: inline-block;
+      }
+    }
+
+    .grid-section {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+  /*********************blog*******************/
+  .blog {
+    .grid {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+  /**************************************about me******************************/
+  #about {
+    .about-me-grid {
+      display: grid;
+      width: 75%;
+      margin: auto;
+      grid-template-columns: 1fr;
+      grid-template-rows: 0.7fr 1fr;
+    }
+
+    .skills {
+      .main-grid {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr;
+
+      }
+    }
+
+    .experience-and-education {
+      .experience-and-education-grids {
+        grid-template-rows: 1fr 1fr;
+        grid-template-columns: 1fr;
+
+        .experience-grid {
+          .card {
+            alignment: center;
+            font-weight: 400;
+            align-items: center;
+            color: $kamal-gray;
+            border-radius: 3px;
+            display: block;
+            border-right: 3px solid $kamal-green;
+            box-shadow: -2px 0 0 1px #dddddd;
+            padding: 15px 25px 15px 25px;
+            margin-bottom: 24px;
+            transition: all 0.3s ease;
+            position: relative;
+            z-index: 2;
+
+
+            h1 {
               display: block;
-              border-right: 3px solid $kamal-green;
-              box-shadow: -2px 0 0 1px #dddddd;
-              padding: 15px 25px 15px 25px;
-              margin-bottom: 24px;
-              transition: all 0.3s ease;
-              position: relative;
-              z-index: 2;
+              margin-bottom: 10px;
+              font-weight: 500;
+              font-size: 1.25rem;
+              line-height: 28px;
+            }
 
+            .second {
+              margin-bottom: 4px;
 
-              h1 {
-                display: block;
-                margin-bottom: 10px;
-                font-weight: 500;
-                font-size: 1.25rem;
-                line-height: 28px;
-              }
-
-              .second {
+              p {
+                display: inline-block;
+                margin-left: 16px;
+                font-size: 13px;
+                font-weight: 400;
                 margin-bottom: 4px;
 
-                p {
-                  display: inline-block;
-                  margin-left: 16px;
-                  font-size: 13px;
-                  font-weight: 400;
-                  margin-bottom: 4px;
-
-                  i {
-                    margin-left: 5px;
-                  }
-                }
-
-                article {
-                  display: block;
-                  margin-top: 4px;
-                  font-size: 15px;
-                  font-weight: 400;
-                  line-height: 30px;
-                }
-
-                span {
-                  background-color: $kamal-green;
-                  color: $kamal-white;
-                  border-radius: 3px;
-                  padding-right: 5px;
-                  padding-left: 5px;
-                  margin-right: 5px;
-                  vertical-align: baseline;
+                i {
+                  margin-left: 5px;
                 }
               }
-            }
 
-            .card:before {
-              content: "";
-              right: -37px !important;
-              display: block;
-              position: absolute;
-              background-color: white;
-              border: 2px solid $kamal-green;
-              width: 17px;
-              height: 17px;
-              border-radius: 50%;
-              z-index: 999;
-            }
+              article {
+                display: block;
+                margin-top: 4px;
+                font-size: 15px;
+                font-weight: 400;
+                line-height: 30px;
+              }
 
-            .card:hover:before {
-              background-color: $kamal-green;
-            }
-
-            .card:after {
-              content: "";
-              display: block;
-              position: absolute;
-              width: 33px;
-              height: 2px;
-              top: 15%;
-              left: 100.5%;
-              background-color: $kamal-gray;
-              z-index: 0;
-            }
-
-            .last-one {
-              margin-bottom: 0;
-            }
-
-            .card:hover {
-              box-shadow: 0 0 10px rgb(33 33 33 / 20%);
+              span {
+                background-color: $kamal-green;
+                color: $kamal-white;
+                border-radius: 3px;
+                padding-right: 5px;
+                padding-left: 5px;
+                margin-right: 5px;
+                vertical-align: baseline;
+              }
             }
           }
-        }
-      }
 
-      .counter-cards {
-        grid-template-rows: 1fr 1fr;
-        grid-template-columns: 1fr 1fr;
-      }
-    }
-    /********************contact me*****************************************************/
-    .contact-me {
-      .cards {
-        grid-template-columns: 1fr;
-        grid-template-rows: 1fr 1fr 1fr;
-      }
+          .card:before {
+            content: "";
+            right: -37px !important;
+            display: block;
+            position: absolute;
+            background-color: white;
+            border: 2px solid $kamal-green;
+            width: 17px;
+            height: 17px;
+            border-radius: 50%;
+            z-index: 999;
+          }
 
-      .forms {
-        grid-template-columns: 1fr;
+          .card:hover:before {
+            background-color: $kamal-green;
+          }
 
-        .message {
-          input {
-            width: 95%;
+          .card:after {
+            content: "";
+            display: block;
+            position: absolute;
+            width: 33px;
+            height: 2px;
+            top: 15%;
+            left: 100.5%;
+            background-color: $kamal-green;
+            z-index: 0;
+          }
+
+          .last-one {
+            margin-bottom: 0;
+          }
+
+          .card:hover {
+            box-shadow: 0 0 10px rgb(33 33 33 / 20%);
           }
         }
       }
     }
-    /*******************************portfolio************************************/
-    .portfolio {
-      .buttons-grid {
-        grid-template-rows: 1fr 1fr;
-        grid-template-columns: 1fr 1fr;
-      }
 
-      .grid-section-portfolio {
-        grid-template-columns: 1fr 1fr;
-      }
-
+    .counter-cards {
+      grid-template-rows: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
     }
   }
+  /********************contact me*****************************************************/
+  .contact-me {
+    .cards {
+      grid-template-columns: 1fr;
+      grid-template-rows: 1fr 1fr 1fr;
+    }
+
+    .forms {
+      grid-template-columns: 1fr;
+
+      .message {
+        input {
+          width: 95%;
+        }
+      }
+    }
+  }
+  /*******************************portfolio************************************/
+  .portfolio {
+    .buttons-grid {
+      grid-template-rows: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .grid-section-portfolio {
+      grid-template-columns: 1fr 1fr;
+    }
+
+  }
+
+  /**********************************navbar******************************************/
+  nav {
+    height: 40px;
+
+    a:not(.bars, .kamal-name) {
+      display: none !important;
+      position: relative;
+    }
+
+    .bars {
+      display: initial !important;
+      color: white;
+      font-size: 32px;
+      position: absolute;
+      left: 10%;
+      top: 10%;
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+
+    .kamal-name {
+      padding: 0 !important;
+      right: 30%;
+      position: absolute;
+      display: initial;
+      top: 10%;
+    }
+  }
+}

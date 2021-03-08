@@ -22,14 +22,48 @@ const buttonDesign = document.querySelector(".design");
 const buttonMusic = document.querySelector(".music");
 const buttonVideo = document.querySelector(".video");
 
+const barsButton = document.querySelector(".bars");
+
+const closeButton = document.querySelector(".close-navbar");
+
+const homeButton = document.querySelector(".i-home");
+const aboutButton = document.querySelector(".i-about");
+const servicesButton = document.querySelector(".i-services");
+const portfolioButton = document.querySelector(".i-portfolio");
+const blogButton = document.querySelector(".i-blog");
+const contactButton = document.querySelector(".i-contact");
+
+var homeHeader = document.querySelector("#home");
+var aboutHeader = document.querySelector("#about");
+var servicesHeader = document.querySelector("#services");
+var portfolioHeader = document.querySelector("#portfolio");
+var blogHeader = document.querySelector("#blog");
+var contactHeader = document.querySelector("#contact");
+
+const navbarOnTheRight = document.querySelector(".navbar-full-page");
+
 /* E V E N T - L I S T E N E R S */
 
 buttonAll.addEventListener('click', showAll);
-buttonDesign.addEventListener('click',  showDesign);
+buttonDesign.addEventListener('click', showDesign);
 buttonMusic.addEventListener('click', showMusic);
 buttonVideo.addEventListener('click', showVideo);
 
+barsButton.addEventListener('click', sideNavbar);
+
+closeButton.addEventListener('click', closeNavbar);
+
+aboutButton.addEventListener('click', changeColorAbout);
+homeButton.addEventListener('click', changeColorHome);
+portfolioButton.addEventListener('click', changeColorPortfolio);
+servicesButton.addEventListener('click', changeColorServices);
+blogButton.addEventListener('click', changeColorBlog);
+contactButton.addEventListener('click', changeColorContact);
+
+navbarOnTheRight.addEventListener('click', closeNavbar);
+
 /* F U N C T I O N S */
+
 const symbolMap = ["۰", "۱", "۲", "۳", "۴", "۵", "۶", "۷", "۸", "۹"];
 
 function postformat(string) {
@@ -79,18 +113,33 @@ function studentsCard() {
 
 window.onscroll = function () {
 
+    if (homeHeader.getBoundingClientRect().top <= 100 && homeHeader.getBoundingClientRect().bottom > 0) {
+        changeColorHome();
+    }
+    if (aboutHeader.getBoundingClientRect().top <= 100 && aboutHeader.getBoundingClientRect().bottom > 0) {
+        changeColorAbout();
+    }
+    if (servicesHeader.getBoundingClientRect().top <= 100 && servicesHeader.getBoundingClientRect().bottom > 0) {
+        changeColorServices();
+    }
+    if (portfolioHeader.getBoundingClientRect().top <= 100 && portfolioHeader.getBoundingClientRect().bottom > 0) {
+        changeColorPortfolio();
+    }
+    if (blogHeader.getBoundingClientRect().top <= 100 && blogHeader.getBoundingClientRect().bottom > 0) {
+        changeColorBlog();
+    }
+    if (contactHeader.getBoundingClientRect().top <= 100 && contactHeader.getBoundingClientRect().bottom > 0) {
+        changeColorContact();
+    }
     if (bannerGrid.getBoundingClientRect().top <= 0) {
-        // document.getElementsByClassName(".navbar").style.backgroundColor = "red";
         const newNavbar = document.getElementById("navbarid");
         newNavbar.classList.add("new-navbar-style");
-        // console.log("heyyy");
     }
     if (bannerGrid.getBoundingClientRect().top > 0) {
         const newNavbar = document.getElementById("navbarid");
         newNavbar.classList.remove("new-navbar-style");
     }
     if (skillsHeader.getBoundingClientRect().top <= 500 && skillsHeader.getBoundingClientRect().top >= 400 && isCountingS === false && isCountingH === false && isCountingP === false && isCountingC === false) {
-        console.log('asdasd');
 
         const firstBar = document.getElementById("first")
         firstBar.classList.add("animation-activation-1");
@@ -123,24 +172,25 @@ window.onscroll = function () {
 }
 
 var speed = 150;
-function typeWriterGenerator(){
+
+function typeWriterGenerator() {
     var i = 0;
-    return function typeWriter(txt){
-        if( i < txt.length){
-            document.getElementById("kamalsname").innerHTML+= txt.charAt(i);
+    return function typeWriter(txt) {
+        if (i < txt.length) {
+            document.getElementById("kamalsname").innerHTML += txt.charAt(i);
             i++;
-            setTimeout(()=>typeWriter(txt),speed);
+            setTimeout(() => typeWriter(txt), speed);
         }
         return new Promise(resolve => {
-            setTimeout(()=>{
+            setTimeout(() => {
                 resolve()
             }, txt.length * speed + 500)
         })
     }
 }
 
-setTimeout(async ()=>{
-    while (true){
+setTimeout(async () => {
+    while (true) {
         await typeWriterGenerator()("کمال");
         document.getElementById("kamalsname").innerHTML = ''
         await typeWriterGenerator()("یک وب دیزاینر");
@@ -153,10 +203,10 @@ setTimeout(async ()=>{
 
 }, 1000)
 
-function showAll(){
-    document.querySelectorAll(".card-p").forEach(e=>(e.style.display = 'none'));
-    document.querySelectorAll(".card-p").forEach(e=>{
-        if( e.className.includes("card-p")){
+function showAll() {
+    document.querySelectorAll(".card-p").forEach(e => (e.style.display = 'none'));
+    document.querySelectorAll(".card-p").forEach(e => {
+        if (e.className.includes("card-p")) {
             e.style.display = 'block';
         }
     })
@@ -167,10 +217,10 @@ function showAll(){
 
 }
 
-function showDesign(){
-    document.querySelectorAll(".card-p").forEach(e=>(e.style.display = 'none'));
-    document.querySelectorAll(".card-p").forEach(e=>{
-        if( e.className.includes("design-card")){
+function showDesign() {
+    document.querySelectorAll(".card-p").forEach(e => (e.style.display = 'none'));
+    document.querySelectorAll(".card-p").forEach(e => {
+        if (e.className.includes("design-card")) {
             e.style.display = 'block';
         }
     })
@@ -181,10 +231,10 @@ function showDesign(){
 
 }
 
-function showVideo(){
-    document.querySelectorAll(".card-p").forEach(e=>(e.style.display = 'none'));
-    document.querySelectorAll(".card-p").forEach(e=>{
-        if( e.className.includes("video-card")){
+function showVideo() {
+    document.querySelectorAll(".card-p").forEach(e => (e.style.display = 'none'));
+    document.querySelectorAll(".card-p").forEach(e => {
+        if (e.className.includes("video-card")) {
             e.style.display = 'block';
         }
     })
@@ -194,10 +244,10 @@ function showVideo(){
     buttonAll.style.backgroundColor = "#666666";
 }
 
-function showMusic(){
-    document.querySelectorAll(".card-p").forEach(e=>(e.style.display = 'none'));
-    document.querySelectorAll(".card-p").forEach(e=>{
-        if( e.className.includes("music-card")){
+function showMusic() {
+    document.querySelectorAll(".card-p").forEach(e => (e.style.display = 'none'));
+    document.querySelectorAll(".card-p").forEach(e => {
+        if (e.className.includes("music-card")) {
             e.style.display = 'block';
         }
     })
@@ -208,4 +258,85 @@ function showMusic(){
 
 }
 
+function sideNavbar() {
+    barsButton.innerHTML = '<i class="fas fa-times"/>';
+    const navbarOnTheRight = document.querySelector(".navbar-full-page");
+    navbarOnTheRight.style.display = "block";
+    const innerNavbar = document.querySelector(".navbar-responsive");
+    innerNavbar.classList.add("navbar-width-change");
+}
+
+function changeColorAbout() {
+    aboutButton.classList.add("go-green");
+    servicesButton.classList.remove("go-green")
+    portfolioButton.classList.remove("go-green")
+    blogButton.classList.remove("go-green")
+    contactButton.classList.remove("go-green")
+    homeButton.classList.remove("go-green")
+
+}
+
+function changeColorServices() {
+    aboutButton.classList.remove("go-green")
+    servicesButton.classList.add("go-green");
+    portfolioButton.classList.remove("go-green")
+    blogButton.classList.remove("go-green")
+    contactButton.classList.remove("go-green")
+    homeButton.classList.remove("go-green")
+
+}
+
+function changeColorHome() {
+    aboutButton.classList.remove("go-green")
+    servicesButton.classList.remove("go-green")
+    portfolioButton.classList.remove("go-green")
+    blogButton.classList.remove("go-green")
+    contactButton.classList.remove("go-green")
+    homeButton.classList.add("go-green");
+
+}
+
+function changeColorContact() {
+    aboutButton.classList.remove("go-green")
+    servicesButton.classList.remove("go-green")
+    portfolioButton.classList.remove("go-green")
+    blogButton.classList.remove("go-green")
+    contactButton.classList.add("go-green");
+    homeButton.classList.remove("go-green")
+
+}
+
+function changeColorBlog() {
+    aboutButton.classList.remove("go-green")
+    servicesButton.classList.remove("go-green")
+    portfolioButton.classList.remove("go-green")
+    blogButton.classList.add("go-green");
+    contactButton.classList.remove("go-green")
+    homeButton.classList.remove("go-green")
+
+}
+
+function changeColorPortfolio() {
+    aboutButton.classList.remove("go-green")
+    servicesButton.classList.remove("go-green")
+    portfolioButton.classList.add("go-green");
+    blogButton.classList.remove("go-green")
+    contactButton.classList.remove("go-green")
+    homeButton.classList.remove("go-green")
+
+}
+
+function closeNavbar() {
+    const navbarOnTheRight = document.querySelector(".navbar-full-page");
+    navbarOnTheRight.style.display = "none";
+    setTimeout(async () => {
+        const innerNavbar = document.querySelector(".navbar-responsive");
+        innerNavbar.classList.remove("navbar-width-change");
+    }, 700)
+
+    const innerNavbar = document.querySelector(".navbar-responsive");
+    // innerNavbar.classList.remove("navbar-width-change");
+    // barsButton.innerHTML = '<i class="fas fa-bars"/>';
+
+}
 
