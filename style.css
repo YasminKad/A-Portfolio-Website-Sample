@@ -45,7 +45,7 @@ a, a i.fa, a img, .button, .btn {
   bottom: 0;
   right: -100%;
   width: 300px;
-  transition: all 0.7s;
+  animation: 0.5s navbarToTheLeft;
 }
 .navbar-full-page .navbar-responsive a:not(.close-navbar) {
   display: block;
@@ -84,8 +84,29 @@ a, a i.fa, a img, .button, .btn {
 .navbar-full-page .navbar-responsive .go-green {
   color: #5cbe26 !important;
 }
-.navbar-full-page .navbar-width-change {
+.navbar-full-page .navbar-show {
   right: 0;
+  animation: 0.5s navbarToTheRight;
+}
+.navbar-full-page .navbar-go {
+  animation: 0.5s navbarToTheLeft;
+  right: -100%;
+}
+@keyframes navbarToTheRight {
+  from {
+    right: -100%;
+  }
+  to {
+    right: 0;
+  }
+}
+@keyframes navbarToTheLeft {
+  from {
+    right: 0;
+  }
+  to {
+    right: -100;
+  }
 }
 
 .navbar {
@@ -103,6 +124,9 @@ a, a i.fa, a img, .button, .btn {
   display: none;
   background-color: transparent;
   border: 0;
+}
+.navbar .bars:focus {
+  border: 0 !important;
 }
 .navbar a {
   display: initial !important;
@@ -234,22 +258,6 @@ a, a i.fa, a img, .button, .btn {
   animation: typescriptBack 0.8s ease;
   animation-delay: 0.5s;
 }
-@keyframes typescriptBack {
-  from {
-    width: 100px;
-  }
-  to {
-    width: 0;
-  }
-}
-@keyframes typescriptGo {
-  from {
-    width: 0;
-  }
-  to {
-    width: 100px;
-  }
-}
 #home .container .banner-grid a.social-media-icons {
   color: white;
 }
@@ -303,6 +311,7 @@ a, a i.fa, a img, .button, .btn {
   padding: 12px 0 12px 0;
 }
 #home .container .banner-grid .introduction-buttons .more-about-me {
+  box-sizing: border-box;
   display: flex;
   color: white;
   font-size: 15px;
@@ -314,6 +323,8 @@ a, a i.fa, a img, .button, .btn {
   font-weight: 500;
   background-color: #666666;
   text-align: center;
+  margin-left: 0.5rem;
+  margin-bottom: 0.5rem;
 }
 #home .container .banner-grid .introduction-buttons .more-about-me span {
   position: absolute;
@@ -344,6 +355,7 @@ a, a i.fa, a img, .button, .btn {
   padding-bottom: 6px;
 }
 #home .container .banner-grid .introduction-buttons .portfolio-button {
+  box-sizing: border-box;
   display: flex;
   color: white;
   font-size: 15px;
@@ -355,6 +367,8 @@ a, a i.fa, a img, .button, .btn {
   font-weight: 500;
   background-color: #5cbe26;
   justify-content: center;
+  margin-right: 0.5rem;
+  margin-bottom: 0.5rem;
 }
 #home .container .banner-grid .introduction-buttons .portfolio-button span {
   z-index: 2;
@@ -632,6 +646,10 @@ a, a i.fa, a img, .button, .btn {
   color: #5cbe26;
   transition-duration: 0.5s;
   cursor: pointer;
+}
+.about-me-first .container .about-me-grid .about-me-second-column .inner-second-column .btn {
+  margin-right: auto;
+  margin-left: auto;
 }
 
 .experience-and-education {
@@ -1864,25 +1882,52 @@ a, a i.fa, a img, .button, .btn {
   margin: 10px;
 }
 .contact-me .forms input {
+  box-sizing: border-box;
   alignment: left;
   padding: 5px 10px;
   overflow: hidden;
   vertical-align: middle;
-  margin: 5px;
   font-size: 14px;
   height: 50px;
   box-shadow: none;
   outline: none;
   border: 1px solid #d9d9d9;
   border-radius: 30px;
-  width: 95%;
+  width: 100%;
   display: inline-block;
   line-height: 1.5;
   background-color: #ffffff;
   text-align: right;
+  padding-left: 50px;
+}
+.contact-me .forms .input-is-okay {
+  transition-duration: 0.5s;
+  border-color: #5cbe26;
+}
+.contact-me .forms .input-is-empty {
+  transition-duration: 0.5s;
+  border-color: #ff253a;
+}
+.contact-me .forms .focus-okay:focus {
+  transition-duration: 0.5s;
+  box-shadow: 0 1px 7px 0 #5cbe26 !important;
+}
+.contact-me .forms .input-container {
+  margin: 5px;
+  position: relative;
+}
+.contact-me .forms .input-container input:focus {
+  border-color: #5cbe26;
+}
+.contact-me .forms .fa-check {
+  position: absolute;
+  left: 10px;
+  top: 15px;
+  color: #427700;
+  display: none;
 }
 .contact-me .forms .message input {
-  width: 195%;
+  width: 200%;
   height: 106px;
   text-align: start;
 }
@@ -1939,9 +1984,9 @@ footer {
     margin-left: auto;
   }
   #home .banner-grid {
-    top: 20% !important;
+    top: 25% !important;
     grid-template-columns: 1fr !important;
-    grid-template-rows: 1fr 1fr;
+    grid-template-rows: 0.25fr 1fr;
     justify-content: center;
     right: 11% !important;
   }
@@ -1955,6 +2000,10 @@ footer {
     grid-template-columns: 1fr !important;
     grid-template-rows: 1fr 1fr !important;
   }
+  #home .banner-grid .text-part .introduction-buttons .btn {
+    margin-right: auto;
+    margin-left: auto;
+  }
   #home .banner-grid .text-part .introduction-buttons a {
     padding: 5px;
   }
@@ -1962,6 +2011,8 @@ footer {
     display: block;
     margin: auto;
     align-items: center;
+    height: 150px !important;
+    width: 150px !important;
   }
   #home .banner-grid h2 {
     margin-top: 10px;
@@ -1969,6 +2020,9 @@ footer {
   }
   #home .banner-grid .inner-text {
     text-align: center;
+  }
+  #home .jumper {
+    display: none;
   }
 
   /*****************services************************************/
@@ -2076,9 +2130,9 @@ footer {
     margin-left: auto !important;
   }
   #home .banner-grid {
-    top: 20% !important;
+    top: 25% !important;
     grid-template-columns: 1fr !important;
-    grid-template-rows: 1fr 1fr;
+    grid-template-rows: 0.75fr 1fr;
     justify-content: center;
     right: 23% !important;
   }
@@ -2092,6 +2146,8 @@ footer {
     display: block;
     margin: auto;
     align-items: center;
+    height: 200px !important;
+    width: 200px !important;
   }
   #home .banner-grid h2 {
     margin-top: 10px;
@@ -2099,6 +2155,9 @@ footer {
   }
   #home .banner-grid .inner-text {
     text-align: center;
+  }
+  #home .jumper {
+    display: none;
   }
 
   /*************************services*******************/
@@ -2235,7 +2294,7 @@ footer {
     grid-template-columns: 1fr;
   }
   .contact-me .forms .message input {
-    width: 95%;
+    width: 100%;
   }
 
   /*******************************portfolio************************************/

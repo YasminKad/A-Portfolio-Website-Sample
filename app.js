@@ -41,7 +41,13 @@ var blogHeader = document.querySelector("#blog");
 var contactHeader = document.querySelector("#contact");
 
 const navbarOnTheRight = document.querySelector(".navbar-full-page");
+const innerNavbar = document.querySelector(".navbar-responsive");
 
+const submitButton = document.querySelector(".send-button");
+const inputs = document.querySelectorAll(".input-container input");
+// const ".input-container input"
+// if ( !value)
+const check = document.querySelector(".fa-check");
 /* E V E N T - L I S T E N E R S */
 
 buttonAll.addEventListener('click', showAll);
@@ -61,6 +67,9 @@ blogButton.addEventListener('click', changeColorBlog);
 contactButton.addEventListener('click', changeColorContact);
 
 navbarOnTheRight.addEventListener('click', closeNavbar);
+innerNavbar.addEventListener('click', doNothing);
+
+submitButton.addEventListener('click', checkValidation);
 
 /* F U N C T I O N S */
 
@@ -258,14 +267,6 @@ function showMusic() {
 
 }
 
-function sideNavbar() {
-    barsButton.innerHTML = '<i class="fas fa-times"/>';
-    const navbarOnTheRight = document.querySelector(".navbar-full-page");
-    navbarOnTheRight.style.display = "block";
-    const innerNavbar = document.querySelector(".navbar-responsive");
-    innerNavbar.classList.add("navbar-width-change");
-}
-
 function changeColorAbout() {
     aboutButton.classList.add("go-green");
     servicesButton.classList.remove("go-green")
@@ -326,17 +327,43 @@ function changeColorPortfolio() {
 
 }
 
-function closeNavbar() {
+function sideNavbar() {
+    barsButton.innerHTML = '<i class="fas fa-times"/>';
+    barsButton.style.border = 0;
     const navbarOnTheRight = document.querySelector(".navbar-full-page");
-    navbarOnTheRight.style.display = "none";
+    navbarOnTheRight.style.display = "block";
+    innerNavbar.classList.remove("navbar-go");
+    innerNavbar.classList.add("navbar-show");
+}
+
+function closeNavbar() {
+    innerNavbar.classList.remove("navbar-show");
+    innerNavbar.classList.add("navbar-go");
     setTimeout(async () => {
-        const innerNavbar = document.querySelector(".navbar-responsive");
-        innerNavbar.classList.remove("navbar-width-change");
-    }, 700)
+        const navbarOnTheRight = document.querySelector(".navbar-full-page");
+        navbarOnTheRight.style.display = "none";
+        barsButton.innerHTML = '<i class="fas fa-bars"/>';
+    }, 150)
+}
+function doNothing(e){
+    e.stopPropagation();
+}
 
-    const innerNavbar = document.querySelector(".navbar-responsive");
-    // innerNavbar.classList.remove("navbar-width-change");
-    // barsButton.innerHTML = '<i class="fas fa-bars"/>';
-
+function checkValidation(e){
+    //const inputs = document.querySelectorAll(".input-container input message");
+    inputs.forEach(e => {
+        if (e.value === "") {
+            document.querySelector(`.${e.name}.input-container .fa-check`).style.display = "none";
+            e.classList.remove("input-is-okay");
+            e.classList.remove("focus-okay");
+            e.classList.add("input-is-empty");
+        }
+        else {
+            e.classList.remove("input-is-empty");
+            e.classList.add("focus-okay")
+            e.classList.add("input-is-okay");
+            document.querySelector(`.${e.name}.input-container .fa-check`).style.display = "block";
+        }
+})
 }
 
