@@ -27,6 +27,10 @@ a, a i.fa, a img, .button, .btn {
 }
 
 /*************************************navbar section*******************************/
+.go-green {
+  color: #5cbe26 !important;
+}
+
 .navbar-full-page {
   display: none;
   position: fixed;
@@ -80,9 +84,6 @@ a, a i.fa, a img, .button, .btn {
 }
 .navbar-full-page .navbar-responsive a:hover i {
   transition-duration: 1s;
-}
-.navbar-full-page .navbar-responsive .go-green {
-  color: #5cbe26 !important;
 }
 .navbar-full-page .navbar-show {
   right: 0;
@@ -917,74 +918,10 @@ a, a i.fa, a img, .button, .btn {
   height: 10px;
   margin-bottom: 10px;
 }
-.skills .main-grid .first-column .item .bar .progress-1, .skills .main-grid .second-column .item .bar .progress-1 {
+.skills .main-grid .first-column .item .bar .progress, .skills .main-grid .second-column .item .bar .progress {
+  width: 0;
+  transition-duration: 0.7s;
   height: 10px;
-  width: 95%;
-  background-color: #5cbe26;
-  border-radius: 3px;
-  display: block;
-}
-.skills .main-grid .first-column .item .bar .animation-activation-1, .skills .main-grid .second-column .item .bar .animation-activation-1 {
-  animation-name: first-bar-animation;
-  animation-duration: 2s;
-}
-.skills .main-grid .first-column .item .bar .progress-2, .skills .main-grid .second-column .item .bar .progress-2 {
-  height: 10px;
-  width: 90%;
-  background-color: #5cbe26;
-  border-radius: 3px;
-  display: block;
-}
-.skills .main-grid .first-column .item .bar .animation-activation-2, .skills .main-grid .second-column .item .bar .animation-activation-2 {
-  animation-name: second-bar-animation;
-  animation-duration: 2s;
-}
-.skills .main-grid .first-column .item .bar .progress-3, .skills .main-grid .second-column .item .bar .progress-3 {
-  height: 10px;
-  width: 65%;
-  background-color: #5cbe26;
-  border-radius: 3px;
-  display: block;
-}
-.skills .main-grid .first-column .item .bar .animation-activation-3, .skills .main-grid .second-column .item .bar .animation-activation-3 {
-  animation-name: third-bar-animation;
-  animation-duration: 2s;
-}
-.skills .main-grid .first-column .item .bar .progress-4, .skills .main-grid .second-column .item .bar .progress-4 {
-  height: 10px;
-  width: 75%;
-  background-color: #5cbe26;
-  border-radius: 3px;
-  display: block;
-}
-.skills .main-grid .first-column .item .bar .animation-activation-4, .skills .main-grid .second-column .item .bar .animation-activation-4 {
-  animation-name: fourth-bar-animation;
-  animation-duration: 2s;
-}
-.skills .main-grid .first-column .item .bar .progress-5, .skills .main-grid .second-column .item .bar .progress-5 {
-  height: 10px;
-  width: 95%;
-  background-color: #5cbe26;
-  border-radius: 3px;
-  display: block;
-}
-.skills .main-grid .first-column .item .bar .progress-6, .skills .main-grid .second-column .item .bar .progress-6 {
-  height: 10px;
-  width: 90%;
-  background-color: #5cbe26;
-  border-radius: 3px;
-  display: block;
-}
-.skills .main-grid .first-column .item .bar .progress-7, .skills .main-grid .second-column .item .bar .progress-7 {
-  height: 10px;
-  width: 65%;
-  background-color: #5cbe26;
-  border-radius: 3px;
-  display: block;
-}
-.skills .main-grid .first-column .item .bar .progress-8, .skills .main-grid .second-column .item .bar .progress-8 {
-  height: 10px;
-  width: 75%;
   background-color: #5cbe26;
   border-radius: 3px;
   display: block;
@@ -1059,38 +996,6 @@ a, a i.fa, a img, .button, .btn {
   box-shadow: 0 0 10px rgba(33, 33, 33, 0.2);
 }
 
-@keyframes first-bar-animation {
-  from {
-    width: 0;
-  }
-  to {
-    width: 95%;
-  }
-}
-@keyframes second-bar-animation {
-  from {
-    width: 0;
-  }
-  to {
-    width: 90%;
-  }
-}
-@keyframes third-bar-animation {
-  from {
-    width: 0;
-  }
-  to {
-    width: 65%;
-  }
-}
-@keyframes fourth-bar-animation {
-  from {
-    width: 0;
-  }
-  to {
-    width: 75%;
-  }
-}
 /*************************************services section*******************************/
 .services {
   display: block;
@@ -1417,6 +1322,9 @@ a, a i.fa, a img, .button, .btn {
   margin-top: 15px;
   text-align: center;
 }
+.portfolio .buttons-grid .bg-green {
+  background-color: #5cbe26 !important;
+}
 .portfolio .buttons-grid a {
   alignment: center;
   display: inline-block;
@@ -1444,7 +1352,7 @@ a, a i.fa, a img, .button, .btn {
   transition: 0.3s;
 }
 .portfolio .buttons-grid .all-work {
-  background-color: #5cbe26;
+  background-color: #666666;
 }
 .portfolio .grid-section-portfolio {
   display: grid;

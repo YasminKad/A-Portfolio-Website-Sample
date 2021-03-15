@@ -20,7 +20,6 @@ $kamal-background: #f9f9f9;
   text-align: center;
   color: $kamal-gray;
   margin: 0 0 50px;
-
   .separator {
     position: absolute;
     bottom: -10px;
@@ -123,6 +122,9 @@ a, a i.fa, a img, .button, .btn {
 }
 
 /*************************************navbar section*******************************/
+.go-green {
+  color: $kamal-green !important;
+}
 
 .navbar-full-page {
   display: none;
@@ -185,9 +187,7 @@ a, a i.fa, a img, .button, .btn {
       }
     }
 
-    .go-green {
-      color: $kamal-green !important;
-    }
+
   }
 
   .navbar-show {
@@ -195,17 +195,26 @@ a, a i.fa, a img, .button, .btn {
     animation: 0.5s navbarToTheRight;
   }
 
-  .navbar-go{
+  .navbar-go {
     animation: 0.5s navbarToTheLeft;
     right: -100%;
   }
+
   @keyframes navbarToTheRight {
-    from { right: -100%;}
-    to { right: 0; }
+    from {
+      right: -100%;
+    }
+    to {
+      right: 0;
+    }
   }
   @keyframes navbarToTheLeft {
-    from{ right: 0;}
-   to{ right: -100;}
+    from {
+      right: 0;
+    }
+    to {
+      right: -100;
+    }
   }
 }
 
@@ -227,7 +236,8 @@ a, a i.fa, a img, .button, .btn {
     background-color: transparent;
     border: 0;
   }
-  .bars:focus{
+
+  .bars:focus {
     border: 0 !important;
   }
 
@@ -783,7 +793,8 @@ a, a i.fa, a img, .button, .btn {
               cursor: pointer;
             }
           }
-          .btn{
+
+          .btn {
             margin-right: auto;
             margin-left: auto;
           }
@@ -1080,90 +1091,10 @@ a, a i.fa, a img, .button, .btn {
           height: 10px;
           margin-bottom: 10px;
 
-          .progress-1 {
+          .progress {
+            width: 0;
+            transition-duration: 0.7s;
             height: 10px;
-            width: 95%;
-            background-color: $kamal-green;
-            border-radius: 3px;
-            display: block;
-          }
-
-          .animation-activation-1 {
-            animation-name: first-bar-animation;
-            animation-duration: 2s;
-          }
-
-          .progress-2 {
-            height: 10px;
-            width: 90%;
-            background-color: $kamal-green;
-            border-radius: 3px;
-            display: block;
-
-          }
-
-          .animation-activation-2 {
-            animation-name: second-bar-animation;
-            animation-duration: 2s;
-          }
-
-          .progress-3 {
-            height: 10px;
-            width: 65%;
-            background-color: $kamal-green;
-            border-radius: 3px;
-            display: block;
-
-          }
-
-          .animation-activation-3 {
-            animation-name: third-bar-animation;
-            animation-duration: 2s;
-          }
-        ;
-
-          .progress-4 {
-            height: 10px;
-            width: 75%;
-            background-color: $kamal-green;
-            border-radius: 3px;
-            display: block;
-          }
-
-          .animation-activation-4 {
-            animation-name: fourth-bar-animation;
-            animation-duration: 2s;
-          }
-
-          .progress-5 {
-            height: 10px;
-            width: 95%;
-            background-color: $kamal-green;
-            border-radius: 3px;
-            display: block;
-
-          }
-
-          .progress-6 {
-            height: 10px;
-            width: 90%;
-            background-color: $kamal-green;
-            border-radius: 3px;
-            display: block;
-
-          }
-
-          .progress-7 {
-            height: 10px;
-            width: 65%;
-            background-color: $kamal-green;
-            border-radius: 3px;
-            display: block;
-          }
-
-          .progress-8 {
-            height: 10px;
-            width: 75%;
             background-color: $kamal-green;
             border-radius: 3px;
             display: block;
@@ -1176,7 +1107,6 @@ a, a i.fa, a img, .button, .btn {
       padding: 0 15px;
       display: grid;
       align-items: center;
-      //width: 20%;
       grid-template-rows: repeat(4, 1fr);
 
       .item {
@@ -1249,42 +1179,6 @@ a, a i.fa, a img, .button, .btn {
     -webkit-transform: translateY(-5px);
     transform: translateY(-5px);
     box-shadow: 0 0 10px rgb(33 33 33 / 20%);
-  }
-}
-
-@keyframes first-bar-animation {
-  from {
-    width: 0;
-  }
-  to {
-    width: 95%;
-  }
-}
-
-@keyframes second-bar-animation {
-  from {
-    width: 0;
-  }
-  to {
-    width: 90%;
-  }
-}
-
-@keyframes third-bar-animation {
-  from {
-    width: 0;
-  }
-  to {
-    width: 65%;
-  }
-}
-
-@keyframes fourth-bar-animation {
-  from {
-    width: 0;
-  }
-  to {
-    width: 75%;
   }
 }
 
@@ -1529,6 +1423,7 @@ a, a i.fa, a img, .button, .btn {
   padding-top: 70px;
   background-color: white;
 
+
   .header {
     h1 {
       font-size: 50px !important;
@@ -1545,6 +1440,10 @@ a, a i.fa, a img, .button, .btn {
     margin-bottom: 15px;
     margin-top: 15px;
     text-align: center;
+
+    .bg-green{
+      background-color: $kamal-green !important;
+    }
 
     a {
       alignment: center;
@@ -1569,7 +1468,7 @@ a, a i.fa, a img, .button, .btn {
     }
 
     .all-work {
-      background-color: $kamal-green;
+      background-color: $kamal-gray;
     }
   }
 
@@ -1980,27 +1879,32 @@ a, a i.fa, a img, .button, .btn {
       padding-left: 50px;
 
     }
-    .input-is-okay{
+
+    .input-is-okay {
       transition-duration: 0.5s;
       border-color: $kamal-green;
     }
 
-    .input-is-empty{
+    .input-is-empty {
       transition-duration: 0.5s;
       border-color: #ff253a;
     }
-    .focus-okay:focus{
+
+    .focus-okay:focus {
       transition-duration: 0.5s;
       box-shadow: 0 1px 7px 0 $kamal-green !important;
     }
-    .input-container{
+
+    .input-container {
       margin: 5px;
       position: relative;
     }
-    .input-container input:focus{
+
+    .input-container input:focus {
       border-color: $kamal-green;
     }
-    .fa-check{
+
+    .fa-check {
       position: absolute;
       left: 10px;
       top: 15px;
@@ -2079,7 +1983,8 @@ footer {
         .introduction-buttons {
           grid-template-columns: 1fr !important;
           grid-template-rows: 1fr 1fr !important;
-          .btn{
+
+          .btn {
             margin-right: auto;
             margin-left: auto;
           }
@@ -2107,7 +2012,8 @@ footer {
         text-align: center;
       }
     }
-    .jumper{
+
+    .jumper {
       display: none;
     }
   }
@@ -2256,7 +2162,7 @@ footer {
       justify-content: center;
       right: 23% !important;
 
-      .im-this-and-that{
+      .im-this-and-that {
         margin: auto;
       }
 
@@ -2282,7 +2188,8 @@ footer {
         text-align: center;
       }
     }
-    .jumper{
+
+    .jumper {
       display: none;
     }
   }
