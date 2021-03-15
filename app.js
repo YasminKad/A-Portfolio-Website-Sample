@@ -1,188 +1,119 @@
-var customers;
-var prizes;
-var hours;
-var students;
-
-var isCountingC = false;
-var isCountingP = false;
-var isCountingH = false;
-var isCountingS = false;
-
-let counterc = 1;
-let counterp = 1;
-let counterh = 1;
-let counters = 1;
-
-var bannerGrid = document.querySelector(".banner-grid");
-
-var skillsHeader = document.querySelector(".skills");
-
-const buttonAll = document.querySelector(".all-work");
-const buttonDesign = document.querySelector(".design");
-const buttonMusic = document.querySelector(".music");
-const buttonVideo = document.querySelector(".video");
-
-const barsButton = document.querySelector(".bars");
-
-const closeButton = document.querySelector(".close-navbar");
-
-const homeButton = document.querySelector(".i-home");
-const aboutButton = document.querySelector(".i-about");
-const servicesButton = document.querySelector(".i-services");
-const portfolioButton = document.querySelector(".i-portfolio");
-const blogButton = document.querySelector(".i-blog");
-const contactButton = document.querySelector(".i-contact");
-
-var homeHeader = document.querySelector("#home");
-var aboutHeader = document.querySelector("#about");
-var servicesHeader = document.querySelector("#services");
-var portfolioHeader = document.querySelector("#portfolio");
-var blogHeader = document.querySelector("#blog");
-var contactHeader = document.querySelector("#contact");
-
-const navbarOnTheRight = document.querySelector(".navbar-full-page");
-const innerNavbar = document.querySelector(".navbar-responsive");
-
-const submitButton = document.querySelector(".send-button");
-const inputs = document.querySelectorAll(".input-container input");
-// const ".input-container input"
-// if ( !value)
-const check = document.querySelector(".fa-check");
-/* E V E N T - L I S T E N E R S */
-
-buttonAll.addEventListener('click', showAll);
-buttonDesign.addEventListener('click', showDesign);
-buttonMusic.addEventListener('click', showMusic);
-buttonVideo.addEventListener('click', showVideo);
-
-barsButton.addEventListener('click', sideNavbar);
-
-closeButton.addEventListener('click', closeNavbar);
-
-aboutButton.addEventListener('click', changeColorAbout);
-homeButton.addEventListener('click', changeColorHome);
-portfolioButton.addEventListener('click', changeColorPortfolio);
-servicesButton.addEventListener('click', changeColorServices);
-blogButton.addEventListener('click', changeColorBlog);
-contactButton.addEventListener('click', changeColorContact);
-
-navbarOnTheRight.addEventListener('click', closeNavbar);
-innerNavbar.addEventListener('click', doNothing);
-
-submitButton.addEventListener('click', checkValidation);
-
-/* F U N C T I O N S */
-
 const symbolMap = ["۰", "۱", "۲", "۳", "۴", "۵", "۶", "۷", "۸", "۹"];
 
-function postformat(string) {
+function postFormat(string) {
     return string.replace(/\d/g, (d) => symbolMap[d]).replace(/,/g, "،");
 }
 
-function customerCard() {
-    counterc++;
-    document.querySelector("#number1").innerHTML = postformat(counterc.toString());
-    if (counterc === 299) {
-        counterc = 0;
-        clearInterval(customers);
-        isCountingC = false;
+cardListContentNumbers = ['299', '45', '99', '36'];
+var cardList = [];
+
+function cardListGenerator() {
+    for (let i = 0; i < 4; i++) {
+        cardList.push({
+            intervalRef: null,
+            id: `#number${i + 1}`,
+            isCounting: false,
+            contentNumber: cardListContentNumbers[i],
+            counter: 1
+        });
+        console.log(cardList[i]);
     }
 }
 
-function prizesCard() {
-    counterp++;
-    document.querySelector("#number2").innerHTML = postformat(counterp.toString());
-    if (counterp === 45) {
-        counterp = 0
-        clearInterval(prizes);
-        isCountingP = false;
+cardListGenerator();
+
+function counterCardAnimation(card) {
+    card.counter++;
+    document.querySelector(`${card.id}`).innerHTML = postFormat(card.counter.toString());
+    if (card.counter === card.contentNumber) {
+        card.counter = 0;
+        clearInterval(card.intervalRef);
+        card.isCounting = false;
     }
 }
 
-function hoursCard() {
-    counterh++;
-    document.querySelector("#number3").innerHTML = postformat(counterh.toString());
-    if (counterh === 99) {
-        counterh = 0
-        clearInterval(hours);
-        isCountingH = false;
+function ChangeColor(target) {
+    document.querySelectorAll(".navbar-icon-link").forEach(e => {
+        e.classList.remove("go-green");
+    })
+    document.querySelectorAll(`.i-${target}`).forEach(e => {
+        e.classList.add("go-green");
+    })
+}
 
+const newNavbar = document.getElementById("navbarid");
+const bannerGrid = document.querySelector(".banner-grid");
+const skillsHeader = document.querySelector(".skills");
+const headerIds = ['home', 'about', 'services', 'portfolio', 'blog', 'contact']
+var headers = [];
+
+function headersGenerator() {
+    for (let i = 0; i < 6; i++) {
+        headers.push(document.querySelector(`#${headerIds[i]}`));
+        console.log(headers[i]);
     }
 }
 
-function studentsCard() {
-    counters++;
-    document.querySelector("#number4").innerHTML = postformat(counters.toString());
-    if (counters === 36) {
-        counters = 0
-        clearInterval(students);
-        isCountingS = false;
+headersGenerator();
+
+function ifGenerator(header) {
+    if (header.getBoundingClientRect().top <= 100 && header.getBoundingClientRect().bottom > 0) {
+        ChangeColor(header.id.toString())
+    }
+}
+
+function navbarTransform() {
+    if (bannerGrid.getBoundingClientRect().top <= 0) {
+        newNavbar.classList.add("new-navbar-style");
+    } else {
+        newNavbar.classList.remove("new-navbar-style");
+    }
+}
+
+function progressBarsActivation() {
+    document.querySelectorAll(".progress").forEach(e => {
+        const num = e.getAttribute("data-value");
+        e.style.width = `${num}%`;
+    })
+}
+
+function counterCardsSection() {
+    if (skillsHeader.getBoundingClientRect().top <= 500
+        && skillsHeader.getBoundingClientRect().top >= 400
+        && !(cardList.reduce((prev, curr) => {
+            return prev || curr.isCounting;
+        }, false))) {
+        progressBarsActivation();
+        cardList.forEach(e => {
+            e.isCounting = true;
+        })
+        timeoutGenerator();
+    }
+}
+
+var i = 0;
+const timeouts = [3, 40, 20, 60];
+
+function timeoutGenerator() {
+    for (let cardListElement of cardList) {
+        cardListElement.intervalRef = setInterval(() => {
+            counterCardAnimation(cardListElement)
+        }, timeouts[i++]);
     }
 }
 
 window.onscroll = function () {
-
-    if (homeHeader.getBoundingClientRect().top <= 100 && homeHeader.getBoundingClientRect().bottom > 0) {
-        changeColorHome();
-    }
-    if (aboutHeader.getBoundingClientRect().top <= 100 && aboutHeader.getBoundingClientRect().bottom > 0) {
-        changeColorAbout();
-    }
-    if (servicesHeader.getBoundingClientRect().top <= 100 && servicesHeader.getBoundingClientRect().bottom > 0) {
-        changeColorServices();
-    }
-    if (portfolioHeader.getBoundingClientRect().top <= 100 && portfolioHeader.getBoundingClientRect().bottom > 0) {
-        changeColorPortfolio();
-    }
-    if (blogHeader.getBoundingClientRect().top <= 100 && blogHeader.getBoundingClientRect().bottom > 0) {
-        changeColorBlog();
-    }
-    if (contactHeader.getBoundingClientRect().top <= 100 && contactHeader.getBoundingClientRect().bottom > 0) {
-        changeColorContact();
-    }
-    if (bannerGrid.getBoundingClientRect().top <= 0) {
-        const newNavbar = document.getElementById("navbarid");
-        newNavbar.classList.add("new-navbar-style");
-    }
-    if (bannerGrid.getBoundingClientRect().top > 0) {
-        const newNavbar = document.getElementById("navbarid");
-        newNavbar.classList.remove("new-navbar-style");
-    }
-    if (skillsHeader.getBoundingClientRect().top <= 500 && skillsHeader.getBoundingClientRect().top >= 400 && isCountingS === false && isCountingH === false && isCountingP === false && isCountingC === false) {
-
-        const firstBar = document.getElementById("first")
-        firstBar.classList.add("animation-activation-1");
-        const secondBar = document.getElementById("second");
-        secondBar.classList.add("animation-activation-2");
-        const thirdBar = document.getElementById("third");
-        thirdBar.classList.add("animation-activation-3");
-        const fourthBar = document.getElementById("fourth");
-        fourthBar.classList.add("animation-activation-4");
-
-        const fifthBar = document.getElementById("first-2");
-        fifthBar.classList.add("animation-activation-1");
-        const sixthBar = document.getElementById("second-2");
-        sixthBar.classList.add("animation-activation-2");
-        const seventhBar = document.getElementById("third-2");
-        seventhBar.classList.add("animation-activation-3");
-        const eightBar = document.getElementById("fourth-2");
-        eightBar.classList.add("animation-activation-4");
-
-        isCountingC = true;
-        isCountingH = true;
-        isCountingP = true;
-        isCountingS = true;
-
-        customers = setInterval(customerCard, 3);
-        prizes = setInterval(prizesCard, 40);
-        hours = setInterval(hoursCard, 20);
-        students = setInterval(studentsCard, 60);
-    }
+    headers.forEach(function (element) {
+            ifGenerator(element);
+        }
+    )
+    navbarTransform();
+    counterCardsSection();
 }
 
-var speed = 150;
 
 function typeWriterGenerator() {
+    const speed = 150;
     var i = 0;
     return function typeWriter(txt) {
         if (i < txt.length) {
@@ -199,142 +130,62 @@ function typeWriterGenerator() {
 }
 
 setTimeout(async () => {
+    const kamalTitle = ['کمال', 'یک وب دیزاینر', 'یک توسعه دهنده', 'یک لوگو دیزاینر'];
     while (true) {
-        await typeWriterGenerator()("کمال");
-        document.getElementById("kamalsname").innerHTML = ''
-        await typeWriterGenerator()("یک وب دیزاینر");
-        document.getElementById("kamalsname").innerHTML = ''
-        await typeWriterGenerator()("یک توسعه دهنده وب");
-        document.getElementById("kamalsname").innerHTML = ''
-        await typeWriterGenerator()("یک لوگو دیزاینر");
-        document.getElementById("kamalsname").innerHTML = ''
+        for (const title of kamalTitle) {
+            await typeWriterGenerator()(title);
+            document.getElementById("kamalsname").innerHTML = ''
+        }
     }
-
 }, 1000)
 
-function showAll() {
+const filters = ['design', 'music', 'video']
+for (let filter of filters) {
+    const btn = document.querySelector(`.${filter}`);
+    btn.addEventListener('click', () => {
+        portfolioSort(filter)
+    });
+}
+
+const allWorkBtn = document.querySelector(".all-work");
+allWorkBtn.addEventListener('click', () => {
+    portfolioSort("card-p")
+});
+
+function portfolioSort(filter) {
     document.querySelectorAll(".card-p").forEach(e => (e.style.display = 'none'));
     document.querySelectorAll(".card-p").forEach(e => {
-        if (e.className.includes("card-p")) {
+        if (e.className.includes(filter)) {
             e.style.display = 'block';
         }
     })
-    buttonAll.style.backgroundColor = "#5cbe26";
-    buttonDesign.style.backgroundColor = "#666666";
-    buttonMusic.style.backgroundColor = "#666666";
-    buttonVideo.style.backgroundColor = "#666666";
-
-}
-
-function showDesign() {
-    document.querySelectorAll(".card-p").forEach(e => (e.style.display = 'none'));
-    document.querySelectorAll(".card-p").forEach(e => {
-        if (e.className.includes("design-card")) {
-            e.style.display = 'block';
-        }
+    document.querySelectorAll(".p-button").forEach(e => {
+        e.classList.remove("bg-green");
     })
-    buttonDesign.style.backgroundColor = "#5cbe26";
-    buttonAll.style.backgroundColor = "#666666";
-    buttonMusic.style.backgroundColor = "#666666";
-    buttonVideo.style.backgroundColor = "#666666";
-
+    if (filter === "card-p") {
+        document.querySelector(".all-work").classList.add("bg-green");
+    } else {
+        document.querySelector(`.${filter}`).classList.add("bg-green");
+    }
 }
 
-function showVideo() {
-    document.querySelectorAll(".card-p").forEach(e => (e.style.display = 'none'));
-    document.querySelectorAll(".card-p").forEach(e => {
-        if (e.className.includes("video-card")) {
-            e.style.display = 'block';
-        }
-    })
-    buttonVideo.style.backgroundColor = "#5cbe26";
-    buttonDesign.style.backgroundColor = "#666666";
-    buttonMusic.style.backgroundColor = "#666666";
-    buttonAll.style.backgroundColor = "#666666";
-}
-
-function showMusic() {
-    document.querySelectorAll(".card-p").forEach(e => (e.style.display = 'none'));
-    document.querySelectorAll(".card-p").forEach(e => {
-        if (e.className.includes("music-card")) {
-            e.style.display = 'block';
-        }
-    })
-    buttonMusic.style.backgroundColor = "#5cbe26";
-    buttonDesign.style.backgroundColor = "#666666";
-    buttonAll.style.backgroundColor = "#666666";
-    buttonVideo.style.backgroundColor = "#666666";
-
-}
-
-function changeColorAbout() {
-    aboutButton.classList.add("go-green");
-    servicesButton.classList.remove("go-green")
-    portfolioButton.classList.remove("go-green")
-    blogButton.classList.remove("go-green")
-    contactButton.classList.remove("go-green")
-    homeButton.classList.remove("go-green")
-
-}
-
-function changeColorServices() {
-    aboutButton.classList.remove("go-green")
-    servicesButton.classList.add("go-green");
-    portfolioButton.classList.remove("go-green")
-    blogButton.classList.remove("go-green")
-    contactButton.classList.remove("go-green")
-    homeButton.classList.remove("go-green")
-
-}
-
-function changeColorHome() {
-    aboutButton.classList.remove("go-green")
-    servicesButton.classList.remove("go-green")
-    portfolioButton.classList.remove("go-green")
-    blogButton.classList.remove("go-green")
-    contactButton.classList.remove("go-green")
-    homeButton.classList.add("go-green");
-
-}
-
-function changeColorContact() {
-    aboutButton.classList.remove("go-green")
-    servicesButton.classList.remove("go-green")
-    portfolioButton.classList.remove("go-green")
-    blogButton.classList.remove("go-green")
-    contactButton.classList.add("go-green");
-    homeButton.classList.remove("go-green")
-
-}
-
-function changeColorBlog() {
-    aboutButton.classList.remove("go-green")
-    servicesButton.classList.remove("go-green")
-    portfolioButton.classList.remove("go-green")
-    blogButton.classList.add("go-green");
-    contactButton.classList.remove("go-green")
-    homeButton.classList.remove("go-green")
-
-}
-
-function changeColorPortfolio() {
-    aboutButton.classList.remove("go-green")
-    servicesButton.classList.remove("go-green")
-    portfolioButton.classList.add("go-green");
-    blogButton.classList.remove("go-green")
-    contactButton.classList.remove("go-green")
-    homeButton.classList.remove("go-green")
-
-}
+const barsButton = document.querySelector(".bars");
+const navbarOnTheRight = document.querySelector(".navbar-full-page");
+const innerNavbar = document.querySelector(".navbar-responsive");
+barsButton.addEventListener('click', sideNavbar);
 
 function sideNavbar() {
     barsButton.innerHTML = '<i class="fas fa-times"/>';
-    barsButton.style.border = 0;
+    barsButton.style.border = '0';
     const navbarOnTheRight = document.querySelector(".navbar-full-page");
     navbarOnTheRight.style.display = "block";
     innerNavbar.classList.remove("navbar-go");
     innerNavbar.classList.add("navbar-show");
 }
+
+const closeButton = document.querySelector(".close-navbar");
+navbarOnTheRight.addEventListener('click', closeNavbar);
+closeButton.addEventListener('click', closeNavbar);
 
 function closeNavbar() {
     innerNavbar.classList.remove("navbar-show");
@@ -345,25 +196,28 @@ function closeNavbar() {
         barsButton.innerHTML = '<i class="fas fa-bars"/>';
     }, 150)
 }
-function doNothing(e){
+
+innerNavbar.addEventListener('click', doNothing);
+
+function doNothing(e) {
     e.stopPropagation();
 }
 
-function checkValidation(e){
-    //const inputs = document.querySelectorAll(".input-container input message");
+const submitButton = document.querySelector(".send-button");
+submitButton.addEventListener('click', checkValidation);
+const inputs = document.querySelectorAll(".input-container input");
+const check = document.querySelector(".fa-check");
+
+function checkValidation() {
     inputs.forEach(e => {
         if (e.value === "") {
             document.querySelector(`.${e.name}.input-container .fa-check`).style.display = "none";
-            e.classList.remove("input-is-okay");
-            e.classList.remove("focus-okay");
+            e.classList.remove("input-is-okay", "focus-okay");
             e.classList.add("input-is-empty");
-        }
-        else {
+        } else {
             e.classList.remove("input-is-empty");
-            e.classList.add("focus-okay")
-            e.classList.add("input-is-okay");
+            e.classList.add("focus-okay", "input-is-okay")
             document.querySelector(`.${e.name}.input-container .fa-check`).style.display = "block";
         }
-})
+    })
 }
-
