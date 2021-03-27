@@ -7,7 +7,7 @@ $kamal-background: #f9f9f9;
 @mixin grid-fundamentals {
   display: grid;
   align-items: center;
-  width: 75%;
+  width: 65%;
   margin: auto;
 }
 
@@ -251,27 +251,27 @@ a, a i.fa, a img, .button, .btn {
   //  }
 
   .i-home {
-    right: 54%;
+    right: 50%;
   }
 
   .i-about {
-    right: 60%;
+    right: 55%;
   }
 
   .i-services {
-    right: 68%;
+    right: 61%;
   }
 
   .i-portfolio {
-    right: 76%;
+    right: 67%;
   }
 
   .i-blog {
-    right: 83.5%;
+    right: 72.5%;
   }
 
   .i-contact {
-    right: 90%;
+    right: 76.5%;
     padding-left: 0 !important;
   }
 }
@@ -679,7 +679,7 @@ a, a i.fa, a img, .button, .btn {
 
     .about-me-grid {
       display: grid;
-      width: 75%;
+      width: 65%;
       margin: auto;
       grid-template-columns: 1fr 1fr;
 
@@ -817,8 +817,9 @@ a, a i.fa, a img, .button, .btn {
   .experience-and-education-grids {
     display: grid;
     align-items: center;
-    width: 75%;
+    width: 65%;
     margin: auto;
+    margin-right: 19% !important;
     grid-template-columns: 1fr 1fr;
 
     .education-grid {
@@ -1006,7 +1007,7 @@ a, a i.fa, a img, .button, .btn {
 
       .card:before {
         content: "";
-        left: 104.3%;
+        left: 103.3%;
         display: block;
         position: absolute;
         background-color: white;
@@ -1028,7 +1029,7 @@ a, a i.fa, a img, .button, .btn {
         width: 33px;
         height: 2px;
         top: 13%;
-        left: 100.7%;
+        left: 100%;
         background-color: $kamal-green;
         z-index: 0;
       }
@@ -1051,6 +1052,7 @@ a, a i.fa, a img, .button, .btn {
 
   .main-grid {
     @include grid-fundamentals();
+    width: 65% !important;
     grid-template-columns: 1fr 1fr;
     margin-bottom: 48px;
 
@@ -1132,6 +1134,7 @@ a, a i.fa, a img, .button, .btn {
 
 .counter-cards {
   @include grid-fundamentals();
+  width: 65% !important;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   alignment: center;
 
@@ -1139,7 +1142,7 @@ a, a i.fa, a img, .button, .btn {
     position: relative;
     display: block;
     margin-top: 30px;
-    padding: 13%;
+    padding: 13px;
     box-sizing: border-box;
     border: 1px solid $kamal-light-gray;
     border-radius: 10px;
@@ -1151,8 +1154,8 @@ a, a i.fa, a img, .button, .btn {
       display: block;
       text-align: left;
       color: $kamal-green;
-      font-size: 52px;
-      font-weight: bolder;
+      font-size: 45px;
+      font-weight: bold;
       border-bottom: 2px solid rgba(102, 102, 102, 0.4);
       margin: 10px;
     }
@@ -1219,7 +1222,7 @@ a, a i.fa, a img, .button, .btn {
 
       i {
         color: $kamal-green;
-        font-size: 50px;
+        font-size: 40px;
         margin-bottom: 10px;
       }
 
@@ -1766,7 +1769,7 @@ a, a i.fa, a img, .button, .btn {
         font-size: 18px;
         background-color: $kamal-light-gray;
         border-radius: 50%;
-        padding: 10px;
+        padding: 5px;
         width: 40px;
         height: 40px;
         align-items: center;
@@ -1933,6 +1936,7 @@ a, a i.fa, a img, .button, .btn {
     a:hover {
       background-color: #3d7814;
       transition: .5s;
+      cursor: pointer;
     }
   }
 

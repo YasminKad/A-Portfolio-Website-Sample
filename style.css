@@ -134,22 +134,22 @@ a, a i.fa, a img, .button, .btn {
   position: absolute;
 }
 .navbar .i-home {
-  right: 54%;
+  right: 50%;
 }
 .navbar .i-about {
-  right: 60%;
+  right: 55%;
 }
 .navbar .i-services {
-  right: 68%;
+  right: 61%;
 }
 .navbar .i-portfolio {
-  right: 76%;
+  right: 67%;
 }
 .navbar .i-blog {
-  right: 83.5%;
+  right: 72.5%;
 }
 .navbar .i-contact {
-  right: 90%;
+  right: 76.5%;
   padding-left: 0 !important;
 }
 
@@ -554,7 +554,7 @@ a, a i.fa, a img, .button, .btn {
 }
 .about-me-first .container .about-me-grid {
   display: grid;
-  width: 75%;
+  width: 65%;
   margin: auto;
   grid-template-columns: 1fr 1fr;
 }
@@ -671,8 +671,9 @@ a, a i.fa, a img, .button, .btn {
 .experience-and-education .experience-and-education-grids {
   display: grid;
   align-items: center;
-  width: 75%;
+  width: 65%;
   margin: auto;
+  margin-right: 19% !important;
   grid-template-columns: 1fr 1fr;
 }
 .experience-and-education .experience-and-education-grids .education-grid {
@@ -836,7 +837,7 @@ a, a i.fa, a img, .button, .btn {
 }
 .experience-and-education .experience-and-education-grids .experience-grid .card:before {
   content: "";
-  left: 104.3%;
+  left: 103.3%;
   display: block;
   position: absolute;
   background-color: white;
@@ -856,7 +857,7 @@ a, a i.fa, a img, .button, .btn {
   width: 33px;
   height: 2px;
   top: 13%;
-  left: 100.7%;
+  left: 100%;
   background-color: #5cbe26;
   z-index: 0;
 }
@@ -879,8 +880,9 @@ a, a i.fa, a img, .button, .btn {
 .skills .main-grid {
   display: grid;
   align-items: center;
-  width: 75%;
+  width: 65%;
   margin: auto;
+  width: 65% !important;
   grid-template-columns: 1fr 1fr;
   margin-bottom: 48px;
 }
@@ -950,8 +952,9 @@ a, a i.fa, a img, .button, .btn {
 .counter-cards {
   display: grid;
   align-items: center;
-  width: 75%;
+  width: 65%;
   margin: auto;
+  width: 65% !important;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   alignment: center;
 }
@@ -959,7 +962,7 @@ a, a i.fa, a img, .button, .btn {
   position: relative;
   display: block;
   margin-top: 30px;
-  padding: 13%;
+  padding: 13px;
   box-sizing: border-box;
   border: 1px solid #d9d9d9;
   border-radius: 10px;
@@ -971,8 +974,8 @@ a, a i.fa, a img, .button, .btn {
   display: block;
   text-align: left;
   color: #5cbe26;
-  font-size: 52px;
-  font-weight: bolder;
+  font-size: 45px;
+  font-weight: bold;
   border-bottom: 2px solid rgba(102, 102, 102, 0.4);
   margin: 10px;
 }
@@ -1058,7 +1061,7 @@ a, a i.fa, a img, .button, .btn {
 .services .grid-section {
   display: grid;
   align-items: center;
-  width: 75%;
+  width: 65%;
   margin: auto;
   grid-template-columns: 1fr 1fr 1fr;
   color: #666666;
@@ -1079,7 +1082,7 @@ a, a i.fa, a img, .button, .btn {
 }
 .services .grid-section .card i {
   color: #5cbe26;
-  font-size: 50px;
+  font-size: 40px;
   margin-bottom: 10px;
 }
 .services .grid-section .card .title {
@@ -1101,7 +1104,7 @@ a, a i.fa, a img, .button, .btn {
 .services .testimonial {
   display: grid;
   align-items: center;
-  width: 75%;
+  width: 65%;
   margin: auto;
   grid-template-columns: 1fr;
   position: relative;
@@ -1314,7 +1317,7 @@ a, a i.fa, a img, .button, .btn {
 .portfolio .buttons-grid {
   display: grid;
   align-items: center;
-  width: 75%;
+  width: 65%;
   margin: auto;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   display: block;
@@ -1357,7 +1360,7 @@ a, a i.fa, a img, .button, .btn {
 .portfolio .grid-section-portfolio {
   display: grid;
   align-items: center;
-  width: 75%;
+  width: 65%;
   margin: auto;
   width: 65% !important;
   grid-template-columns: 1fr 1fr 1fr;
@@ -1514,7 +1517,7 @@ a, a i.fa, a img, .button, .btn {
 .blog .grid {
   display: grid;
   align-items: center;
-  width: 75%;
+  width: 65%;
   margin: auto;
   width: 65% !important;
   grid-template-columns: 1fr 1fr 1fr;
@@ -1526,7 +1529,7 @@ a, a i.fa, a img, .button, .btn {
 .blog .grid .card {
   display: grid;
   align-items: center;
-  width: 75%;
+  width: 65%;
   margin: auto;
   width: 90% !important;
   grid-template-rows: 1fr 1fr;
@@ -1678,7 +1681,7 @@ a, a i.fa, a img, .button, .btn {
 .contact-me .cards {
   display: grid;
   align-items: center;
-  width: 75%;
+  width: 65%;
   margin: auto;
   width: 65% !important;
   grid-template-columns: 1fr 1fr;
@@ -1690,7 +1693,7 @@ a, a i.fa, a img, .button, .btn {
 .contact-me .cards .card {
   display: grid;
   align-items: center;
-  width: 75%;
+  width: 65%;
   margin: auto;
   width: 90% !important;
   grid-template-columns: 1fr 1fr;
@@ -1708,7 +1711,7 @@ a, a i.fa, a img, .button, .btn {
   font-size: 18px;
   background-color: #d9d9d9;
   border-radius: 50%;
-  padding: 10px;
+  padding: 5px;
   width: 40px;
   height: 40px;
   align-items: center;
@@ -1769,7 +1772,7 @@ a, a i.fa, a img, .button, .btn {
 .contact-me .sentence p {
   display: grid;
   align-items: center;
-  width: 75%;
+  width: 65%;
   margin: auto;
   grid-template-columns: 1fr;
   margin-top: 24px;
@@ -1780,7 +1783,7 @@ a, a i.fa, a img, .button, .btn {
 .contact-me .forms {
   display: grid;
   align-items: center;
-  width: 75%;
+  width: 65%;
   margin: auto;
   grid-template-columns: 1fr 1fr;
   margin-bottom: 5px;
@@ -1857,6 +1860,7 @@ a, a i.fa, a img, .button, .btn {
 .contact-me .forms a:hover {
   background-color: #3d7814;
   transition: 0.5s;
+  cursor: pointer;
 }
 .contact-me a {
   color: white;
